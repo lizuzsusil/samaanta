@@ -15,7 +15,7 @@ export function Card({
   return (
     <section
       className={cn(
-        'rounded-xl border border-slate-200 bg-white shadow-card',
+        'rounded-lg border border-slate-200/90 bg-white shadow-card',
         padded && 'p-5',
         className,
       )}
@@ -41,9 +41,9 @@ export function CardHeader({
   return (
     <div className={cn('mb-4 flex flex-wrap items-start justify-between gap-3', className)}>
       <div className="flex min-w-0 items-start gap-2">
-        {Icon ? <Icon className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" /> : null}
+        {Icon ? <Icon className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" /> : null}
         <div>
-        <h2 className="text-sm font-semibold tracking-wide text-slate-900 uppercase">{title}</h2>
+        <h2 className="font-display text-[17px] font-semibold text-slate-900">{title}</h2>
         {subtitle ? <p className="mt-1 text-xs text-slate-500">{subtitle}</p> : null}
         </div>
       </div>
@@ -84,7 +84,7 @@ export function Button({
     'inline-flex items-center justify-center gap-1.5 rounded-lg font-medium transition disabled:cursor-not-allowed disabled:opacity-50'
   const sizes = size === 'sm' ? 'px-2.5 py-1.5 text-xs' : 'px-3.5 py-2 text-sm'
   const variants = {
-    primary: 'bg-indigo-600 text-white hover:bg-indigo-500 shadow-sm',
+    primary: 'bg-teal-700 text-white hover:bg-teal-600 shadow-sm',
     secondary: 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50',
     ghost: 'text-slate-600 hover:bg-slate-100',
     danger: 'border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100',
@@ -104,7 +104,7 @@ export function PageHeader({
   return (
     <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div className="min-w-0">
-        <h1 className="text-xl font-semibold tracking-tight text-slate-900">{title}</h1>
+        <h1 className="font-display text-[26px] leading-tight font-semibold text-slate-900">{title}</h1>
         {subtitle ? <p className="mt-1 max-w-3xl text-sm text-slate-500">{subtitle}</p> : null}
       </div>
       {actions ? <div className="flex flex-wrap items-center gap-2">{actions}</div> : null}
@@ -121,7 +121,7 @@ export function Stat({
   label: string
   value: ReactNode
   hint?: ReactNode
-  tone?: 'slate' | 'green' | 'amber' | 'blue' | 'rose' | 'indigo'
+  tone?: 'slate' | 'green' | 'amber' | 'blue' | 'rose' | 'teal'
 }) {
   const tones = {
     slate: 'border-slate-200',
@@ -129,7 +129,7 @@ export function Stat({
     amber: 'border-amber-200',
     blue: 'border-sky-200',
     rose: 'border-rose-200',
-    indigo: 'border-indigo-200',
+    teal: 'border-teal-600/30',
   }[tone]
   const valueTones = {
     slate: 'text-slate-900',
@@ -137,7 +137,7 @@ export function Stat({
     amber: 'text-amber-700',
     blue: 'text-sky-700',
     rose: 'text-rose-700',
-    indigo: 'text-indigo-700',
+    teal: 'text-teal-700',
   }[tone]
   return (
     <div className={cn('rounded-xl border bg-white p-4 shadow-card', tones)}>
@@ -150,9 +150,9 @@ export function Stat({
   )
 }
 
-export function Progress({ value, tone = 'indigo' }: { value: number; tone?: 'indigo' | 'green' }) {
+export function Progress({ value, tone = 'teal' }: { value: number; tone?: 'teal' | 'green' }) {
   const pct = Math.max(0, Math.min(1, value)) * 100
-  const bar = tone === 'green' ? 'bg-emerald-500' : 'bg-indigo-500'
+  const bar = tone === 'green' ? 'bg-emerald-500' : 'bg-teal-600'
   return (
     <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
       <div className={cn('h-full rounded-full transition-all', bar)} style={{ width: `${pct}%` }} />

@@ -12,14 +12,6 @@ import { fmtPct, npr, TIMING_LABEL } from '@/lib/calc'
 import { Badge, Card, CardHeader, Progress } from '@/components/ui/primitives'
 import { cn } from '@/lib/cn'
 
-const STATUS_COLORS: Record<string, string> = {
-  Completed: '#10b981',
-  Submitted: '#6366f1',
-  'In Progress': '#f59e0b',
-  'Not Started': '#94a3b8',
-  'On Hold': '#f43f5e',
-}
-
 const TIMING_ICONS = {
   complete: CheckCircle2,
   active: Clock3,
@@ -48,7 +40,7 @@ export function KpiGrid({ data }: { data: Dashboard }) {
       label: 'Active this month',
       value: k.active,
       hint: 'in their window now',
-      tone: 'indigo' as const,
+      tone: 'teal' as const,
     },
     {
       label: 'Needs attention',
@@ -92,7 +84,7 @@ export function ComplianceChain({ data }: { data: Dashboard }) {
             <li key={step.code} className="relative">
               <Link
                 href="/tasks"
-                className="flex h-full flex-col rounded-lg border border-slate-200 bg-slate-50/60 p-3 transition hover:border-indigo-300 hover:bg-white"
+                className="flex h-full flex-col rounded-lg border border-slate-200 bg-slate-50/60 p-3 transition hover:border-teal-200 hover:bg-white"
               >
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-sm font-semibold text-slate-800">{step.name}</span>
@@ -217,68 +209,6 @@ export function BookkeepingStrip({ data }: { data: Dashboard }) {
   )
 }
 
-export function StatusBreakdown({ data }: { data: Dashboard }) {
-  const total = data.kpis.total || 1
-  const radius = 54
-  const circumference = 2 * Math.PI * radius
-  const lens = data.statusBreakdown.map((s) => (s.count / total) * circumference)
-  const offsets = lens.map((_, i) => lens.slice(0, i).reduce((sum, l) => sum + l, 0))
-
-  return (
-    <Card className="h-full">
-      <CardHeader title="Task status breakdown" />
-      <div className="flex flex-col items-center gap-5 sm:flex-row">
-        <svg viewBox="0 0 140 140" className="h-36 w-36 shrink-0" role="img" aria-label="Status breakdown">
-          <circle cx="70" cy="70" r={radius} fill="none" stroke="#f1f5f9" strokeWidth="18" />
-          {data.statusBreakdown.map((s, i) =>
-            s.count ? (
-              <circle
-                key={s.status}
-                cx="70"
-                cy="70"
-                r={radius}
-                fill="none"
-                stroke={STATUS_COLORS[s.status]}
-                strokeWidth="18"
-                strokeDasharray={`${lens[i]} ${circumference - lens[i]}`}
-                strokeDashoffset={-offsets[i]}
-                transform="rotate(-90 70 70)"
-              />
-            ) : null,
-          )}
-          <text
-            x="70"
-            y="66"
-            textAnchor="middle"
-            className="fill-slate-900 text-2xl font-semibold"
-          >
-            {data.kpis.total}
-          </text>
-          <text x="70" y="84" textAnchor="middle" className="fill-slate-400 text-[10px]">
-            tasks
-          </text>
-        </svg>
-
-        <ul className="w-full space-y-1.5">
-          {data.statusBreakdown.map((s) => (
-            <li key={s.status} className="flex items-center gap-2 text-sm">
-              <span
-                className="h-2.5 w-2.5 shrink-0 rounded-sm"
-                style={{ background: STATUS_COLORS[s.status] }}
-              />
-              <span className="flex-1 text-slate-700">{s.status}</span>
-              <span className="tabular-nums text-slate-900">{s.count}</span>
-              <span className="w-10 text-right tabular-nums text-slate-400">
-                {fmtPct(s.pct)}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Card>
-  )
-}
-
 export function ProgressByArea({ data }: { data: Dashboard }) {
   return (
     <Card padded={false}>
@@ -310,7 +240,7 @@ export function ProgressByArea({ data }: { data: Dashboard }) {
                     {row.guideSlug ? (
                       <Link
                         href={`/guides/${row.guideSlug}`}
-                        className="font-medium text-indigo-600 hover:underline"
+                        className="font-medium text-teal-700 hover:underline"
                       >
                         {row.area}
                       </Link>

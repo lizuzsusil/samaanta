@@ -90,7 +90,7 @@ export function UsersAdmin({
           {adding ? (
             <form
               onSubmit={addUser}
-              className="mb-4 grid gap-3 rounded-lg border border-indigo-200 bg-indigo-50/50 p-4 sm:grid-cols-2 lg:grid-cols-6"
+              className="mb-4 grid gap-3 rounded-lg border border-teal-600/20 bg-teal-50/50 p-4 sm:grid-cols-2 lg:grid-cols-6"
             >
               <label className="block">
                 <span className="mb-1 block text-[11px] text-slate-500">Full name</span>
@@ -161,7 +161,7 @@ export function UsersAdmin({
                     <div className="font-medium text-slate-900">
                       {u.name}
                       {u.id === meId ? (
-                        <span className="ml-2 text-[11px] font-normal text-indigo-500">(you)</span>
+                        <span className="ml-2 text-[11px] font-normal text-teal-600">(you)</span>
                       ) : null}
                     </div>
                     <div className="text-xs text-slate-500">{u.email}</div>
@@ -274,7 +274,7 @@ export function UsersAdmin({
                                 checked={field === 'canRead' ? (p?.canRead ?? false) : (p?.canWrite ?? false)}
                                 disabled={pending}
                                 onChange={(e) => toggle(r, m, field, e.target.checked)}
-                                className="h-3.5 w-3.5 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                                className="h-3.5 w-3.5 rounded border-slate-300 text-teal-700 focus:ring-teal-600"
                               />
                               {field === 'canRead' ? 'Read' : 'Write'}
                             </label>

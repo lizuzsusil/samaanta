@@ -43,7 +43,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
       <div>
         <Link
           href="/guides"
-          className="inline-flex items-center gap-1 text-xs font-medium text-indigo-600 hover:underline"
+          className="inline-flex items-center gap-1 text-xs font-medium text-teal-700 hover:underline"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> All step guides
         </Link>
@@ -74,7 +74,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
             const value = String(guide[key] ?? '')
             if (!value && key !== 'dropbox') return null
             return (
-              <div key={key} className="border-l-2 border-indigo-100 pl-3">
+              <div key={key} className="border-l-2 border-teal-600/10 pl-3">
                 <dt className="text-[10px] font-semibold tracking-[0.14em] text-slate-500 uppercase">
                   {label}
                 </dt>
@@ -84,7 +84,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
                       href={value}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-indigo-600 hover:underline"
+                      className="inline-flex items-center gap-1 text-teal-700 hover:underline"
                     >
                       <FolderOpen className="h-3.5 w-3.5" /> Open folder
                     </a>
@@ -376,7 +376,7 @@ function AddInline({
   return (
     <form
       onSubmit={submit}
-      className="flex w-full flex-wrap items-end gap-2 rounded-lg border border-indigo-200 bg-indigo-50/50 p-3"
+      className="flex w-full flex-wrap items-end gap-2 rounded-lg border border-teal-600/20 bg-teal-50/50 p-3"
     >
       {fields.map((f) => (
         <label key={f.name} className={cn('block', f.wide ? 'min-w-64 flex-1' : 'w-44')}>

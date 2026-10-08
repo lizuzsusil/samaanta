@@ -58,7 +58,7 @@ export function TaskTracker({ tasks, month, canWrite }: Props) {
   }
 
   const filterSelect =
-    'rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-700 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100'
+    'rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-700 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-600/10'
 
   return (
     <div className="space-y-4">
@@ -220,7 +220,7 @@ function TaskRows({
 }) {
   return (
     <>
-      <tr className={cn('align-top hover:bg-slate-50/70', open && 'bg-indigo-50/40')}>
+      <tr className={cn('align-top hover:bg-slate-50/70', open && 'bg-teal-50/40')}>
         <td className="px-3 py-2 font-mono text-xs font-medium text-slate-500">{task.code}</td>
         <td className="px-3 py-2 whitespace-nowrap text-slate-600">{task.area}</td>
         <td className="px-3 py-2 font-medium text-slate-900">{task.title}</td>
@@ -289,7 +289,7 @@ function TaskRows({
           {task.guideSlug ? (
             <Link
               href={`/guides/${task.guideSlug}`}
-              className="inline-flex items-center gap-1 text-xs font-medium text-indigo-600 hover:underline"
+              className="inline-flex items-center gap-1 text-xs font-medium text-teal-700 hover:underline"
             >
               Open guide <ExternalLink className="h-3 w-3" />
             </Link>
@@ -360,7 +360,7 @@ function TaskRows({
                     href={task.dropbox}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-indigo-600 hover:underline"
+                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-teal-700 hover:underline"
                   >
                     <FolderOpen className="h-4 w-4" /> Open Dropbox folder
                   </a>
@@ -434,7 +434,7 @@ function NewTaskForm({
         e.preventDefault()
         onSubmit(form)
       }}
-      className="rounded-xl border border-indigo-200 bg-indigo-50/50 p-4"
+      className="rounded-xl border border-teal-600/20 bg-teal-50/50 p-4"
     >
       <h3 className="mb-3 text-sm font-semibold text-slate-800">New compliance task</h3>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">

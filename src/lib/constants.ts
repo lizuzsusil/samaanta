@@ -67,7 +67,7 @@ export const CALENDAR_KINDS: Record<string, { label: string; bg: string; fg: str
 
 export const STATUS_STYLES: Record<string, string> = {
   Completed: 'bg-emerald-100 text-emerald-800 ring-emerald-200',
-  Submitted: 'bg-indigo-100 text-indigo-800 ring-indigo-200',
+  Submitted: 'bg-cyan-100 text-cyan-900 ring-cyan-200',
   'In Progress': 'bg-amber-100 text-amber-900 ring-amber-200',
   'Not Started': 'bg-slate-100 text-slate-700 ring-slate-200',
   'On Hold': 'bg-rose-100 text-rose-800 ring-rose-200',

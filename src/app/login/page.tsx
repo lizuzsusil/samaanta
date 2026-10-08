@@ -37,7 +37,7 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(79,70,229,0.35),transparent_60%)]" />
         <div className="relative flex h-full flex-col justify-between p-12 text-white">
           <div>
-            <div className="text-xs font-semibold tracking-[0.3em] text-indigo-300 uppercase">
+            <div className="text-xs font-semibold tracking-[0.3em] text-teal-200 uppercase">
               Samaanta Development Foundation
             </div>
             <h1 className="mt-6 max-w-md text-3xl leading-tight font-semibold">
@@ -56,11 +56,11 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
             </div>
             <div className="rounded-xl bg-white/5 p-4">
               <dt className="text-[11px] tracking-wide text-slate-400 uppercase">Tasks</dt>
-              <dd className="mt-1 font-medium">14 tracked</dd>
+              <dd className="mt-1 font-medium">Full FY coverage</dd>
             </div>
             <div className="rounded-xl bg-white/5 p-4">
               <dt className="text-[11px] tracking-wide text-slate-400 uppercase">Guides</dt>
-              <dd className="mt-1 font-medium">9 processes</dd>
+              <dd className="mt-1 font-medium">Every process</dd>
             </div>
           </dl>
         </div>
@@ -69,7 +69,7 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
       <div className="flex w-full items-center justify-center px-5 py-10 lg:w-1/2">
         <div className="w-full max-w-sm">
           <div className="mb-8">
-            <div className="text-xs font-semibold tracking-[0.25em] text-indigo-600 uppercase">
+            <div className="text-xs font-semibold tracking-[0.25em] text-teal-700 uppercase">
               Compliance workspace
             </div>
             <h2 className="mt-2 text-2xl font-semibold text-slate-900">Sign in</h2>

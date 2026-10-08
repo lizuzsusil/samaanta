@@ -34,7 +34,7 @@ export function ShellClient({
   const nav = (
     <nav className="flex h-full flex-col gap-6 overflow-y-auto px-3 py-5">
       <div className="px-2">
-        <div className="text-[11px] font-semibold tracking-[0.2em] text-indigo-300 uppercase">
+        <div className="text-[11px] font-semibold tracking-[0.2em] text-teal-200 uppercase">
           Samaanta
         </div>
         <div className="mt-0.5 text-sm font-medium text-white">Development Foundation</div>
@@ -61,7 +61,7 @@ export function ShellClient({
                       className={cn(
                         'flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition',
                         active
-                          ? 'bg-indigo-500/20 font-medium text-white'
+                          ? 'bg-teal-600/20 font-medium text-white'
                           : 'text-slate-300 hover:bg-white/5 hover:text-white',
                       )}
                     >
@@ -93,7 +93,7 @@ export function ShellClient({
                     className={cn(
                       'block truncate rounded-lg px-2.5 py-1.5 text-[13px] transition',
                       active
-                        ? 'bg-indigo-500/20 font-medium text-white'
+                        ? 'bg-teal-600/20 font-medium text-white'
                         : 'text-slate-400 hover:bg-white/5 hover:text-white',
                     )}
                   >
@@ -175,7 +175,7 @@ export function ShellClient({
               </label>
 
               <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white py-1 pr-2 pl-1">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-indigo-600 text-[11px] font-semibold text-white">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-teal-700 text-[11px] font-semibold text-white">
                   {initials(user.name)}
                 </span>
                 <span className="hidden text-left leading-tight sm:block">
