@@ -1,0 +1,3449 @@
+{
+ "meta": {
+  "org": "SAMAANTA DEVELOPMENT FOUNDATION",
+  "title": "Administrative, Governance & Legal Compliance Dashboard",
+  "subtitle": "Fiscal Year 2083/84 (2026/27)   •   Shrawan 2083 – Asadh 2084   •   Handover edition",
+  "fy": "FY 2083/84",
+  "trackerTitle": "Compliance Task Tracker – FY 2083/84",
+  "trackerNote": "Update the blue-headed columns (Status, dates, follow-up). 'Timing' updates automatically from the month selected on the Dashboard. Enter dates as text in BS format (e.g. 2083-06-15) or as normal dates. Month # 1 = Shrawan … 12 = Asadh.  Column T opens the Dropbox folder for each task (links are pasted once in Start Here, section 9).",
+  "calendarTitle": "Samaanta Development Foundation: Annual Administrative, Governance & Legal Calendar",
+  "calendarSubtitle": "Fiscal Year 2083/84 (2026/27) • Nepali months (BS) with approximate English months • Fiscal year runs Shrawan → Asadh",
+  "bookTitle": "Monthly TDS Log – Office Rent, Staff Salaries, Income & Expenses, Bookkeeping & TDS",
+  "bookNote": "One column per payment month (BS, Shrawan → Asadh). Enter data only in the YELLOW cells. Office rent is paid in advance and salaries are disbursed in the first week – enter each person's NET payment once paid. TDS must be deposited and e-TDS filed by the 25th of the FOLLOWING month. Amounts in NPR; dates as 2083-06-05 or normal dates. Totals, gross, SST and net surplus calculate automatically. Rent TDS is NOT a monthly item – it is paid once a year at Ward renewal (see '4 Ward Renewal').",
+  "overviewTitle": "START HERE – Handover Guide, Sheet Index & Contacts",
+  "calendarNotes": "Notes: Nepali month boundaries fall mid-month in the English calendar, so English months are approximate. Deadlines marked 'verify' depend on current IRD / OCR / SWC / Ward rules and should be confirmed before each filing. Monthly TDS is due by the 25th of the month after the payment month."
+ },
+ "tasks": [
+  {
+   "id": "T01",
+   "area": "Audit",
+   "task": "Annual financial audit (previous FY books)",
+   "frequency": "Annual",
+   "window": "Shrawan – Bhadra",
+   "fromMo": 1,
+   "toMo": 2,
+   "priority": "High",
+   "responsible": "PO / Auditor",
+   "status": "Completed",
+   "timing": "✔ Complete",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Auditor (in person / electronic)",
+   "documents": "Complete bookkeeping, bank certificates & statements, FD & TDS certificates, payroll, VAT/TDS records, donor records, fixed-asset register, previous audit",
+   "notes": "Target: signed audit report by end of Bhadra. Audit output feeds every other filing.",
+   "guide": "→ Open guide",
+   "dropbox": "Open Dropbox folder ►"
+  },
+  {
+   "id": "T02",
+   "area": "Tax",
+   "task": "Annual income-tax return",
+   "frequency": "Annual",
+   "window": "Bhadra – Ashwin",
+   "fromMo": 2,
+   "toMo": 3,
+   "priority": "High",
+   "responsible": "Auditor / PO",
+   "status": "In Progress",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "IRD – e-filing (via Auditor)",
+   "documents": "Audited financial statements, income/expense schedules, TDS/e-TDS records, PAN, previous filings",
+   "notes": "Return generally due 3 months after FY-end (end of Ashwin) – confirm with IRD / Auditor.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T03",
+   "area": "Tax Clearance",
+   "task": "Obtain Tax Clearance Certificate",
+   "frequency": "Annual",
+   "window": "Ashwin – Kartik",
+   "fromMo": 3,
+   "toMo": 4,
+   "priority": "High",
+   "responsible": "PO / Admin",
+   "status": "In Progress",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "IRD – Inland Revenue Office",
+   "documents": "Board-signed application, audited FS (Annex 2 & 13), return acknowledgement, TDS/e-TDS records, payment receipts incl. VAT, previous clearance, exemption cert, PAN, updated OCR, Ward & SWC certificates",
+   "notes": "SWC renewal and Tax Exemption both depend on this certificate.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T04",
+   "area": "Local Government",
+   "task": "Ward / Municipality registration renewal",
+   "frequency": "Annual",
+   "window": "Bhadra – Ashwin",
+   "fromMo": 2,
+   "toMo": 3,
+   "priority": "High",
+   "responsible": "PO",
+   "status": "Completed",
+   "timing": "✔ Complete",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Ward Office (hard copies)",
+   "documents": "Application letter, current ward certificate, rent agreement, rent TDS payment slip, latest OCR certificate, SWC certificate, PAN",
+   "notes": "Renewal dates and requirements vary by ward / municipality. Pay the office rent TDS first – the Ward renews only after the TDS slip is shown.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T05",
+   "area": "OCR / Legal",
+   "task": "OCR annual update / annual filing",
+   "frequency": "Annual",
+   "window": "Ashwin – Mangsir",
+   "fromMo": 3,
+   "toMo": 5,
+   "priority": "High",
+   "responsible": "PO / Lawyer",
+   "status": "Not Started",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "OCR via CAMIS (Lawyer)",
+   "documents": "Audited FS & audit report, AGM / Board minutes & resolutions, director details, statutory forms, current registration record",
+   "notes": "Usually handled by the Lawyer – confirm current CAMIS requirements before filing.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T06",
+   "area": "SWC",
+   "task": "SWC affiliation / certificate renewal",
+   "frequency": "Every 3 years",
+   "window": "Kartik – Mangsir",
+   "fromMo": 4,
+   "toMo": 5,
+   "priority": "High",
+   "responsible": "PO / Admin",
+   "status": "Not Started",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "SWC, Bhirkutimandap",
+   "documents": "Application, original SWC certificate, program approval & progress report, audit report, Tax Clearance, updated OCR, renewed Ward registration, Board minute",
+   "notes": "Renew only in the expiry cycle – record expiry date on the SWC guide sheet.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T07",
+   "area": "Tax",
+   "task": "Tax Exemption certificate renewal",
+   "frequency": "Annual",
+   "window": "Mangsir – Magh",
+   "fromMo": 5,
+   "toMo": 7,
+   "priority": "High",
+   "responsible": "PO / Admin",
+   "status": "Not Started",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "IRD",
+   "documents": "Application letter, original exemption certificate, Tax Clearance, updated OCR, Ward & SWC certificates, PAN, Board minute if required",
+   "notes": "Draft tracker listed 'OCR/CAMIS' as the office – corrected to IRD; please confirm. Tax exemption does NOT remove TDS duties.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T08",
+   "area": "SWC",
+   "task": "Annual program approval / amendment",
+   "frequency": "Annual / as needed",
+   "window": "Baisakh – Asadh (next FY)",
+   "fromMo": 10,
+   "toMo": 12,
+   "priority": "High",
+   "responsible": "PO / Admin",
+   "status": "Completed",
+   "timing": "✔ Complete",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "SWC",
+   "documents": "Program proposal, budget, workplan, fact sheet, progress report, registration & SWC docs, Board approval, donor agreements",
+   "notes": "FY 2083/84 approval completed. Reset status when next-FY cycle starts (Baisakh).",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T09",
+   "area": "Banking",
+   "task": "HBL KYC review / update",
+   "frequency": "Annual / on change",
+   "window": "Chaitra – Baisakh",
+   "fromMo": 9,
+   "toMo": 10,
+   "priority": "Medium",
+   "responsible": "PO / Admin",
+   "status": "Completed",
+   "timing": "✔ Complete",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "HBL branch",
+   "documents": "Board resolution, KYC forms, ID copies, updated OCR / PAN / SWC / Ward documents, address proof",
+   "notes": "Also update whenever directors, signatories or address change.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T10",
+   "area": "Banking",
+   "task": "Sanima Bank KYC review / update",
+   "frequency": "Annual / on change",
+   "window": "Chaitra – Baisakh",
+   "fromMo": 9,
+   "toMo": 10,
+   "priority": "Medium",
+   "responsible": "PO / Admin",
+   "status": "Completed",
+   "timing": "✔ Complete",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Sanima branch",
+   "documents": "Board resolution, KYC forms, ID copies, updated OCR / PAN / SWC / Ward documents, address proof",
+   "notes": "Also update whenever directors, signatories or address change.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T11",
+   "area": "Finance / Books",
+   "task": "Monthly bookkeeping – income & expenses",
+   "frequency": "Monthly",
+   "window": "Every month",
+   "fromMo": 1,
+   "toMo": 12,
+   "priority": "High",
+   "responsible": "PO / Finance",
+   "status": "Not Started",
+   "timing": "● Active now",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Internal books / accounting records",
+   "documents": "Bank statements (HBL & Sanima), cash book, bills & vouchers, rent receipt, salary sheet, donor receipts, TDS vouchers",
+   "notes": "Set each month's status (Not Started / In Progress / Completed) and enter total income & expenses in the Monthly TDS Log. Late books delay the audit.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T12",
+   "area": "Governance",
+   "task": "Board meetings & AGM",
+   "frequency": "Quarterly",
+   "window": "Ashwin, Poush, Chaitra, Asadh",
+   "fromMo": 1,
+   "toMo": 12,
+   "priority": "High",
+   "responsible": "ED / Board / PO",
+   "status": "Not Started",
+   "timing": "● Active now",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Board meeting",
+   "documents": "Agenda, audited FS, program & budget, previous minutes, notices, draft resolutions",
+   "notes": "Align with constitution and OCR requirements.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T13",
+   "area": "Governance",
+   "task": "Maintain statutory & governance records",
+   "frequency": "Ongoing",
+   "window": "All year",
+   "fromMo": 1,
+   "toMo": 12,
+   "priority": "Medium",
+   "responsible": "Admin",
+   "status": "Not Started",
+   "timing": "● Active now",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Internal records",
+   "documents": "Minutes, resolutions, registers, contracts, policies, bank mandates",
+   "notes": "Keep one master folder plus a backup copy.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  },
+  {
+   "id": "T15",
+   "area": "Compliance Planning",
+   "task": "Annual compliance review & next-FY calendar",
+   "frequency": "Annual",
+   "window": "Jestha – Asadh",
+   "fromMo": 11,
+   "toMo": 12,
+   "priority": "Medium",
+   "responsible": "Admin / PO",
+   "status": "Not Started",
+   "timing": "○ Upcoming",
+   "dateStarted": "",
+   "dateSubmitted": "",
+   "dateCompleted": "",
+   "nextFollowup": "",
+   "submitTo": "Internal",
+   "documents": "Completed tracker, updated authority requirements, expiry dates, pending issues",
+   "notes": "Update this workbook for the next FY.",
+   "guide": "→ Open guide",
+   "dropbox": "Add link in Start Here §9"
+  }
+ ],
+ "calendar": [
+  {
+   "section": "AUDIT, TAX CLEARANCE & TAX EXEMPTION",
+   "label": "Audit Report",
+   "owner": "Annual • PO / Finance / Auditor",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Close FY books; share complete bookkeeping with Auditor; request HBL & Sanima balance certificates, statements, FD & TDS certificates",
+     "kind": "prepare"
+    },
+    {
+     "month": 2,
+     "text": "TARGET: audit completed, report signed & IRD-verified by end of Bhadra; pay audit fee (deduct TDS)",
+     "kind": "deadline"
+    },
+    {
+     "month": 3,
+     "text": "Board / AGM approves audited accounts; file signed copies in Audit folder",
+     "kind": "followup"
+    },
+    {
+     "month": 7,
+     "text": "Mid-year check: bookkeeping and filing up to date (Shrawan–Poush)",
+     "kind": "monitor"
+    },
+    {
+     "month": 9,
+     "text": "Confirm Auditor and audit schedule for the next FY",
+     "kind": "prepare"
+    },
+    {
+     "month": 12,
+     "text": "Year-end closing; start compiling audit pack (income/expense, salary, rent & utilities statements)",
+     "kind": "prepare"
+    }
+   ]
+  },
+  {
+   "section": "AUDIT, TAX CLEARANCE & TAX EXEMPTION",
+   "label": "Tax Clearance (incl. annual income-tax return)",
+   "owner": "Annual • PO / Auditor",
+   "cells": [
+    {
+     "month": 2,
+     "text": "File annual income-tax return once audit is ready; reconcile all TDS / VAT; draft Board-signed application",
+     "kind": "prepare"
+    },
+    {
+     "month": 3,
+     "text": "Return due by end of Ashwin (3 months after FY-end – verify). Submit Tax Clearance application at IRD",
+     "kind": "deadline"
+    },
+    {
+     "month": 4,
+     "text": "Follow up IRD; collect Tax Clearance Certificate; share with OCR, SWC & Tax Exemption files",
+     "kind": "followup"
+    }
+   ]
+  },
+  {
+   "section": "AUDIT, TAX CLEARANCE & TAX EXEMPTION",
+   "label": "Tax Exemption Renewal",
+   "owner": "Annual • PO / Admin",
+   "cells": [
+    {
+     "month": 4,
+     "text": "Confirm exemption expiry; check prerequisites (Tax Clearance, OCR, Ward, SWC)",
+     "kind": "prepare"
+    },
+    {
+     "month": 5,
+     "text": "Prepare application letter, Board minute and full document set",
+     "kind": "prepare"
+    },
+    {
+     "month": 6,
+     "text": "Submit renewal at IRD (within 1 year after income year – verify)",
+     "kind": "deadline"
+    },
+    {
+     "month": 7,
+     "text": "Follow up IRD; collect renewed Tax Exemption Certificate",
+     "kind": "followup"
+    }
+   ]
+  },
+  {
+   "section": "REGISTRATION & LEGAL",
+   "label": "OCR Annual Update",
+   "owner": "Annual • Lawyer / PO",
+   "cells": [
+    {
+     "month": 3,
+     "text": "Engage lawyer; hold AGM / Board; collect audited accounts & director details",
+     "kind": "prepare"
+    },
+    {
+     "month": 4,
+     "text": "Lawyer prepares annual filing forms & resolutions; directors sign",
+     "kind": "submit"
+    },
+    {
+     "month": 5,
+     "text": "File via CAMIS; pay fee; obtain acknowledgement / updated OCR record",
+     "kind": "deadline"
+    }
+   ]
+  },
+  {
+   "section": "REGISTRATION & LEGAL",
+   "label": "Ward / Municipality Registration Renewal",
+   "owner": "Annual • PO",
+   "cells": [
+    {
+     "month": 2,
+     "text": "Pay office rent TDS first (slip needed for renewal); check expiry; prepare application & documents",
+     "kind": "prepare"
+    },
+    {
+     "month": 3,
+     "text": "Submit hard copies at Ward Office; pay fee; collect renewed certificate",
+     "kind": "submit"
+    }
+   ]
+  },
+  {
+   "section": "SOCIAL WELFARE COUNCIL (SWC)",
+   "label": "SWC Certificate Renewal",
+   "owner": "Every 3 years • PO / Admin",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Check SWC certificate expiry date – renew only in the expiry cycle",
+     "kind": "monitor"
+    },
+    {
+     "month": 4,
+     "text": "After Tax Clearance: prepare renewal set, Board minute, application",
+     "kind": "prepare"
+    },
+    {
+     "month": 5,
+     "text": "Submit at SWC (Bhirkutimandap); pay renewal fee",
+     "kind": "submit"
+    },
+    {
+     "month": 6,
+     "text": "Collect renewed certificate",
+     "kind": "followup"
+    }
+   ]
+  },
+  {
+   "section": "SOCIAL WELFARE COUNCIL (SWC)",
+   "label": "SWC Program Approval",
+   "owner": "Annual / as needed • PO / Admin",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Confirm current-FY approval is in force; file donor MoUs; amend if program changes",
+     "kind": "monitor"
+    },
+    {
+     "month": 3,
+     "text": "Annual progress / audit reporting to SWC as required (verify timing)",
+     "kind": "submit"
+    },
+    {
+     "month": 8,
+     "text": "Draft next-FY program, budget & workplan with Board",
+     "kind": "prepare"
+    },
+    {
+     "month": 9,
+     "text": "Board approves next-FY program; download latest SWC checklist",
+     "kind": "prepare"
+    },
+    {
+     "month": 10,
+     "text": "Compile proposal, fact sheet & annexes in current SWC format",
+     "kind": "prepare"
+    },
+    {
+     "month": 11,
+     "text": "Submit next-FY program approval application before FY starts",
+     "kind": "deadline"
+    },
+    {
+     "month": 12,
+     "text": "Follow up; collect approval letter",
+     "kind": "followup"
+    }
+   ]
+  },
+  {
+   "section": "BANKING – KYC UPDATE",
+   "label": "HBL KYC Update",
+   "owner": "Annual / on change • PO / Admin",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Trigger check: any change in directors, signatories, address or registration?",
+     "kind": "monitor"
+    },
+    {
+     "month": 6,
+     "text": "Ad-hoc KYC update if OCR / Board / signatory details changed",
+     "kind": "monitor"
+    },
+    {
+     "month": 9,
+     "text": "Board resolution, KYC forms, ID copies, updated OCR / PAN / SWC / Ward docs",
+     "kind": "prepare"
+    },
+    {
+     "month": 10,
+     "text": "Submit KYC at HBL branch; obtain confirmation",
+     "kind": "submit"
+    }
+   ]
+  },
+  {
+   "section": "BANKING – KYC UPDATE",
+   "label": "Sanima Bank KYC Update",
+   "owner": "Annual / on change • PO / Admin",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Trigger check: any change in directors, signatories, address or registration?",
+     "kind": "monitor"
+    },
+    {
+     "month": 6,
+     "text": "Ad-hoc KYC update if OCR / Board / signatory details changed",
+     "kind": "monitor"
+    },
+    {
+     "month": 9,
+     "text": "Board resolution, KYC forms, ID copies, updated OCR / PAN / SWC / Ward docs",
+     "kind": "prepare"
+    },
+    {
+     "month": 10,
+     "text": "Submit KYC at Sanima branch; obtain confirmation",
+     "kind": "submit"
+    }
+   ]
+  },
+  {
+   "section": "MONTHLY TAX COMPLIANCE (TDS)",
+   "label": "Office Rent Payment & Monthly Bookkeeping",
+   "owner": "Monthly • PO / Finance",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 2,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 3,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 4,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 5,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 6,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 7,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 8,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 9,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 10,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 11,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    },
+    {
+     "month": 12,
+     "text": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log",
+     "kind": "monthly"
+    }
+   ]
+  },
+  {
+   "section": "MONTHLY TAX COMPLIANCE (TDS)",
+   "label": "Staff Salary TDS + other TDS (e.g. counselling fees)",
+   "owner": "Monthly • PO / Finance",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 2,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 3,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 4,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 5,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 6,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 7,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 8,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 9,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 10,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 11,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    },
+    {
+     "month": 12,
+     "text": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS",
+     "kind": "monthly"
+    }
+   ]
+  },
+  {
+   "section": "GOVERNANCE",
+   "label": "Board Meetings & AGM",
+   "owner": "Quarterly • ED / Board / PO",
+   "cells": [
+    {
+     "month": 3,
+     "text": "Q1 Board / AGM: approve audited accounts, appoint Auditor, authorise filings",
+     "kind": "deadline"
+    },
+    {
+     "month": 6,
+     "text": "Q2 Board: review Audit, Tax, OCR, SWC status; approve Tax Exemption renewal",
+     "kind": "followup"
+    },
+    {
+     "month": 9,
+     "text": "Q3 Board: approve next-FY program & budget; KYC / signatory decisions",
+     "kind": "prepare"
+    },
+    {
+     "month": 12,
+     "text": "Q4 Board: year-end review; approve next-FY compliance calendar",
+     "kind": "followup"
+    }
+   ]
+  },
+  {
+   "section": "GOVERNANCE",
+   "label": "Statutory & Governance Records",
+   "owner": "Ongoing • Admin",
+   "cells": [
+    {
+     "month": 1,
+     "text": "Set up FY compliance folder (Audit, Tax, OCR, Ward, SWC, Bank KYC, Payroll TDS, Governance)",
+     "kind": "monitor"
+    },
+    {
+     "month": 3,
+     "text": "Quarterly review: minutes, resolutions, registers, bank mandates",
+     "kind": "monitor"
+    },
+    {
+     "month": 6,
+     "text": "Quarterly review: minutes, resolutions, registers, bank mandates",
+     "kind": "monitor"
+    },
+    {
+     "month": 9,
+     "text": "Quarterly review: minutes, resolutions, registers, bank mandates",
+     "kind": "monitor"
+    },
+    {
+     "month": 12,
+     "text": "Quarterly review; back up complete compliance folder",
+     "kind": "monitor"
+    }
+   ]
+  },
+  {
+   "section": "GOVERNANCE",
+   "label": "Annual Compliance Review & Next-FY Calendar",
+   "owner": "Annual • Admin / PO",
+   "cells": [
+    {
+     "month": 11,
+     "text": "Review pending items; resolve outstanding issues; check all expiry dates",
+     "kind": "prepare"
+    },
+    {
+     "month": 12,
+     "text": "Update this calendar for next FY; hand-over check",
+     "kind": "prepare"
+    }
+   ]
+  }
+ ],
+ "actPerMonth": [
+  8,
+  5,
+  9,
+  6,
+  5,
+  8,
+  4,
+  3,
+  8,
+  5,
+  4,
+  7
+ ],
+ "guides": [
+  {
+   "slug": "audit",
+   "sheet": "1 Audit",
+   "title": "ANNUAL FINANCIAL AUDIT",
+   "subtitle": "Audit report for the financial year that just closed – the foundation for every other filing",
+   "glance": {
+    "authority": "Registered auditor (ICAN member) appointed by the Board / AGM",
+    "frequency": "Annual – for the previous fiscal year",
+    "window": "Shrawan – Bhadra (books closed in Shrawan; report signed by end of Bhadra)",
+    "owner": "PO / Finance Director, with Auditor",
+    "dependsOn": "Closed books, bank certificates, complete supporting vouchers",
+    "feedsInto": "Income-tax return, Tax Clearance, OCR, SWC renewal, Tax Exemption, donor reporting",
+    "output": "Signed audit report + audited financial statements (hard & soft copy)",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": "https://www.dropbox.com/scl/fo/fqdm8icnv0gwp26ilce8q/AFRVOrPy2W4gxF21N_nBNHA?rlkey=7k873r66fxa6e7ua07cqlko2f&st=ivl6pqke&dl=0"
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Close the FY books",
+     "details": "Post all entries up to Asadh end. Reconcile HBL and Sanima bank accounts, cash, advances, payroll and TDS ledgers. Finalise fixed-asset register.",
+     "who": "PO",
+     "when": "Shrawan, week 1–2",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Request bank documents",
+     "details": "Apply to HBL and Sanima for statements, balance certificates / confirmations (call & current accounts), FD certificates, interest and TDS certificates.",
+     "who": "PO / Finance",
+     "when": "Shrawan, Week 1",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Compile the audit pack",
+     "details": "Summary of income & expenditure; salary statement; office rent & utilities statement; income breakdown; SWC approvals with donor MoUs; VAT/TDS records; vouchers.",
+     "who": "PO",
+     "when": "Shrawan, Week 1",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Hand books to Auditor",
+     "details": "Share the complete bookkeeping and supporting files. Ask the Auditor for a written list of required documents and keep a log.",
+     "who": "PO",
+     "when": "Shrawan Week 1",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Office visit",
+     "details": "Answer queries within 2–3 days. Keep a query log (question, answer, date, evidence). Delays here delay Tax Clearance, OCR and SWC.",
+     "who": "PO / Finance",
+     "when": "Shrawan end",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Review the draft report",
+     "details": "Check totals against your books, grants, TDS / VAT figures and notes. Ask for a management letter if issued.",
+     "who": "ED / PO",
+     "when": "Bhadra. Week 2",
+     "status": "Done",
+     "remarks": "Some errors found, auditor is revising the draft",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Sign & pay",
+     "details": "Auditor signs the report. Pay the audit fee and deduct TDS on it (deposit by the 25th of next month).",
+     "who": "Auditor / Finance",
+     "when": "Bhadra End",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "8.0",
+     "action": "Board / AGM approval",
+     "details": "Present audited accounts to the Board / AGM for approval and record it in the minutes.",
+     "who": "Board",
+     "when": "Board End",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "9.0",
+     "action": "Auditor verification at IRD",
+     "details": "Auditor completes the audit verification / e-TDS related work on the IRD system (Auditor's responsibility – confirm it is done).",
+     "who": "Auditor",
+     "when": "Bhadra end or Ashwin week 1",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "10.0",
+     "action": "File & circulate",
+     "details": "Save signed copies in the Audit folder. Share with the Tax Clearance, OCR, SWC and Tax Exemption tasks.",
+     "who": "Admin",
+     "when": "Ashwin",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Bank statements – all accounts",
+     "notes": "Full FY, HBL and Sanima (call & current accounts)",
+     "source": "HBL / Sanima",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Bank balance certificates / confirmations",
+     "notes": "Year-end balance for each account",
+     "source": "Banks",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Bank interest & TDS certificates",
+     "notes": "Needed to match interest income and TDS credit",
+     "source": "Banks",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Fixed deposit certificates",
+     "notes": "HBL & Sanima",
+     "source": "HBL / Sanima",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "TDS and VAT records",
+     "notes": "Monthly returns and payment receipts",
+     "source": "PO / IRD",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Payroll and staff salary records",
+     "notes": "Payroll register, salary sheets, TDS",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Grant / donor agreements & income records",
+     "notes": "MoUs, receipts, donor reports",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Invoices, bills, vouchers & supporting schedules",
+     "notes": "Organised by month",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "9.0",
+     "document": "Fixed asset register & records",
+     "notes": "With additions / disposals",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "10.0",
+     "document": "Previous audit report & financial statements",
+     "notes": "Prior-year comparatives",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "11.0",
+     "document": "SWC program approvals (with donor MoUs)",
+     "notes": "Current and previous FY",
+     "source": "PO – SWC",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "12.0",
+     "document": "Salary, office rent & utilities statement",
+     "notes": "Annual summary",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "13.0",
+     "document": "Hostel fees, tuition fees & admission fees sheet",
+     "notes": "Annual summary",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "14.0",
+     "document": "Summary of income & expenditure",
+     "notes": "By donor / project",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "15.0",
+     "document": "Income breakdown",
+     "notes": "Donors, individuals, interest, Fellows' contributions, etc.",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Late or incomplete bookkeeping is the #1 cause of delay across the whole compliance chain – close books in the first two weeks of Shrawan.",
+    "•  Never let the audit report be finalised before rent and salary TDS are fully deposited; mismatches surface again at Tax Clearance.",
+    "•  Audit documents Dropbox folder (from draft): open link",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "tax-clearance",
+   "sheet": "2 Tax Clearance",
+   "title": "TAX RETURN & TAX CLEARANCE CERTIFICATE",
+   "subtitle": "File the annual income-tax return, then obtain the Tax Clearance Certificate from the Inland Revenue Office",
+   "glance": {
+    "authority": "Inland Revenue Office (IRD) where PAN is registered",
+    "frequency": "Annual",
+    "window": "Return: Bhadra – Ashwin (statutory: about 3 months after FY-end – verify). Clearance: Ashwin – Kartik",
+    "owner": "PO / Admin, with Auditor",
+    "dependsOn": "Signed & verified audit report; all TDS / VAT deposited and filed",
+    "feedsInto": "OCR update, SWC renewal, Tax Exemption renewal, Ward & bank files",
+    "output": "Return acknowledgement + Tax Clearance Certificate",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Confirm audit is complete",
+     "details": "Signed audit report and audited financial statements in hand; Auditor has completed IRD verification.",
+     "who": "PO / Auditor",
+     "when": "Bhadra end",
+     "status": "In Progress",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Reconcile TDS & VAT",
+     "details": "Match salary, rent and other TDS deposits with the IRD portal for all 12 months. Regularise any missing months before applying (see Salary TDS guide).",
+     "who": "PO / Finance",
+     "when": "Bhadra end",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "File annual income-tax return",
+     "details": "File on the IRD system through the Auditor. Save the acknowledgement. Confirm the current-year deadline with IRD / Auditor.",
+     "who": "Auditor / PO",
+     "when": "Bhadra – Ashwin by week 1",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Draft the application",
+     "details": "Application letter for the Tax Clearance Certificate, signed by the Director / Board as per your practice.",
+     "who": "PO / Director",
+     "when": "Ashwin Week 1",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Assemble the document set",
+     "details": "Return acknowledgement, audited FS (Annex 2 & 13), TDS / e-TDS records, payment receipts including VAT bills, previous clearance, exemption certificate, PAN, updated OCR, Ward & SWC certificates.",
+     "who": "PO",
+     "when": "Ashwin Week 1",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Submit at IRD",
+     "details": "Submit the application and documents at the Inland Revenue Office; keep a stamped copy or reference number.",
+     "who": "PO",
+     "when": "Ashwin Week 1",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Answer IRD queries",
+     "details": "Respond quickly to clarifications; bring the Auditor if needed. Pay any assessed dues and keep the receipt.",
+     "who": "PO / Auditor",
+     "when": "Ashwin – Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "8.0",
+     "action": "Collect & circulate",
+     "details": "Collect the certificate, scan it, save in the Tax folder and share with OCR, SWC and Tax Exemption tasks.",
+     "who": "PO",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Application letter signed by Board / Director",
+     "notes": "Addressed to the Inland Revenue Office",
+     "source": "PO – Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Audited financial statements & verified docs (Annex 2 & 13)",
+     "notes": "As per draft checklist – confirm annexes with Auditor",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Annual income-tax return / acknowledgement",
+     "notes": "",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Salary Sheet",
+     "notes": "Staff Salary with TDS calculation and print in Samaanta Letterhead, get signed by Board",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "TDS / e-TDS filing records",
+     "notes": "All 12 months",
+     "source": "Auditor / PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Payment receipts (all, including VAT bills) if required",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Previous Tax Clearance Certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Tax Exemption certificate",
+     "notes": "",
+     "source": "PO / IRD",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "PAN certificate",
+     "notes": "",
+     "source": "PO – IRD",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "9.0",
+     "document": "Updated OCR certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "10.0",
+     "document": "Ward registration & SWC certificate",
+     "notes": "Latest renewed copies",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Tax exemption does not remove TDS obligations – IRD will check TDS compliance before issuing clearance.",
+    "•  Plan for 2–4 weeks in IRD; start the application immediately after the return is filed.",
+    "•  Confirm current-year forms and annexes with the Auditor – requirements change with each Finance Act.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "ocr-update",
+   "sheet": "3 OCR Update",
+   "title": "OCR ANNUAL UPDATE",
+   "subtitle": "Annual filing at the Office of the Company Registrar (OCR) through CAMIS – usually handled by the Lawyer",
+   "glance": {
+    "authority": "Office of the Company Registrar (OCR) – CAMIS online system",
+    "frequency": "Annual",
+    "window": "Ashwin – Mangsir (AGM & audited accounts ready first)",
+    "owner": "PO, with Lawyer",
+    "dependsOn": "Audit report, AGM / Board minutes, current director details",
+    "feedsInto": "Tax Clearance / Exemption, Ward, SWC, bank KYC (updated OCR record)",
+    "output": "OCR filing acknowledgement / updated record",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Engage the Lawyer",
+     "details": "Confirm current CAMIS requirements, forms, fees and statutory deadline for this year. Agree what the Lawyer prepares and what PO supplies.",
+     "who": "PO / Lawyer",
+     "when": "Ashwin",
+     "status": "In Progress",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Hold AGM / Board meeting",
+     "details": "Approve audited accounts, appoint Auditor and confirm directors. Lawyer drafts the minutes and resolutions.",
+     "who": "Board / Lawyer",
+     "when": "Ashwin",
+     "status": "In Progress",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Collect the filing set",
+     "details": "Audited FS and audit report, signed minutes, updated director / authorised-person details, ID copies, current registration record.",
+     "who": "PO",
+     "when": "Ashwin – Kartik",
+     "status": "In Progress",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Prepare statutory forms",
+     "details": "Lawyer prepares the annual return / statutory forms; directors sign where required.",
+     "who": "Lawyer / Directors",
+     "when": "Kartik",
+     "status": "In Progress",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "File through CAMIS",
+     "details": "Lawyer files online and pays the fee (plus late fee if any). Keep the filing reference.",
+     "who": "Lawyer",
+     "when": "Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Obtain acknowledgement",
+     "details": "Download the acknowledgement / updated OCR record and save in the OCR folder.",
+     "who": "PO / Lawyer",
+     "when": "Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Cascade changes",
+     "details": "If directors or details changed, update Ward, SWC, IRD and both banks (HBL, Sanima).",
+     "who": "PO / Admin",
+     "when": "Mangsir – Poush",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Latest company registration certificate / OCR record",
+     "notes": "",
+     "source": "OCR – PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Audited financial statements and audit report",
+     "notes": "",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Board / AGM minutes and resolutions",
+     "notes": "Draft prepared by Lawyer",
+     "source": "PO and Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Updated director / authorised-person details",
+     "notes": "With ID copies",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Statutory forms / annual return",
+     "notes": "Prepared by Lawyer",
+     "source": "Lawyer",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Tax filing evidence, if requested",
+     "notes": "Return acknowledgement / Tax Clearance",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Filing fee receipt & CAMIS acknowledgement",
+     "notes": "",
+     "source": "Lawyer",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  AGM and filing timelines are set by company law and your constitution – let the Lawyer confirm the exact dates each year.",
+    "•  Ask the Lawyer for soft copies of everything filed; keep the CAMIS login owner documented on the Start Here sheet.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "ward-renewal",
+   "sheet": "4 Ward Renewal",
+   "title": "WARD / MUNICIPALITY REGISTRATION RENEWAL",
+   "subtitle": "Annual renewal of the organisation's registration at the local Ward Office",
+   "glance": {
+    "authority": "Ward Office / Municipality where the office is located",
+    "frequency": "Annual",
+    "window": "Bhadra – Ashwin (before the local registration expires)",
+    "owner": "PO",
+    "dependsOn": "Valid rent agreement; office rent TDS paid; latest OCR certificate",
+    "feedsInto": "Tax Clearance, SWC renewal, Tax Exemption, bank KYC",
+    "output": "Renewed Ward registration certificate",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Check expiry & ward calendar",
+     "details": "Look at the current certificate's validity and ask the ward when renewals open – timing and needs vary by ward / municipality.",
+     "who": "PO",
+     "when": "Bhadra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Pay office rent TDS first",
+     "details": "Pay the office rent TDS (ward-bank) before applying – the Ward Office renews the certificate only after you show the payment slip. Check the rent agreement is valid.",
+     "who": "PO / Finance",
+     "when": "Bhadra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Draft application letter",
+     "details": "Application signed by the Director, addressed to the Ward Office.",
+     "who": "PO / Director",
+     "when": "Bhadra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Compile the document set",
+     "details": "Previous ward certificate, rent agreement, rent TDS slip, latest OCR certificate, SWC certificate, PAN; authorisation letter and ID of representative if asked.",
+     "who": "PO",
+     "when": "Bhadra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Submit hard copies",
+     "details": "Submit at the Ward Office; pay the renewal fee and keep the receipt.",
+     "who": "PO",
+     "when": "Bhadra – Ashwin",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Collect renewed certificate",
+     "details": "Check name, address and validity dates; scan and save in the Ward folder.",
+     "who": "PO",
+     "when": "Ashwin",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Application letter",
+     "notes": "Signed by Director; office rent tax must be paid during renewal",
+     "source": "PO – Director",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Current Ward / Municipality registration certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Office lease / rent agreement / address proof",
+     "notes": "Must be current",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Rent TDS payment slip",
+     "notes": "Proof of office rent tax",
+     "source": "PO / Finance",
+     "link": "",
+     "ready": "Yes",
+     "remarks": "will pay at ward office."
+    },
+    {
+     "no": "5.0",
+     "document": "Latest company registration certificate / OCR record",
+     "notes": "Updated OCR certificate",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "SWC certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "PAN certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Authorisation letter & ID of representative",
+     "notes": "If requested by Ward",
+     "source": "PO",
+     "link": "",
+     "ready": "N/A",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Hard copies must be submitted at the ward – call ahead to confirm the current checklist and fee.",
+    "•  Ward renewal comes before Tax Clearance because the Ward certificate is part of that document set.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "swc-renewal",
+   "sheet": "6 SWC Renewal",
+   "title": "SWC AFFILIATION CERTIFICATE RENEWAL",
+   "subtitle": "Renewal of the Social Welfare Council affiliation – needed every 3 years",
+   "glance": {
+    "authority": "Social Welfare Council (SWC), Bhirkutimandap",
+    "frequency": "Every 3 years (as per certificate expiry)",
+    "window": "Kartik – Mangsir, after Tax Clearance is received",
+    "owner": "PO / Admin",
+    "dependsOn": "Audit report, Tax Clearance, updated OCR, renewed Ward registration, program approval",
+    "feedsInto": "Tax Exemption renewal, bank KYC, Ward renewal",
+    "output": "Renewed SWC affiliation certificate",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Check the expiry date",
+     "details": "Record the certificate expiry in the box below. Start at least 3–4 months before expiry, and renew only in the expiry cycle.",
+     "who": "PO",
+     "when": "Shrawan",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Confirm prerequisites",
+     "details": "Audit report, Tax Clearance, updated OCR, renewed Ward registration, program approval and annual progress report should all be ready.",
+     "who": "PO",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Board minute",
+     "details": "Board approves the renewal and authorises signatories.",
+     "who": "PO / Board",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Download the latest form",
+     "details": "Get the current SWC renewal form, checklist and fee schedule from the SWC website / office – formats change.",
+     "who": "PO",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Draft application letter",
+     "details": "Application letter to SWC, signed as required.",
+     "who": "PO / Director",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Compile the document set",
+     "details": "Assemble per the SWC checklist including program records and executive committee details.",
+     "who": "PO",
+     "when": "Kartik – Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Submit & pay the fee",
+     "details": "Submit at SWC, Bhirkutimandap; pay the renewal fee and keep the receipt.",
+     "who": "PO",
+     "when": "Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "8.0",
+     "action": "Follow up on queries",
+     "details": "Answer SWC queries; track the file until the certificate is issued.",
+     "who": "PO",
+     "when": "Mangsir – Poush",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "9.0",
+     "action": "Collect & cascade",
+     "details": "Collect the renewed certificate; update Tax Exemption, both bank KYC files and Ward records.",
+     "who": "PO / Admin",
+     "when": "Poush",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Application letter",
+     "notes": "Pay renewal fee",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "SWC renewal / application form",
+     "notes": "Latest version from SWC",
+     "source": "SWC",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "SWC original certificate",
+     "notes": "Current affiliation certificate",
+     "source": "SWC",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Organisation registration / constitution",
+     "notes": "",
+     "source": "PO / OCR",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "SWC program approval & annual progress report",
+     "notes": "",
+     "source": "Program",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Latest audit report",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Tax Clearance / Updated OCR / Renewed Ward registration",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Program proposal + budget + workplan, if required",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "9.0",
+     "document": "Board approval / minutes for SWC renewal",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "10.0",
+     "document": "Board / executive committee details",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "11.0",
+     "document": "Renewal fee payment evidence",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Certificate expiry date: _2083/03/31 (BS)      Next renewal due: ____________ (BS)      – fill in and keep updated.",
+    "•  Always download the latest SWC checklist before submission; the official site publishes renewal forms and program approval formats.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "tax-exemption",
+   "sheet": "7 Tax Exemption",
+   "title": "TAX EXEMPTION CERTIFICATE RENEWAL",
+   "subtitle": "Annual renewal of the organisation's income-tax exemption at IRD",
+   "glance": {
+    "authority": "Inland Revenue Department (IRD)",
+    "frequency": "Annual",
+    "window": "Mangsir – Magh, once Tax Clearance, OCR, Ward and SWC are ready",
+    "owner": "PO / Admin",
+    "dependsOn": "Tax Clearance; updated OCR; Ward registration; SWC certificate",
+    "feedsInto": "Next year's Tax Clearance; donor confidence; audit notes",
+    "output": "Renewed tax-exemption certificate",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Check the rules & expiry",
+     "details": "Note the exemption expiry. Renewal is generally due within 1 year after the income year – confirm the current timing with IRD.",
+     "who": "PO",
+     "when": "Kartik",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Confirm prerequisites",
+     "details": "Tax Clearance in hand; updated OCR, Ward registration and SWC certificate available, Company's MoA & AoA .",
+     "who": "PO",
+     "when": "Kartik – Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Draft application letter",
+     "details": "Application letter for renewal, plus Board minute if required.",
+     "who": "PO / Director",
+     "when": "Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Compile the document set",
+     "details": "Original exemption certificate, Tax Clearance, OCR, Ward, SWC, PAN, annual return, audit report, TDS records and any other IRD requests.",
+     "who": "PO",
+     "when": "Mangsir",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Submit at IRD",
+     "details": "Submit the renewal application; record the reference number.",
+     "who": "PO",
+     "when": "Poush",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Follow up",
+     "details": "Answer IRD queries; keep a follow-up date in the Task Tracker.",
+     "who": "PO",
+     "when": "Poush – Magh",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Collect & file",
+     "details": "Collect the renewed certificate; save scan in the Tax folder-dropbox; update expiry date on the Task Tracker.",
+     "who": "PO",
+     "when": "Magh",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Application letter & original Exemption certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Tax Clearance",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Updated OCR record",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Updated Ward registration",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Updated SWC certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "PAN certificate",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Board minutes, if required",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Copy of Board registration at OCR",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "9.0",
+     "document": "Annual return & audited financial statements",
+     "notes": "",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "10.0",
+     "document": "TDS filing & payment records",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Your draft tracker listed 'OCR/CAMIS' as the tax-exemption submission point. IRD is used here – please confirm with the current process.",
+    "•  Tax exemption does not remove TDS obligations; keep monthly TDS clean or renewal may stall.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "swc-program-approval",
+   "sheet": "8 SWC Program Approval",
+   "title": "SWC PROGRAM APPROVAL / AMENDMENT",
+   "subtitle": "Annual program approval from the Social Welfare Council before implementing the new fiscal year's programs",
+   "glance": {
+    "authority": "Social Welfare Council (SWC)",
+    "frequency": "Annual, and whenever the program / budget changes",
+    "window": "Baisakh – Asadh, before the next FY starts",
+    "owner": "PO / Admin",
+    "dependsOn": "Board-approved program & budget; SWC affiliation valid; donor agreements",
+    "feedsInto": "Audit (SWC approvals are audit documents), SWC renewal",
+    "output": "SWC program approval / recommendation letter",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Review current program",
+     "details": "Identify what changed: new donors, projects, budgets or activities that need approval or amendment.",
+     "who": "PO",
+     "when": "Falgun",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Draft proposal, budget & workplan",
+     "details": "Prepare the program proposal, budget, workplan and fact sheet in the current SWC format.",
+     "who": "PO",
+     "when": "Falgun – Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Collect donor agreements",
+     "details": "Gather donor / grant agreements and MoUs relevant to the program.",
+     "who": "PO",
+     "when": "Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Board approval",
+     "details": "Board approves the program and budget; record in minutes.",
+     "who": "Board",
+     "when": "Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Compile per SWC checklist",
+     "details": "Download and follow the latest SWC checklist; add registration and affiliation documents and previous progress report.",
+     "who": "PO / Admin",
+     "when": "Baisakh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Submit to SWC",
+     "details": "Submit before the FY starts; save the receipt / reference.",
+     "who": "PO",
+     "when": "Jestha",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Follow up & collect approval",
+     "details": "Answer queries and collect the approval letter; file it in the SWC folder.",
+     "who": "PO",
+     "when": "Asadh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "8.0",
+     "action": "Amend when needed",
+     "details": "If a program or budget changes mid-year, submit an amendment to SWC before implementing.",
+     "who": "PO",
+     "when": "As needed",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "9.0",
+     "action": "Annual reporting",
+     "details": "Submit the annual progress / audit reports to SWC as required by SWC (verify current timing).",
+     "who": "PO",
+     "when": "Ashwin",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Program proposal",
+     "notes": "In the current SWC format",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Budget",
+     "notes": "",
+     "source": "PO / Finance",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Workplan",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Fact sheet",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Previous progress report",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Organisation registration & SWC affiliation documents",
+     "notes": "",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Board approval / minutes",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Donor / grant agreements",
+     "notes": "Where relevant",
+     "source": "PO",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "9.0",
+     "document": "SWC official checklist",
+     "notes": "Latest version",
+     "source": "SWC",
+     "link": "",
+     "ready": "Yes",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  FY 2083/84 approval is marked completed in your draft. The next cycle begins in Baisakh 2084 – reset this sheet then.",
+    "•  Keep approved programs and donor MoUs together; the Auditor needs them each year.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "bank-kyc",
+   "sheet": "9 Bank KYC",
+   "title": "BANK KYC UPDATE – HBL & SANIMA BANK",
+   "subtitle": "Annual review and update whenever directors, signatories, address or registration details change",
+   "glance": {
+    "authority": "HBL branch and Sanima Bank branch (separate submissions)",
+    "frequency": "Annual review; also on any change",
+    "window": "Chaitra – Baisakh (review again after OCR update)",
+    "owner": "PO / Admin",
+    "dependsOn": "Board resolution; updated OCR, PAN, SWC and Ward documents",
+    "feedsInto": "Audit bank confirmations; uninterrupted banking authority",
+    "output": "Updated KYC confirmation / account record from each bank",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Check for triggers",
+     "details": "Any change in directors, signatories, address, constitution or registration since the last KYC?",
+     "who": "PO / Admin",
+     "when": "Shrawan / Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Get current KYC forms",
+     "details": "Ask each bank for its latest individual and institutional KYC forms and checklist.",
+     "who": "PO",
+     "when": "Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Board resolution & letter",
+     "details": "Board resolution for KYC / signatory changes; application letter signed by the Director.",
+     "who": "Board / PO",
+     "when": "Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Collect ID documents",
+     "details": "Citizenship / passport copies and photos of directors and signatories.",
+     "who": "PO",
+     "when": "Chaitra",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "Attach updated documents",
+     "details": "Updated OCR, PAN / tax, SWC, Ward documents and address proof.",
+     "who": "PO",
+     "when": "Chaitra – Baisakh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Submit to HBL",
+     "details": "Complete and submit at the HBL branch; get acknowledgement.",
+     "who": "PO / Signatories",
+     "when": "Baisakh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Submit to Sanima Bank",
+     "details": "Complete and submit at the Sanima branch; get acknowledgement.",
+     "who": "PO / Signatories",
+     "when": "Baisakh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "8.0",
+     "action": "Confirm & file",
+     "details": "Get written / email confirmation that KYC is updated; test that cheques and online banking still work.",
+     "who": "PO",
+     "when": "Baisakh",
+     "status": "Done",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Application letter signed by Director",
+     "notes": "",
+     "source": "PO – Director",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=0",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Complete individual & institutional KYC forms",
+     "notes": "One set per bank",
+     "source": "Bank",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=1",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Board resolution for KYC / signatory changes",
+     "notes": "",
+     "source": "Board / PO",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=2",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Citizenship / ID copies of directors & signatories",
+     "notes": "With photos if requested",
+     "source": "Directors",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=3",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Updated organisation registration / OCR documents",
+     "notes": "",
+     "source": "PO / OCR",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=4",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Updated PAN / tax documents",
+     "notes": "",
+     "source": "PO / IRD",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=5",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Updated SWC / Ward documents",
+     "notes": "",
+     "source": "PO",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=6",
+     "ready": "Yes",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Address proof",
+     "notes": "",
+     "source": "PO",
+     "link": "https://www.dropbox.com/scl/fo/xssqouj5a2ietl5q1ksja/AL0QZWk5GWQX2QqSVYGfyJQ?rlkey=nedb7izbzvnllkzcbq7hz9aep&st=mbof88a2&dl=7",
+     "ready": "Yes",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  When you leave, remove yourself as signatory / authorised contact at both banks and add your successor – see the handover checklist on Start Here.",
+    "•  Both banks are marked completed for FY 2083/84 in your draft, so this cycle is pre-filled as done.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  },
+  {
+   "slug": "governance",
+   "sheet": "11 Governance",
+   "title": "GOVERNANCE – BOARD MEETINGS, AGM & RECORDS",
+   "subtitle": "Quarterly Board meetings, the AGM, and the statutory record-keeping that supports every filing",
+   "glance": {
+    "authority": "Board of Directors / Executive Director; OCR requirements; constitution",
+    "frequency": "Quarterly meetings; AGM annually; records ongoing",
+    "window": "Ashwin, Poush, Chaitra, Asadh (Q1–Q4)",
+    "owner": "Executive Director / Board, with Admin",
+    "dependsOn": "Audited accounts (Q1), program & budget (Q3), compliance calendar (Q4)",
+    "feedsInto": "OCR filing, SWC renewal, KYC, Tax Exemption, audit",
+    "output": "Signed minutes and resolutions; updated governance file",
+    "handoverOwner": "Sharmila Tamang",
+    "dropbox": ""
+   },
+   "steps": [
+    {
+     "no": "1.0",
+     "action": "Set the yearly meeting calendar",
+     "details": "Fix the four quarterly meetings and the AGM date in Shrawan and share with all directors.",
+     "who": "ED / Admin",
+     "when": "Shrawan",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "2.0",
+     "action": "Send agenda & papers",
+     "details": "Circulate the notice, agenda and papers within the notice period in your constitution.",
+     "who": "PO / Admin",
+     "when": "Before each meeting",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "3.0",
+     "action": "Hold the meeting",
+     "details": "Record attendance and quorum. Q1: approve audit and appoint Auditor. Q2: review Audit, Tax, OCR, SWC. Q3: next-FY program & budget, KYC. Q4: year-end and next-FY calendar.",
+     "who": "Board / ED",
+     "when": "Ashwin, Poush, Chaitra, Asadh",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "4.0",
+     "action": "Draft & sign minutes",
+     "details": "Prepare minutes and resolutions; get signatures within one week.",
+     "who": "PO / Board",
+     "when": "Within 1 week",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "5.0",
+     "action": "File & track actions",
+     "details": "Save signed minutes in the Governance folder; track action items in the Task Tracker.",
+     "who": "Admin",
+     "when": "After each meeting",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "6.0",
+     "action": "Keep statutory records current",
+     "details": "Update director / signatory changes, registers, contracts, policies and bank mandates when they occur; review quarterly.",
+     "who": "Admin",
+     "when": "Ongoing",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    },
+    {
+     "no": "7.0",
+     "action": "Annual compliance review",
+     "details": "Review this workbook, check expiry dates and update it for the next FY.",
+     "who": "Admin / PO",
+     "when": "Jestha – Asadh",
+     "status": "Not Started",
+     "remarks": "",
+     "dateDone": ""
+    }
+   ],
+   "docs": [
+    {
+     "no": "1.0",
+     "document": "Board / AGM notice, agenda & attendance",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "2.0",
+     "document": "Signed minutes & resolutions",
+     "notes": "",
+     "source": "PO / Board",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "3.0",
+     "document": "Audited financial statements & audit report",
+     "notes": "For Q1 / AGM",
+     "source": "Auditor",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "4.0",
+     "document": "Annual program & budget",
+     "notes": "For Q3 approval",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "5.0",
+     "document": "Constitution / articles",
+     "notes": "Current version",
+     "source": "PO",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "6.0",
+     "document": "Register of directors / members",
+     "notes": "",
+     "source": "Admin",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "7.0",
+     "document": "Bank mandates & authorised-signatory records",
+     "notes": "",
+     "source": "Admin",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    },
+    {
+     "no": "8.0",
+     "document": "Policies, contracts & key legal correspondence",
+     "notes": "",
+     "source": "Admin",
+     "link": "",
+     "ready": "No",
+     "remarks": ""
+    }
+   ],
+   "tips": [
+    "•  Standard resolutions to pass each year: approve audited accounts, appoint Auditor, authorise SWC renewal / program, Tax Exemption renewal, KYC / signatory changes, next-FY budget.",
+    "•  Align meetings with the organisation's constitution and OCR requirements.",
+    "Always confirm current-year forms, deadlines and fees with the relevant authority before submitting."
+   ]
+  }
+ ],
+ "staff": [
+  {
+   "name": "Akhilesh Thakur",
+   "designation": "Senior Program Officer",
+   "pan": "118885209",
+   "salaries": [
+    "55000.0",
+    "55000.0",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Sharmila Tamang",
+   "designation": "Program Officer",
+   "pan": "136827564",
+   "salaries": [
+    "46000.0",
+    "46000.0",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Sneha Rai",
+   "designation": "Program Associate",
+   "pan": "129443401",
+   "salaries": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Shreeka",
+   "designation": "Program Associate",
+   "pan": "",
+   "salaries": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Nabindra Chaurel",
+   "designation": "Program Associate",
+   "pan": "132155207",
+   "salaries": [
+    "20000.0",
+    "20000.0",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Pratistha Gautam",
+   "designation": "COMMS",
+   "pan": "",
+   "salaries": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  },
+  {
+   "name": "Palistha Shakya",
+   "designation": "COMMS & Partnership Officer",
+   "pan": "",
+   "salaries": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  }
+ ],
+ "book": {
+  "tdsStatus": [
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending",
+   "Pending"
+  ],
+  "tdsAmount": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "tdsDate": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "tdsVoucher": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "rentAmount": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "rentDate": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "rentVoucher": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "income": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "expenses": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "bookStatus": [
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started",
+   "Not Started"
+  ],
+  "bookDate": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "remarks": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "salaryDate": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  "sstRate": "0.01",
+  "dueBy": [
+   "25 Bhadra 2083",
+   "25 Ashwin 2083",
+   "25 Kartik 2083",
+   "25 Mangsir 2083",
+   "25 Poush 2083",
+   "25 Magh 2083",
+   "25 Falgun 2083",
+   "25 Chaitra 2083",
+   "25 Baisakh 2084",
+   "25 Jestha 2084",
+   "25 Asadh 2084",
+   "25 Shrawan 2084"
+  ],
+  "sectionTitles": {
+   "tds": "1 · TDS DEPOSIT & e-TDS FILING",
+   "rent": "2 · OFFICE RENT  (paid in advance, 1st week of the month)",
+   "salaries": "3 · STAFF SALARIES  (net paid, first week of the month)",
+   "income": "4 · INCOME, EXPENSES & MONTHLY BOOKKEEPING"
+  },
+  "notes": {
+   "rent": "2 · OFFICE RENT  (paid in advance, 1st week of the month)",
+   "salaries": "3 · STAFF SALARIES  (net paid, first week of the month)"
+  }
+ },
+ "overview": {
+  "howto": [
+   "1.  On the Dashboard, choose the CURRENT Nepali month (cell F6). Timing flags, KPIs and 'This month's focus' update automatically.",
+   "2.  Use the Annual Calendar to see the whole year at a glance; use the Task Tracker to update Status, dates and follow-ups after every action.",
+   "3.  Open a step guide (tabs 1-11) for the detailed process and document checklist of each area. Mark steps Done and documents Ready.",
+   "4.  Every month record office rent, staff salaries, income & expenses, bookkeeping status and TDS deposit in the Monthly TDS Log. Deposit and e-TDS filing are due by the 25th of the following month.",
+   "5.  Save each final form, payment receipt, acknowledgement and certificate in the matching folder of the digital Compliance folder (see sections 6 and 9 – Dropbox links).",
+   "6.  Deadlines and forms change – confirm current IRD, OCR, SWC and Ward requirements before each submission."
+  ],
+  "sheetIndex": [
+   {
+    "name": "Dashboard",
+    "desc": "Overview: KPIs, compliance chain, monthly TDS strip, charts, progress by area, this month's focus"
+   },
+   {
+    "name": "Annual Calendar",
+    "desc": "12-month calendar in Nepali & English months, colour-coded by action type"
+   },
+   {
+    "name": "Task Tracker",
+    "desc": "Master list of 15 compliance tasks with status, dates, owners, documents, Dropbox folder and links to guides"
+   },
+   {
+    "name": "Monthly Book-keeping",
+    "desc": "Month-by-month office rent, staff salaries (with PAN), income & expenses, bookkeeping status and TDS deposit record"
+   },
+   {
+    "name": "1 Audit",
+    "desc": "Audit report for the last Fiscal year"
+   },
+   {
+    "name": "2 Tax Clearance",
+    "desc": "File the annual income-tax return, then obtain the Tax Clearance Certificate from the Inland Revenue Office"
+   },
+   {
+    "name": "3 OCR Update",
+    "desc": "Annual filing at the Office of the Company Registrar (OCR) through CAMIS - usually handled by the Lawyer"
+   },
+   {
+    "name": "4 Ward Renewal",
+    "desc": "Annual renewal of the organisation's registration at the local Ward Office"
+   },
+   {
+    "name": "6 SWC Renewal",
+    "desc": "Renewal of the Social Welfare Council affiliation - needed every 3 years"
+   },
+   {
+    "name": "7 Tax Exemption",
+    "desc": "Annual renewal of the organisation's income-tax exemption at IRD"
+   },
+   {
+    "name": "8 SWC Program Approval",
+    "desc": "Annual program approval from the Social Welfare Council for all new grants"
+   },
+   {
+    "name": "9 Bank KYC",
+    "desc": "Annual review and update whenever directors, signatories, address or registration details change"
+   },
+   {
+    "name": "11 Governance",
+    "desc": "Quarterly Board meetings, the AGM, and the statutory record-keeping that supports every filing"
+   }
+  ],
+  "colourKey": [
+   {
+    "name": "Prepare",
+    "desc": "Gather documents, draft letters, hold internal meetings"
+   },
+   {
+    "name": "Apply / Submit",
+    "desc": "Submit an application or make a first move with an authority"
+   },
+   {
+    "name": "Deadline / Filing",
+    "desc": "Statutory / hard deadline or final filing"
+   },
+   {
+    "name": "Follow-up / Collect",
+    "desc": "Chase the authority and collect the certificate"
+   },
+   {
+    "name": "Recurring monthly",
+    "desc": "Repeats every month"
+   },
+   {
+    "name": "Monitor / Review",
+    "desc": "Check status, expiry dates and records"
+   }
+  ],
+  "roles": [
+   {
+    "name": "PO",
+    "desc": "Senior Program Officer – current compliance owner (successor to take over)"
+   },
+   {
+    "name": "ED / Director",
+    "desc": "Executive Director / signing Director"
+   },
+   {
+    "name": "Board",
+    "desc": "Board of Directors"
+   },
+   {
+    "name": "Finance Director",
+    "desc": "Person responsible for payroll and payments"
+   },
+   {
+    "name": "Admin- PO",
+    "desc": "Administrative support / records"
+   },
+   {
+    "name": "Auditor",
+    "desc": "Registered external auditor"
+   },
+   {
+    "name": "Lawyer",
+    "desc": "Legal counsel who files at OCR"
+   },
+   {
+    "name": "IRD",
+    "desc": "Inland Revenue Department / Inland Revenue Office"
+   },
+   {
+    "name": "OCR / CAMIS",
+    "desc": "Office of the Company Registrar / its online system"
+   },
+   {
+    "name": "SWC",
+    "desc": "Social Welfare Council"
+   },
+   {
+    "name": "TDS / e-TDS",
+    "desc": "Tax deducted at source / its electronic monthly return"
+   },
+   {
+    "name": "BS / AD",
+    "desc": "Bikram Sambat (Nepali)"
+   }
+  ],
+  "folderStructure": "One master folder (with a backup copy) containing sub-folders:  01 Audit  •  02 Tax (Return, Clearance, Exemption)  •  03 OCR  •  04 Ward  •  05 SWC (Renewal, Program Approval)  •  06 Bank KYC (HBL, Sanima)  •  07 Payroll & Rent TDS  •  08 Governance (Minutes, Registers)  •  09 This tracker.  For every submission save the final form, payment receipt, acknowledgement / reference number and final certificate.  Paste every folder link in section 9 below.",
+  "contacts": [
+   {
+    "authority": "Inland Revenue Dept. (IRD)",
+    "usedFor": "Tax return, Tax Clearance, Tax Exemption, TDS / e-TDS",
+    "office": "Inland Revenue Office (PAN office), New Baneshwor; portal: ird.gov.np",
+    "person": "",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Office of Company Registrar",
+    "usedFor": "OCR annual update",
+    "office": "CAMIS online system; ocr.gov.np",
+    "person": "",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Social Welfare Council",
+    "usedFor": "Certificate renewal, program approval",
+    "office": "Bhirkutimandap for renewal and SWC pulchowk for Program approval; swc.org.np",
+    "person": "",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Ward Office / Municipality",
+    "usedFor": "Registration renewal",
+    "office": "Ward office of registered address",
+    "person": "",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Himalayan Bank (HBL)",
+    "usedFor": "KYC, statements, certificates",
+    "office": "Hiti Durbar Branch",
+    "person": "Operator support",
+    "phone": "01-5970896",
+    "email": "Hitidurbar@himalayanbank.com"
+   },
+   {
+    "authority": "Himalayan Bank (HBL)",
+    "usedFor": "For remittance- international donations",
+    "office": "Hiti Durbar Branch",
+    "person": "Shubhasinni Dangol",
+    "phone": "01 –5970896 – Ext 205",
+    "email": "Shubhasinni.Dangol@himalayanbank.com"
+   },
+   {
+    "authority": "Sanima Bank",
+    "usedFor": "KYC, statements, certificates",
+    "office": "Naxal Branch",
+    "person": "",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Auditor",
+    "usedFor": "Annual audit, IRD verification",
+    "office": "Neupane Associates, Tripureshwor",
+    "person": "Prashiddha Neupane",
+    "phone": "985-1160648",
+    "email": "Neupane.prashidhda@gmail.com"
+   },
+   {
+    "authority": "Lawyer",
+    "usedFor": "OCR filings, AGM / Board drafts",
+    "office": "AHN Legal Pvt.Ltd, Patan",
+    "person": "Manish Raj Kharel",
+    "phone": "985-1183977",
+    "email": "manishrajkharel@gmail.com"
+   },
+   {
+    "authority": "Landlord",
+    "usedFor": "Rent, agreement, PAN",
+    "office": "Sajha Courier & Cargo, Thapagaun",
+    "person": "Rameshwor Shiva\nAccount staff:",
+    "phone": "985-1023841\n985-1112287",
+    "email": ""
+   },
+   {
+    "authority": "Board Chair / Executive Director",
+    "usedFor": "Approvals, signatures",
+    "office": "",
+    "person": "Shrochis Karki, Jyoti Pandey, Deb Narayan Mahato, Shirijun Hang Rai, & Kabita Parajuli",
+    "phone": "",
+    "email": ""
+   },
+   {
+    "authority": "Board for operations",
+    "usedFor": "signatories for applications/ Checkbook, & day to day operations",
+    "office": "",
+    "person": "Jyoti Maya Pandey & Deb Narayan Mahato",
+    "phone": "985-1157135\n981-7743521",
+    "email": ""
+   }
+  ],
+  "handover": [
+   {
+    "item": "Walk-through of this workbook",
+    "detail": "Review Dashboard, Calendar, Tracker and every step guide with the successor",
+    "owner": "",
+    "status": "Done"
+   },
+   {
+    "item": "Original certificates",
+    "detail": "Record where originals are kept: OCR, PAN, SWC, Tax Exemption, Tax Clearance, Ward, lease agreement",
+    "owner": "Sharmila, PO",
+    "status": "Done"
+   },
+   {
+    "item": "Portal access",
+    "detail": "IRD, CAMIS, SWC and bank portals: list who holds each login (never store passwords in this file) and transfer ownership",
+    "owner": "",
+    "status": "Not Started"
+   },
+   {
+    "item": "Change of authorised person",
+    "detail": "Update authorised / contact person at IRD, OCR, SWC, HBL and Sanima Bank; remove outgoing officer as signatory where applicable",
+    "owner": "",
+    "status": "Done"
+   },
+   {
+    "item": "Digital folder access",
+    "detail": "Share the full Compliance folder and backup- Dropbox",
+    "owner": "Sharmila, PO",
+    "status": "Done"
+   },
+   {
+    "item": "Introductions",
+    "detail": "Introduce successor to Auditor, Lawyer, Landlord, Ward Office, SWC and bank relationship managers",
+    "owner": "Sharmila, PO",
+    "status": "Done"
+   },
+   {
+    "item": "Monthly TDS ownership",
+    "detail": "Hand over the monthly TDS routine; confirm the last filed month and regularise past unfiled months",
+    "owner": "Sharmila, PO",
+    "status": "Done"
+   },
+   {
+    "item": "Open items briefing",
+    "detail": "Brief on tasks marked In Progress / Past window on the Dashboard (currently Audit, Tax Clearance, etc.)",
+    "owner": "Sharmila, PO",
+    "status": "In Progress"
+   },
+   {
+    "item": "Calendar & expiry dates",
+    "detail": "Confirm SWC, Tax Exemption, Ward and lease expiry dates are entered in the tracker and guides",
+    "owner": "Sharmila, PO",
+    "status": "In Progress"
+   }
+  ],
+  "dropbox": [
+   {
+    "area": "Master compliance folder (with backup copy)",
+    "url": "",
+    "folder": "Samaanta Compliance (master)",
+    "contents": "Parent folder shared with the successor; one backup copy",
+    "lastChecked": ""
+   },
+   {
+    "area": "Audit",
+    "url": "https://www.dropbox.com/scl/fo/fqdm8icnv0gwp26ilce8q/AFRVOrPy2W4gxF21N_nBNHA?rlkey=7k873r66fxa6e7ua07cqlko2f&st=ivl6pqke&dl=0",
+    "folder": "01 Audit",
+    "contents": "Audit pack, signed audit reports, bank certificates, auditor letters",
+    "lastChecked": ""
+   },
+   {
+    "area": "Tax – Return & Tax Clearance",
+    "url": "",
+    "folder": "02 Tax / Return & Clearance",
+    "contents": "Income-tax return, acknowledgements, Tax Clearance certificates",
+    "lastChecked": ""
+   },
+   {
+    "area": "Tax – Exemption",
+    "url": "",
+    "folder": "02 Tax / Exemption",
+    "contents": "Exemption applications and renewed exemption certificates",
+    "lastChecked": ""
+   },
+   {
+    "area": "OCR annual update",
+    "url": "",
+    "folder": "03 OCR",
+    "contents": "CAMIS filings, acknowledgements, registration record",
+    "lastChecked": ""
+   },
+   {
+    "area": "Ward registration renewal",
+    "url": "",
+    "folder": "04 Ward",
+    "contents": "Ward certificates, rent TDS slip, renewal receipts",
+    "lastChecked": ""
+   },
+   {
+    "area": "SWC certificate renewal",
+    "url": "",
+    "folder": "05 SWC / Renewal",
+    "contents": "SWC renewal set, certificates, fee receipts",
+    "lastChecked": ""
+   },
+   {
+    "area": "SWC program approval",
+    "url": "",
+    "folder": "05 SWC / Program Approval",
+    "contents": "Program proposals, approval letters, donor MoUs",
+    "lastChecked": ""
+   },
+   {
+    "area": "Bank KYC (HBL & Sanima)",
+    "url": "",
+    "folder": "06 Bank KYC",
+    "contents": "KYC forms, board resolutions, confirmations",
+    "lastChecked": ""
+   },
+   {
+    "area": "Payroll, Rent & TDS",
+    "url": "",
+    "folder": "07 Payroll & Rent TDS",
+    "contents": "Salary sheets, TDS vouchers, e-TDS acknowledgements, rent agreement & receipts",
+    "lastChecked": ""
+   },
+   {
+    "area": "Monthly bookkeeping",
+    "url": "",
+    "folder": "10 Monthly Books (one sub-folder per month)",
+    "contents": "Monthly vouchers, bank statements, income & expense summaries",
+    "lastChecked": ""
+   },
+   {
+    "area": "Governance (minutes, registers)",
+    "url": "",
+    "folder": "08 Governance",
+    "contents": "Board / AGM minutes, resolutions, registers, bank mandates",
+    "lastChecked": ""
+   },
+   {
+    "area": "This workbook & handover notes",
+    "url": "",
+    "folder": "09 This tracker",
+    "contents": "Latest copy of this file + previous years",
+    "lastChecked": ""
+   }
+  ],
+  "folderTip": "Tip: in Dropbox use  Share ▸ Copy link  on the folder and paste it into the yellow cell. Store only links here – never passwords. If a folder is moved, update the link once here and every sheet follows.",
+  "startTip": "9. DROPBOX FILE LOCATIONS  (paste each Dropbox folder link into the yellow cells – the Task Tracker and every step guide pick it up automatically)"
+ },
+ "dashboard": {
+  "chain": [
+   {
+    "name": "Audit Report",
+    "window": "Shrawan–Bhadra",
+    "status": "Completed"
+   },
+   {
+    "name": "Ward Renewal",
+    "window": "Bhadra–Ashwin",
+    "status": "Completed"
+   },
+   {
+    "name": "Tax Clearance",
+    "window": "Ashwin–Kartik",
+    "status": "In Progress"
+   },
+   {
+    "name": "OCR Update",
+    "window": "Ashwin–Mangsir",
+    "status": "Not Started"
+   },
+   {
+    "name": "SWC Renewal",
+    "window": "Kartik–Mangsir",
+    "status": "Not Started"
+   },
+   {
+    "name": "Tax Exemption",
+    "window": "Mangsir–Magh",
+    "status": "Not Started"
+   }
+  ],
+  "progressArea": [
+   {
+    "area": "Audit Report",
+    "window": "Shrawan – Bhadra",
+    "status": "Completed",
+    "timing": "✔ Complete",
+    "stepsDone": 1.0,
+    "docsReady": 1.0,
+    "stepCount": 10
+   },
+   {
+    "area": "Tax Clearance",
+    "window": "Ashwin – Kartik",
+    "status": "In Progress",
+    "timing": "○ Upcoming",
+    "stepsDone": 0.0,
+    "docsReady": 0.0,
+    "stepCount": 8
+   },
+   {
+    "area": "OCR Update",
+    "window": "Ashwin – Mangsir",
+    "status": "Not Started",
+    "timing": "○ Upcoming",
+    "stepsDone": 0.0,
+    "docsReady": 0.1428571429,
+    "stepCount": 7
+   },
+   {
+    "area": "Ward Renewal",
+    "window": "Bhadra – Ashwin",
+    "status": "Completed",
+    "timing": "✔ Complete",
+    "stepsDone": 1.0,
+    "docsReady": 1.0,
+    "stepCount": 6
+   },
+   {
+    "area": "Monthly Bookkeeping",
+    "window": "Every month",
+    "status": "Not Started",
+    "timing": "● Active now",
+    "stepsDone": 0.0,
+    "docsReady": 0.0,
+    "stepCount": 1
+   },
+   {
+    "area": "SWC Certificate Renewal",
+    "window": "Kartik – Mangsir",
+    "status": "Not Started",
+    "timing": "○ Upcoming",
+    "stepsDone": 0.0,
+    "docsReady": 0.0,
+    "stepCount": 9
+   },
+   {
+    "area": "Tax Exemption",
+    "window": "Mangsir – Magh",
+    "status": "Not Started",
+    "timing": "○ Upcoming",
+    "stepsDone": 0.0,
+    "docsReady": 0.0,
+    "stepCount": 7
+   },
+   {
+    "area": "SWC Program Approval",
+    "window": "Baisakh – Asadh (next FY)",
+    "status": "Completed",
+    "timing": "✔ Complete",
+    "stepsDone": 0.7777777778,
+    "docsReady": 1.0,
+    "stepCount": 9
+   },
+   {
+    "area": "Bank KYC (HBL & Sanima)",
+    "window": "Chaitra – Baisakh",
+    "status": "Completed",
+    "timing": "✔ Complete",
+    "stepsDone": 1.0,
+    "docsReady": 1.0,
+    "stepCount": 8
+   },
+   {
+    "area": "Governance",
+    "window": "Ashwin, Poush, Chaitra, Asadh",
+    "status": "Not Started",
+    "timing": "● Active now",
+    "stepsDone": 0.0,
+    "docsReady": 0.0,
+    "stepCount": 7
+   }
+  ],
+  "focus": [
+   {
+    "area": "Audit Report",
+    "action": "Close FY books; share complete bookkeeping with Auditor; request HBL & Sanima balance certificates, statements, FD & TDS certificates"
+   },
+   {
+    "area": "Tax Clearance (incl. annual income-tax return)",
+    "action": "—"
+   },
+   {
+    "area": "Tax Exemption Renewal",
+    "action": "—"
+   },
+   {
+    "area": "OCR Annual Update",
+    "action": "—"
+   },
+   {
+    "area": "Ward / Municipality Registration Renewal",
+    "action": "—"
+   },
+   {
+    "area": "SWC Certificate Renewal",
+    "action": "Check SWC certificate expiry date – renew only in the expiry cycle"
+   },
+   {
+    "area": "SWC Program Approval",
+    "action": "Confirm current-FY approval is in force; file donor MoUs; amend if program changes"
+   },
+   {
+    "area": "HBL KYC Update",
+    "action": "Trigger check: any change in directors, signatories, address or registration?"
+   },
+   {
+    "area": "Sanima Bank KYC Update",
+    "action": "Trigger check: any change in directors, signatories, address or registration?"
+   },
+   {
+    "area": "Office Rent Payment & Monthly Bookkeeping",
+    "action": "Pay office rent (1st week) • Book the month's income & expenses • Update status in the Monthly TDS Log"
+   },
+   {
+    "area": "Staff Salary TDS + other TDS (e.g. counselling fees)",
+    "action": "Pay salary (1st week) & record in Monthly TDS Log • Deposit previous month's TDS by the 25th & file e-TDS"
+   },
+   {
+    "area": "Board Meetings & AGM",
+    "action": "—"
+   },
+   {
+    "area": "Statutory & Governance Records",
+    "action": "Set up FY compliance folder (Audit, Tax, OCR, Ward, SWC, Bank KYC, Payroll TDS, Governance)"
+   },
+   {
+    "area": "Annual Compliance Review & Next-FY Calendar",
+    "action": "—"
+   }
+  ]
+ }
+}

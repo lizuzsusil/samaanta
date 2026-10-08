@@ -1,0 +1,262 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- Identity & RBAC ----------
+
+model User {
+  id           String      @id @default(cuid())
+  email        String      @unique
+  name         String
+  passwordHash String
+  role         String // ADMIN | VIEWER
+  title        String?
+  active       Boolean     @default(true)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  sessions     Session[]
+  auditLogs    AuditLog[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+
+  @@index([userId])
+}
+
+model Permission {
+  id       Int     @id @default(autoincrement())
+  role     String
+  module   String
+  canRead  Boolean @default(false)
+  canWrite Boolean @default(false)
+
+  @@unique([role, module])
+}
+
+model Setting {
+  key   String @id
+  value String
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String
+  entityId  String?
+  detail    String?
+  createdAt DateTime @default(now())
+
+  @@index([entity, entityId])
+  @@index([createdAt])
+}
+
+// ---------- Task Tracker ----------
+
+model Task {
+  id             String   @id @default(cuid())
+  code           String   @unique
+  area           String
+  title          String
+  frequency      String
+  window         String
+  fromMo         Int
+  toMo           Int
+  priority       String
+  responsible    String
+  status         String
+  dateStarted    String   @default("")
+  dateSubmitted  String   @default("")
+  dateCompleted  String   @default("")
+  nextFollowup   String   @default("")
+  submitTo       String   @default("")
+  documents      String   @default("")
+  notes          String   @default("")
+  guideSlug      String?
+  dropbox        String   @default("")
+  updatedAt      DateTime @updatedAt
+
+  @@index([area])
+}
+
+// ---------- Annual Calendar ----------
+
+model CalendarActivity {
+  id       String         @id @default(cuid())
+  section  String
+  label    String
+  owner    String
+  sort     Int
+  cells    CalendarCell[]
+}
+
+model CalendarCell {
+  id         String           @id @default(cuid())
+  activityId String
+  activity   CalendarActivity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  month      Int
+  text       String
+  kind       String
+
+  @@unique([activityId, month])
+  @@index([month])
+}
+
+// ---------- Step guides ----------
+
+model Guide {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  sheet         String
+  sortOrder     Int
+  title         String
+  subtitle      String
+  authority     String       @default("")
+  frequency     String       @default("")
+  window        String       @default("")
+  owner         String       @default("")
+  dependsOn     String       @default("")
+  feedsInto     String       @default("")
+  output        String       @default("")
+  handoverOwner String       @default("")
+  dropbox       String       @default("")
+  steps         GuideStep[]
+  docs          GuideDoc[]
+  tips          GuideTip[]
+}
+
+model GuideStep {
+  id       String @id @default(cuid())
+  guideId  String
+  guide    Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  no       String
+  action   String
+  details  String
+  who      String
+  when     String
+  status   String
+  remarks  String  @default("")
+  dateDone String  @default("")
+  sort     Int
+
+  @@index([guideId])
+}
+
+model GuideDoc {
+  id       String @id @default(cuid())
+  guideId  String
+  guide    Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  no       String
+  document String
+  notes    String @default("")
+  source   String @default("")
+  link     String @default("")
+  ready    String
+  remarks  String @default("")
+  sort     Int
+
+  @@index([guideId])
+}
+
+model GuideTip {
+  id      String @id @default(cuid())
+  guideId String
+  guide   Guide  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  text    String
+  sort    Int
+
+  @@index([guideId])
+}
+
+// ---------- Monthly book-keeping ----------
+
+model MonthlyRecord {
+  month       Int    @id
+  tdsStatus   String @default("Pending")
+  tdsAmount   Float  @default(0)
+  tdsDate     String @default("")
+  tdsVoucher  String @default("")
+  rentAmount  Float  @default(0)
+  rentDate    String @default("")
+  rentVoucher String @default("")
+  income      Float  @default(0)
+  expenses    Float  @default(0)
+  bookStatus  String @default("Not Started")
+  bookDate    String @default("")
+  salaryDate  String @default("")
+  remarks     String @default("")
+}
+
+model Staff {
+  id          String    @id @default(cuid())
+  name        String
+  designation String    @default("")
+  pan         String    @default("")
+  sort        Int
+  salaries    Salary[]
+}
+
+model Salary {
+  id      String  @id @default(cuid())
+  staffId String
+  staff   Staff   @relation(fields: [staffId], references: [id], onDelete: Cascade)
+  month   Int
+  amount  Float   @default(0)
+
+  @@unique([staffId, month])
+}
+
+// ---------- Start Here / Overview ----------
+
+model ContentItem {
+  id      String @id @default(cuid())
+  section String
+  key     String
+  label   String @default("")
+  value   String @default("")
+  sort    Int
+
+  @@unique([section, key])
+}
+
+model Contact {
+  id        String @id @default(cuid())
+  authority String
+  usedFor   String @default("")
+  office    String @default("")
+  person    String @default("")
+  phone     String @default("")
+  email     String @default("")
+  sort      Int
+}
+
+model HandoverItem {
+  id     String @id @default(cuid())
+  item   String
+  detail String @default("")
+  owner  String @default("")
+  status String
+  sort   Int
+}
+
+model DropboxFolder {
+  id          String @id @default(cuid())
+  area        String
+  url         String @default("")
+  folder      String @default("")
+  contents    String @default("")
+  lastChecked String @default("")
+  sort        Int
+}
