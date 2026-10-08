@@ -279,48 +279,6 @@ export function StatusBreakdown({ data }: { data: Dashboard }) {
   )
 }
 
-export function ActivitiesChart({ data, month }: { data: Dashboard; month: number }) {
-  const max = Math.max(...data.activitiesPerMonth, 1)
-  return (
-    <Card className="h-full">
-      <CardHeader
-        title="Activities per month"
-        subtitle="From the Annual Calendar — every scheduled action"
-      />
-      <div className="flex h-40 items-end gap-1.5">
-        {data.activitiesPerMonth.map((count, i) => {
-          const active = i + 1 === month
-          return (
-            <div key={i} className="group flex flex-1 flex-col items-center gap-1.5">
-              <span
-                className={cn(
-                  'block w-full rounded-t-sm pt-1 text-center text-[10px] font-medium tabular-nums',
-                  count ? 'text-slate-500' : 'text-slate-300',
-                )}
-                style={{ height: `${Math.max((count / max) * 110, 12)}px` }}
-              >
-                {count}
-              </span>
-              <span
-                className={cn(
-                  'text-[10px] font-medium',
-                  active ? 'text-indigo-600' : 'text-slate-400',
-                )}
-              >
-                {BS_MONTHS[i].short}
-              </span>
-            </div>
-          )
-        })}
-      </div>
-      <p className="mt-3 text-[11px] text-slate-400">
-        Total {data.activitiesPerMonth.reduce((a, b) => a + b, 0)} scheduled actions this fiscal
-        year.
-      </p>
-    </Card>
-  )
-}
-
 export function ProgressByArea({ data }: { data: Dashboard }) {
   return (
     <Card padded={false}>

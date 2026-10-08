@@ -3,7 +3,6 @@ import { readCurrentMonth } from '@/lib/month'
 import { getDashboard } from '@/lib/queries'
 import { PageHeader } from '@/components/ui/primitives'
 import {
-  ActivitiesChart,
   BookkeepingStrip,
   ComplianceChain,
   KpiGrid,
@@ -12,6 +11,13 @@ import {
   TdsStrip,
   ThisMonthFocus,
 } from '@/components/dashboard/panels'
+import {
+  CalendarHeatmap,
+  DueCurve,
+  GuideReadiness,
+  MoneyChart,
+  WorkloadChart,
+} from '@/components/dashboard/charts'
 
 export const metadata = { title: 'Dashboard' }
 
@@ -30,22 +36,37 @@ export default async function DashboardPage() {
       <KpiGrid data={data} />
       <ComplianceChain data={data} />
 
-      <div className="grid gap-5 xl:grid-cols-2">
-        <TdsStrip data={data} />
-        <div className="grid gap-5">
-          <StatusBreakdown data={data} />
-          <ActivitiesChart data={data} month={month} />
+      <div className="grid gap-5 xl:grid-cols-3">
+        <div className="xl:col-span-2">
+          <WorkloadChart data={data} month={month} />
         </div>
+        <StatusBreakdown data={data} />
       </div>
 
-      <BookkeepingStrip data={data} />
+      <div className="grid gap-5 xl:grid-cols-2">
+        <DueCurve data={data} month={month} />
+        <MoneyChart data={data} month={month} />
+      </div>
+
+      <div className="grid gap-5 xl:grid-cols-2">
+        <TdsStrip data={data} />
+        <BookkeepingStrip data={data} />
+      </div>
+
+      <CalendarHeatmap data={data} month={month} />
+
+      <div className="grid gap-5 xl:grid-cols-2">
+        <GuideReadiness data={data} />
+        <ThisMonthFocus data={data} month={month} />
+      </div>
+
       <ProgressByArea data={data} />
-      <ThisMonthFocus data={data} month={month} />
 
       <p className="text-[11px] text-slate-400">
-        Data sources: Task Tracker (status & timing) · Annual Calendar (workload, focus) · step-guide
-        sheets (steps done, docs ready) · Monthly Book-keeping (TDS & bookkeeping strips, rent,
-        salaries, income &amp; expenses).
+        Data sources: Task Tracker (status, windows & timing) · Annual Calendar (workload, heatmap,
+        focus) · step-guide sheets (readiness) · Monthly Book-keeping (TDS & bookkeeping strips,
+        money chart, rent, salaries, income &amp; expenses). Hover any chart element for exact
+        values.
       </p>
     </div>
   )

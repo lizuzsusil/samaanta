@@ -175,6 +175,45 @@ export async function getDashboard(month: number) {
     expenses: records.reduce((s, r) => s + r.expenses, 0),
   }
 
+  const months = Array.from({ length: 12 }, (_, i) => i + 1)
+
+  /** Workload per payment month: scheduled calendar actions + tasks inside their window. */
+  const workload = months.map((m) => ({
+    month: m,
+    activities: calendar.reduce((sum, a) => sum + (a.byMonth[m] ? 1 : 0), 0),
+    activeTasks: tasks.filter((t) => t.fromMo <= m && m <= t.toMo).length,
+  }))
+
+  /** Cumulative tasks due (window end) by month — the FY completion plan. */
+  const dueCurve = months.map((m) => tasks.filter((t) => t.toMo <= m).length)
+
+  /** Money movement per month for the finance chart. */
+  const salaryByMonth: Record<number, number> = {}
+  for (const s of staff) {
+    for (const [m, amount] of Object.entries(s.byMonth)) {
+      salaryByMonth[Number(m)] = (salaryByMonth[Number(m)] ?? 0) + (amount ?? 0)
+    }
+  }
+  const recordByMonth = Object.fromEntries(records.map((r) => [r.month, r]))
+  const moneyMonthly = months.map((m) => ({
+    month: m,
+    income: recordByMonth[m]?.income ?? 0,
+    expenses: recordByMonth[m]?.expenses ?? 0,
+    salaries: salaryByMonth[m] ?? 0,
+    rent: recordByMonth[m]?.rentAmount ?? 0,
+  }))
+
+  /** Annual-calendar heatmap: kind + text per activity per month. */
+  const heatmap = calendar.map((a) => ({
+    id: a.id,
+    section: a.section,
+    label: a.label,
+    cells: months.map((m) => ({
+      kind: a.byMonth[m]?.kind ?? null as string | null,
+      text: a.byMonth[m]?.text ?? '',
+    })),
+  }))
+
   return {
     tasks,
     kpis,
@@ -188,6 +227,10 @@ export async function getDashboard(month: number) {
     tdsFiled,
     booked,
     finance,
+    workload,
+    dueCurve,
+    moneyMonthly,
+    heatmap,
     taskTiming: (t: Task) => TIMING_LABEL[timingOf(t, month)],
   }
 }
