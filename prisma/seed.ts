@@ -2,6 +2,9 @@ import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcryptjs'
 import data from './appdata.json'
 
+/** Transaction client accepted by seedDatabase (works with $transaction). */
+export type SeedDb = Parameters<Parameters<PrismaClient['$transaction']>[0]>[0]
+
 const prisma = new PrismaClient()
 
 const TASK_GUIDE: Record<string, string | null> = {
@@ -32,33 +35,32 @@ const MODULES = [
   'audit',
 ]
 
-async function main() {
-  console.log('Seeding database…')
+export async function seedDatabase(db: SeedDb) {
 
   // --- wipe ---
-  await prisma.auditLog.deleteMany()
-  await prisma.session.deleteMany()
-  await prisma.permission.deleteMany()
-  await prisma.calendarCell.deleteMany()
-  await prisma.calendarActivity.deleteMany()
-  await prisma.guideStep.deleteMany()
-  await prisma.guideDoc.deleteMany()
-  await prisma.guideTip.deleteMany()
-  await prisma.guide.deleteMany()
-  await prisma.task.deleteMany()
-  await prisma.salary.deleteMany()
-  await prisma.staff.deleteMany()
-  await prisma.monthlyRecord.deleteMany()
-  await prisma.contentItem.deleteMany()
-  await prisma.contact.deleteMany()
-  await prisma.handoverItem.deleteMany()
-  await prisma.dropboxFolder.deleteMany()
-  await prisma.user.deleteMany()
-  await prisma.setting.deleteMany()
+  await db.auditLog.deleteMany()
+  await db.session.deleteMany()
+  await db.permission.deleteMany()
+  await db.calendarCell.deleteMany()
+  await db.calendarActivity.deleteMany()
+  await db.guideStep.deleteMany()
+  await db.guideDoc.deleteMany()
+  await db.guideTip.deleteMany()
+  await db.guide.deleteMany()
+  await db.task.deleteMany()
+  await db.salary.deleteMany()
+  await db.staff.deleteMany()
+  await db.monthlyRecord.deleteMany()
+  await db.contentItem.deleteMany()
+  await db.contact.deleteMany()
+  await db.handoverItem.deleteMany()
+  await db.dropboxFolder.deleteMany()
+  await db.user.deleteMany()
+  await db.setting.deleteMany()
 
   // --- settings ---
-  await prisma.setting.create({ data: { key: 'currentMonth', value: '1' } })
-  await prisma.setting.create({ data: { key: 'fiscalYear', value: data.meta.fy } })
+  await db.setting.create({ data: { key: 'currentMonth', value: '1' } })
+  await db.setting.create({ data: { key: 'fiscalYear', value: data.meta.fy } })
 
   // --- RBAC ---
   const perms: { role: string; module: string; canRead: boolean; canWrite: boolean }[] = []
@@ -68,12 +70,12 @@ async function main() {
     const read = ['dashboard', 'calendar', 'tasks', 'bookkeeping', 'guides', 'startHere'].includes(m)
     perms.push({ role: 'VIEWER', module: m, canRead: read, canWrite: write })
   }
-  await prisma.permission.createMany({ data: perms })
+  await db.permission.createMany({ data: perms })
 
   // --- users ---
   const adminHash = await bcrypt.hash('Admin@2083', 10)
   const viewerHash = await bcrypt.hash('Board@2083', 10)
-  await prisma.user.create({
+  await db.user.create({
     data: {
       email: 'admin@samaanta.org.np',
       name: 'Akhilesh Thakur',
@@ -82,7 +84,7 @@ async function main() {
       passwordHash: adminHash,
     },
   })
-  await prisma.user.create({
+  await db.user.create({
     data: {
       email: 'board@samaanta.org.np',
       name: 'Board Secretariat',
@@ -94,7 +96,7 @@ async function main() {
 
   // --- tasks ---
   for (const t of data.tasks) {
-    await prisma.task.create({
+    await db.task.create({
       data: {
         code: t.id,
         area: t.area,
@@ -122,11 +124,11 @@ async function main() {
   // --- calendar ---
   for (let i = 0; i < data.calendar.length; i++) {
     const a = data.calendar[i]
-    const act = await prisma.calendarActivity.create({
+    const act = await db.calendarActivity.create({
       data: { section: a.section, label: a.label, owner: a.owner, sort: i },
     })
     if (a.cells.length) {
-      await prisma.calendarCell.createMany({
+      await db.calendarCell.createMany({
         data: a.cells.map((c) => ({
           activityId: act.id,
           month: c.month,
@@ -140,7 +142,7 @@ async function main() {
   // --- guides ---
   for (let i = 0; i < data.guides.length; i++) {
     const g = data.guides[i]
-    const guide = await prisma.guide.create({
+    const guide = await db.guide.create({
       data: {
         slug: g.slug,
         sheet: g.sheet,
@@ -158,7 +160,7 @@ async function main() {
         dropbox: g.glance.dropbox ?? '',
       },
     })
-    await prisma.guideStep.createMany({
+    await db.guideStep.createMany({
       data: g.steps.map((s, idx) => ({
         guideId: guide.id,
         no: s.no,
@@ -172,7 +174,7 @@ async function main() {
         sort: idx,
       })),
     })
-    await prisma.guideDoc.createMany({
+    await db.guideDoc.createMany({
       data: g.docs.map((d, idx) => ({
         guideId: guide.id,
         no: d.no,
@@ -185,7 +187,7 @@ async function main() {
         sort: idx,
       })),
     })
-    await prisma.guideTip.createMany({
+    await db.guideTip.createMany({
       data: g.tips.map((t, idx) => ({ guideId: guide.id, text: t, sort: idx })),
     })
   }
@@ -195,7 +197,7 @@ async function main() {
   for (const m of months) {
     const idx = m - 1
     const num = (v: string) => (v.trim() === '' ? 0 : Number(v))
-    await prisma.monthlyRecord.create({
+    await db.monthlyRecord.create({
       data: {
         month: m,
         tdsStatus: data.book.tdsStatus[idx] || 'Pending',
@@ -216,13 +218,13 @@ async function main() {
   }
   for (let i = 0; i < data.staff.length; i++) {
     const s = data.staff[i]
-    const staff = await prisma.staff.create({
+    const staff = await db.staff.create({
       data: { name: s.name, designation: s.designation, pan: s.pan, sort: i },
     })
     const entries = s.salaries
       .map((v, mi) => ({ staffId: staff.id, month: mi + 1, amount: v.trim() === '' ? 0 : Number(v) }))
       .filter((e) => e.amount > 0)
-    if (entries.length) await prisma.salary.createMany({ data: entries })
+    if (entries.length) await db.salary.createMany({ data: entries })
   }
 
   // --- overview / start here content ---
@@ -250,9 +252,9 @@ async function main() {
   content.push({ section: 'folder', key: 'structure', value: data.overview.folderStructure, sort: 0 })
   content.push({ section: 'tips', key: 'startTip', value: data.overview.startTip, sort: 0 })
   content.push({ section: 'tips', key: 'folderTip', value: data.overview.folderTip, sort: 1 })
-  await prisma.contentItem.createMany({ data: content })
+  await db.contentItem.createMany({ data: content })
 
-  await prisma.contact.createMany({
+  await db.contact.createMany({
     data: data.overview.contacts.map((c, i) => ({
       authority: c.authority,
       usedFor: c.usedFor,
@@ -264,7 +266,7 @@ async function main() {
     })),
   })
 
-  await prisma.handoverItem.createMany({
+  await db.handoverItem.createMany({
     data: data.overview.handover.map((h, i) => ({
       item: h.item,
       detail: h.detail,
@@ -274,7 +276,7 @@ async function main() {
     })),
   })
 
-  await prisma.dropboxFolder.createMany({
+  await db.dropboxFolder.createMany({
     data: data.overview.dropbox.map((d, i) => ({
       area: d.area,
       url: d.url,
@@ -286,24 +288,32 @@ async function main() {
   })
 
   const counts = {
-    tasks: await prisma.task.count(),
-    activities: await prisma.calendarActivity.count(),
-    cells: await prisma.calendarCell.count(),
-    guides: await prisma.guide.count(),
-    steps: await prisma.guideStep.count(),
-    docs: await prisma.guideDoc.count(),
-    staff: await prisma.staff.count(),
-    contacts: await prisma.contact.count(),
-    handover: await prisma.handoverItem.count(),
-    dropbox: await prisma.dropboxFolder.count(),
-    content: await prisma.contentItem.count(),
+    tasks: await db.task.count(),
+    activities: await db.calendarActivity.count(),
+    cells: await db.calendarCell.count(),
+    guides: await db.guide.count(),
+    steps: await db.guideStep.count(),
+    docs: await db.guideDoc.count(),
+    staff: await db.staff.count(),
+    contacts: await db.contact.count(),
+    handover: await db.handoverItem.count(),
+    dropbox: await db.dropboxFolder.count(),
+    content: await db.contentItem.count(),
   }
   console.log('Seed complete:', counts)
 }
 
-main()
-  .catch((e) => {
-    console.error(e)
-    process.exit(1)
-  })
-  .finally(() => prisma.$disconnect())
+async function main() {
+  console.log('Seeding database…')
+  await prisma.$transaction((tx) => seedDatabase(tx), { timeout: 20000 })
+}
+
+const invokedDirectly = (process.argv[1] ?? '').replace(/\\/g, '/').endsWith('prisma/seed.ts')
+if (invokedDirectly) {
+  main()
+    .catch((e) => {
+      console.error(e)
+      process.exit(1)
+    })
+    .finally(() => prisma.$disconnect())
+}
