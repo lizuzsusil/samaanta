@@ -1,32 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-newsreader), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bitter), Georgia, 'Times New Roman', serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  /* Premium SaaS light — warm paper + deep pine + emerald + gold */
-  --color-paper: #f6f4ee;
-  --color-paper-deep: #ede9dd;
+  /* Samaanta Foundation brand — graduation-cap red, warm paper, near-black.
+     Source: samaantafoundation.org (brand red #ec3436, Lato + Bitter). */
+  --color-paper: #faf7f3;
+  --color-paper-deep: #f0e8df;
   --color-ink: #1c1917;
-  --color-mist: #faf9f6;
+  --color-mist: #fffdfb;
 
-  --color-shell: #0d1f1c;
-  --color-shell-soft: #14302b;
-  --color-shell-line: #23403a;
-  --color-shell-glow: #14b8a6;
+  --color-brand-50: #fdf1f1;
+  --color-brand-100: #fbdfe0;
+  --color-brand-200: #f6c2c4;
+  --color-brand-300: #ef9a9d;
+  --color-brand-400: #e56b6f;
+  --color-brand-500: #d9484c;
+  --color-brand-600: #c92e32;
+  --color-brand-700: #a92529;
+  --color-brand-800: #871e22;
+  --color-brand-900: #5f1518;
 
-  --color-accent: #0d7a6f;
-  --color-accent-deep: #0b5f57;
-  --color-accent-soft: #e3f2ec;
-  --color-accent-mist: #f0f9f5;
+  --color-shell: #221b1b;
+  --color-shell-soft: #322929;
+  --color-shell-line: #4a3d3d;
+  --color-shell-glow: #ec3436;
+
+  --color-accent: #c92e32;
+  --color-accent-deep: #a92529;
+  --color-accent-soft: #fbe3e3;
+  --color-accent-mist: #fdf4f4;
 
   --color-gold: #b8862e;
   --color-gold-soft: #faf0d7;
 
   --shadow-card: 0 1px 2px 0 rgb(28 25 23 / 0.05), 0 8px 24px -12px rgb(28 25 23 / 0.12);
-  --shadow-pop: 0 12px 40px -12px rgb(13 31 28 / 0.28), 0 2px 8px 0 rgb(13 31 28 / 0.12);
-  --shadow-glow: 0 0 0 1px rgb(20 184 166 / 0.25), 0 8px 24px -8px rgb(13 122 111 / 0.45);
+  --shadow-pop: 0 12px 40px -12px rgb(34 27 27 / 0.3), 0 2px 8px 0 rgb(34 27 27 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(236 52 54 / 0.25), 0 8px 24px -8px rgb(201 46 50 / 0.45);
 
   --animate-rise: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-shimmer: shimmer 1.6s linear infinite;
@@ -57,9 +69,9 @@ html {
 
 body {
   background:
-    radial-gradient(1200px 400px at 50% -120px, #e8f3ee 0%, transparent 60%),
+    radial-gradient(1200px 400px at 50% -120px, #f7e4e4 0%, transparent 60%),
     radial-gradient(900px 320px at 90% -80px, #f7ecd2 0%, transparent 55%),
-    #f6f4ee;
+    #faf7f3;
   background-attachment: fixed;
   color: #1c1917;
   font-family: var(--font-sans);
@@ -68,7 +80,7 @@ body {
 }
 
 ::selection {
-  background: #0d7a6f;
+  background: #c92e32;
   color: #fff;
 }
 
@@ -87,8 +99,8 @@ body {
   --os-track-border-hover: none;
   --os-track-border-active: none;
   --os-handle-bg: rgba(120, 113, 96, 0.45);
-  --os-handle-bg-hover: rgba(13, 122, 111, 0.65);
-  --os-handle-bg-active: rgba(13, 122, 111, 0.9);
+  --os-handle-bg-hover: rgba(201, 46, 50, 0.65);
+  --os-handle-bg-active: rgba(169, 37, 41, 0.9);
   --os-handle-border: none;
   --os-handle-border-hover: none;
   --os-handle-border-active: none;
@@ -166,12 +178,12 @@ body {
 /* ---------- inputs ---------- */
 .cell-input {
   @apply w-full rounded-lg border border-transparent bg-transparent px-2 py-1.5 text-sm transition
-    hover:border-stone-300 hover:bg-white focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/15;
+    hover:border-stone-300 hover:bg-white focus:border-brand-600 focus:bg-white focus:ring-4 focus:ring-brand-600/15;
 }
 
 .field {
   @apply w-full rounded-xl border border-stone-300/90 bg-white px-3.5 py-2.5 text-sm text-stone-900 shadow-[inset_0_1px_2px_rgb(0_0_0/0.04)]
-    placeholder:text-stone-400 focus:border-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-600/15 transition;
+    placeholder:text-stone-400 focus:border-brand-600 focus:outline-none focus:ring-4 focus:ring-brand-600/15 transition;
 }
 
 /* ---------- premium helpers ---------- */
@@ -223,7 +235,7 @@ body {
 
 /* focus visibility for a11y */
 :where(a, button, input, select, textarea):focus-visible {
-  outline: 2px solid #0d7a6f;
+  outline: 2px solid #c92e32;
   outline-offset: 2px;
   border-radius: 6px;
 }

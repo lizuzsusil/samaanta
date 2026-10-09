@@ -1,17 +1,18 @@
 import type { Metadata } from 'next'
-import { Newsreader, Public_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { Bitter, Lato, IBM_Plex_Mono } from 'next/font/google'
 import 'overlayscrollbars/overlayscrollbars.css'
 import './globals.css'
 
-const sans = Public_Sans({
-  variable: '--font-public-sans',
+const sans = Lato({
+  variable: '--font-lato',
   subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
 })
 
-const display = Newsreader({
-  variable: '--font-newsreader',
+const display = Bitter({
+  variable: '--font-bitter',
   subsets: ['latin'],
-  style: ['normal', 'italic'],
+  weight: ['500', '600', '700', '800'],
 })
 
 const mono = IBM_Plex_Mono({

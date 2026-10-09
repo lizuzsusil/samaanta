@@ -105,7 +105,7 @@ export function CalendarGrid({
                   key={m.n}
                   className={cn(
                     'w-40 px-2 py-2 text-center font-semibold',
-                    m.n === month && 'bg-teal-700 text-white',
+                    m.n === month && 'bg-brand-700 text-white',
                   )}
                 >
                   <div>{m.name} 20{m.n <= 9 ? '83' : '84'}</div>
@@ -244,7 +244,7 @@ function SectionRows({
                 key={m.n}
                 className={cn(
                   'border-l border-slate-100 p-1',
-                  isCurrent && 'bg-teal-50/40',
+                  isCurrent && 'bg-brand-50/40',
                 )}
               >
                 <button
@@ -253,7 +253,7 @@ function SectionRows({
                   onClick={() => onEdit(a.id, a.label, m.n, cell?.text ?? '', cell?.kind ?? '')}
                   className={cn(
                     'min-h-11 w-full rounded-md px-2 py-1.5 text-left text-xs leading-snug transition',
-                    canWrite ? 'hover:ring-2 hover:ring-teal-200' : 'cursor-default',
+                    canWrite ? 'hover:ring-2 hover:ring-brand-200' : 'cursor-default',
                     cell?.text ? 'font-medium' : 'text-slate-300',
                   )}
                   style={

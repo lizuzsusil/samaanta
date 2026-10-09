@@ -50,7 +50,7 @@ function SectionHead({
         {index}
       </span>
       <div className="max-w-3xl">
-        <div className="text-[10px] font-bold tracking-[0.22em] text-teal-700 uppercase">
+        <div className="text-[10px] font-bold tracking-[0.22em] text-brand-700 uppercase">
           {eyebrow}
         </div>
         <h2 className="font-display mt-0.5 text-[24px] leading-tight font-semibold tracking-tight text-stone-900">
@@ -112,12 +112,12 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-5">
       {/* Hero */}
-      <div className="rise relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d1f1c] via-[#14302b] to-teal-800 p-6 text-white shadow-pop sm:p-8">
+      <div className="rise relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#221b1b] via-[#3a2a2a] to-brand-800 p-6 text-white shadow-pop sm:p-8">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              'radial-gradient(520px 220px at 12% -20%, rgba(45,212,191,0.35), transparent 65%), radial-gradient(420px 200px at 95% 10%, rgba(201,155,63,0.35), transparent 65%), radial-gradient(600px 300px at 50% 120%, rgba(255,255,255,0.08), transparent 60%)',
+              'radial-gradient(520px 220px at 12% -20%, rgba(236,52,54,0.35), transparent 65%), radial-gradient(420px 200px at 95% 10%, rgba(201,155,63,0.35), transparent 65%), radial-gradient(600px 300px at 50% 120%, rgba(255,255,255,0.08), transparent 60%)',
           }}
         />
         <div
@@ -132,7 +132,7 @@ export default async function DashboardPage() {
         <div className="relative flex flex-wrap items-start justify-between gap-6">
           <div className="min-w-0 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold tracking-[0.22em] uppercase">
-              <span className="rounded-full bg-white/10 px-2.5 py-1 text-teal-100 ring-1 ring-white/15">
+              <span className="rounded-full bg-white/10 px-2.5 py-1 text-brand-100 ring-1 ring-white/15">
                 FY 2083/84 · 2026/27
               </span>
               <span className="rounded-full bg-amber-300/15 px-2.5 py-1 text-amber-200 ring-1 ring-amber-200/25">

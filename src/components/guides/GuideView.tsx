@@ -41,16 +41,16 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
 
   return (
     <div className="space-y-5">
-      <div className="rise relative overflow-hidden rounded-3xl border border-stone-200/70 bg-gradient-to-br from-white via-teal-50/50 to-amber-50/60 p-6 shadow-card">
+      <div className="rise relative overflow-hidden rounded-3xl border border-stone-200/70 bg-gradient-to-br from-white via-brand-50/50 to-amber-50/60 p-6 shadow-card">
         <Link
           href="/guides"
-          className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-bold text-teal-800 ring-1 ring-stone-200 transition hover:ring-teal-600/40"
+          className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-bold text-brand-800 ring-1 ring-stone-200 transition hover:ring-brand-600/40"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> All step guides
         </Link>
         <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
           <div className="min-w-0 max-w-2xl">
-            <div className="text-[10px] font-bold tracking-[0.22em] text-teal-700 uppercase">
+            <div className="text-[10px] font-bold tracking-[0.22em] text-brand-700 uppercase">
               {guide.sheet}
             </div>
             <h1 className="font-display mt-1 text-[26px] leading-tight font-semibold tracking-tight text-stone-900">
@@ -80,7 +80,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
             const value = String(guide[key] ?? '')
             if (!value && key !== 'dropbox') return null
             return (
-              <div key={key} className="border-l-2 border-teal-600/10 pl-3">
+              <div key={key} className="border-l-2 border-brand-600/10 pl-3">
                 <dt className="text-[10px] font-semibold tracking-[0.14em] text-slate-500 uppercase">
                   {label}
                 </dt>
@@ -90,7 +90,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
                       href={value}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-teal-700 hover:underline"
+                      className="inline-flex items-center gap-1 text-brand-700 hover:underline"
                     >
                       <FolderOpen className="h-3.5 w-3.5" /> Open folder
                     </a>
@@ -382,7 +382,7 @@ function AddInline({
   return (
     <form
       onSubmit={submit}
-      className="flex w-full flex-wrap items-end gap-2 rounded-lg border border-teal-600/20 bg-teal-50/50 p-3"
+      className="flex w-full flex-wrap items-end gap-2 rounded-lg border border-brand-600/20 bg-brand-50/50 p-3"
     >
       {fields.map((f) => (
         <label key={f.name} className={cn('block', f.wide ? 'min-w-64 flex-1' : 'w-44')}>

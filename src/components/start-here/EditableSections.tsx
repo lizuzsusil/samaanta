@@ -246,7 +246,7 @@ export function EditableSections({
                           href={d.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="shrink-0 rounded p-1 text-teal-600 hover:bg-teal-50"
+                          className="shrink-0 rounded p-1 text-brand-600 hover:bg-brand-50"
                           aria-label={`Open ${d.area} folder`}
                         >
                           <ExternalLink className="h-3.5 w-3.5" />

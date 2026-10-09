@@ -2,6 +2,7 @@
 
 import { useState, useTransition, type ReactNode } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import {
   Menu,
@@ -12,7 +13,6 @@ import {
   Eye,
   Sparkles,
   ChevronRight,
-  Landmark,
 } from 'lucide-react'
 import { cn, initials } from '@/lib/cn'
 import { BS_MONTHS } from '@/lib/constants'
@@ -57,23 +57,19 @@ export function ShellClient({
 
   const nav = (
     <nav className="flex min-h-full flex-col gap-5 px-3 py-5">
-      {/* Brand */}
+      {/* Brand — official Samaanta Foundation lockup */}
       <div className="px-1">
-        <Link href="/dashboard" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-teal-600 via-teal-700 to-[#0d1f1c] text-lg font-bold text-white shadow-[0_10px_24px_-8px_rgb(13_122_111/0.7)] transition-transform group-hover:scale-[1.03]">
-            <Landmark className="h-5 w-5" />
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate text-[13px] font-bold tracking-tight text-stone-900">
-              Samaanta
-            </span>
-            <span className="block truncate text-[11px] font-medium text-stone-500">
-              Development Foundation
-            </span>
-          </span>
+        <Link href="/dashboard" onClick={() => setOpen(false)} className="group block">
+          <Image
+            src="/brand/samaanta-logo.png"
+            alt="Samaanta Foundation"
+            width={324}
+            height={118}
+            className="h-auto w-full mx-auto transition-transform group-hover:scale-[1.02]"
+          />
         </Link>
-        <div className="mt-3 flex items-center gap-2 rounded-xl border border-teal-700/15 bg-gradient-to-br from-teal-50 to-amber-50 px-3 py-2">
-          <Sparkles className="h-3.5 w-3.5 shrink-0 text-teal-700" />
+        <div className="mt-3 flex items-center gap-2 rounded-xl border border-brand-700/15 bg-gradient-to-br from-brand-50 to-amber-50 px-3 py-2">
+          <Sparkles className="h-3.5 w-3.5 shrink-0 text-brand-700" />
           <p className="text-[11px] leading-tight font-medium text-stone-700">
             FY 2083/84 <span className="text-stone-400">· Handover edition</span>
           </p>
@@ -100,19 +96,19 @@ export function ShellClient({
                       className={cn(
                         'group flex items-center gap-2.5 rounded-xl px-3 py-2 text-[13px] transition-all',
                         active
-                          ? 'bg-gradient-to-b from-teal-700 to-teal-800 font-semibold text-white shadow-[0_8px_20px_-8px_rgb(13_122_111/0.7)]'
+                          ? 'bg-gradient-to-b from-brand-700 to-brand-800 font-semibold text-white shadow-[0_8px_20px_-8px_rgb(196_42_45/0.7)]'
                           : 'font-medium text-stone-600 hover:bg-stone-900/[0.05] hover:text-stone-900',
                       )}
                     >
                       <Icon
                         className={cn(
                           'h-4 w-4 shrink-0 transition',
-                          active ? 'text-teal-100' : 'text-stone-400 group-hover:text-stone-700',
+                          active ? 'text-brand-100' : 'text-stone-400 group-hover:text-stone-700',
                         )}
                       />
                       <span className="flex-1 truncate">{item.label}</span>
                       {active ? (
-                        <ChevronRight className="h-3.5 w-3.5 text-teal-200" />
+                        <ChevronRight className="h-3.5 w-3.5 text-brand-200" />
                       ) : null}
                     </Link>
                   </li>
@@ -131,7 +127,7 @@ export function ShellClient({
             </span>
             <Link
               href="/guides"
-              className="text-[11px] font-semibold text-teal-700 hover:underline"
+              className="text-[11px] font-semibold text-brand-700 hover:underline"
               onClick={() => setOpen(false)}
             >
               All
@@ -149,14 +145,14 @@ export function ShellClient({
                     className={cn(
                       'flex items-center gap-2 rounded-lg px-3 py-1.5 text-[12.5px] transition',
                       active
-                        ? 'bg-teal-700/10 font-semibold text-teal-900'
+                        ? 'bg-brand-700/10 font-semibold text-brand-900'
                         : 'text-stone-500 hover:bg-stone-900/[0.04] hover:text-stone-800',
                     )}
                   >
                     <span
                       className={cn(
                         'h-1.5 w-1.5 shrink-0 rounded-full',
-                        active ? 'bg-teal-600' : 'bg-stone-300',
+                        active ? 'bg-brand-600' : 'bg-stone-300',
                       )}
                     />
                     <span className="truncate">
@@ -171,16 +167,16 @@ export function ShellClient({
       ) : null}
 
       <div className="mt-auto space-y-2 px-1 pt-4">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d1f1c] via-[#14302b] to-teal-800 p-3.5 text-white shadow-pop">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#221b1b] via-[#3a2a2a] to-brand-800 p-3.5 text-white shadow-pop">
           <div
             className="pointer-events-none absolute inset-0 opacity-40"
             style={{
               background:
-                'radial-gradient(180px 90px at 85% -10%, rgba(45,212,191,0.5), transparent 70%), radial-gradient(140px 80px at 0% 110%, rgba(201,155,63,0.35), transparent 70%)',
+                'radial-gradient(180px 90px at 85% -10%, rgba(236,52,54,0.5), transparent 70%), radial-gradient(140px 80px at 0% 110%, rgba(201,155,63,0.35), transparent 70%)',
             }}
           />
           <div className="relative">
-            <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] text-teal-200 uppercase">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] text-brand-200 uppercase">
               <ShieldCheck className="h-3.5 w-3.5" /> {user.role === 'ADMIN' ? 'Administrator' : 'Board view'}
             </div>
             <p className="mt-1.5 text-[12px] leading-snug text-white/85">
@@ -237,15 +233,15 @@ export function ShellClient({
               </div>
               <div className="mt-0.5 truncate text-[13px] font-bold tracking-tight text-stone-900">
                 Administrative, Governance &amp; Legal Compliance
-                <span className="ml-2 rounded-full bg-teal-700/10 px-2 py-0.5 align-middle text-[10px] font-bold tracking-wide text-teal-800 uppercase">
+                <span className="ml-2 rounded-full bg-brand-700/10 px-2 py-0.5 align-middle text-[10px] font-bold tracking-wide text-brand-800 uppercase">
                   {monthMeta.name} · mo {currentMonth}/12
                 </span>
               </div>
             </div>
 
             <div className="ml-auto flex items-center gap-2">
-              <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-stone-200 bg-white py-2 pr-3 pl-3 text-sm shadow-sm transition hover:border-teal-600/40 hover:shadow-md">
-                <CalendarRange className="h-4 w-4 text-teal-700" />
+              <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-stone-200 bg-white py-2 pr-3 pl-3 text-sm shadow-sm transition hover:border-brand-600/40 hover:shadow-md">
+                <CalendarRange className="h-4 w-4 text-brand-700" />
                 <span className="sr-only">Current Nepali month</span>
                 <select
                   className="cursor-pointer bg-transparent text-[13px] font-semibold text-stone-800 focus:outline-none"
@@ -271,7 +267,7 @@ export function ShellClient({
               </label>
 
               <div className="flex items-center gap-2.5 rounded-xl border border-stone-200 bg-white py-1.5 pr-1.5 pl-1.5 shadow-sm">
-                <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-teal-700 to-[#0d1f1c] text-[11px] font-bold text-white">
+                <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-[#241b1b] text-[11px] font-bold text-white">
                   {initials(user.name)}
                 </span>
                 <span className="hidden text-left leading-tight xl:block">
@@ -280,7 +276,7 @@ export function ShellClient({
                   </span>
                   <span className="flex items-center gap-1 text-[10px] font-medium text-stone-500">
                     {user.role === 'ADMIN' ? (
-                      <ShieldCheck className="h-3 w-3 text-teal-700" />
+                      <ShieldCheck className="h-3 w-3 text-brand-700" />
                     ) : (
                       <Eye className="h-3 w-3" />
                     )}
@@ -308,7 +304,15 @@ export function ShellClient({
         <footer className="border-t border-stone-200/70 bg-white/60 px-6 py-4 backdrop-blur">
           <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-between gap-2 text-[11px] text-stone-400">
             <span>
-              Samaanta Development Foundation · FY 2083/84 · Shrawan 2083 – Asadh 2084
+              Samaanta Development Foundation · Sajha Complex, Thapagaun, Kathmandu ·{' '}
+              <a
+                href="https://samaantafoundation.org"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-brand-700 hover:underline"
+              >
+                samaantafoundation.org
+              </a>
             </span>
             <span className="font-medium">
               Verify statutory deadlines with IRD / OCR / SWC / Ward before filing.

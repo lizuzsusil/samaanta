@@ -112,7 +112,7 @@ export function SelectCell({
       onChange={handleChange}
       className={cn(
         'w-full cursor-pointer rounded-lg border border-transparent bg-transparent px-2 py-1.5 text-[13px] font-medium text-stone-700 transition',
-        'hover:border-stone-300 hover:bg-white focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/15',
+        'hover:border-stone-300 hover:bg-white focus:border-brand-600 focus:bg-white focus:ring-4 focus:ring-brand-600/15',
         disabled && 'cursor-default hover:border-transparent hover:bg-transparent',
         pending && 'opacity-60',
         className,

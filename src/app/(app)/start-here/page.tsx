@@ -65,7 +65,7 @@ export default async function StartHerePage() {
           <ol className="space-y-3">
             {howto.map((h) => (
               <li key={h.key} className="flex gap-3 text-sm text-slate-700">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-700 text-[11px] font-semibold text-white">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-700 text-[11px] font-semibold text-white">
                   {h.key}
                 </span>
                 <span className="leading-relaxed">{h.value}</span>
@@ -129,7 +129,7 @@ export default async function StartHerePage() {
           <dl className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {roles.map((r) => (
               <div key={r.key}>
-                <dt className="text-xs font-semibold text-teal-700">{r.label}</dt>
+                <dt className="text-xs font-semibold text-brand-700">{r.label}</dt>
                 <dd className="text-xs leading-relaxed text-slate-600">{r.value}</dd>
               </div>
             ))}

@@ -25,7 +25,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 
 /* --------------------------------- palette --------------------------------- */
 
-const TEAL = '#0e7d6e'
+const TEAL = '#cf3033'
 const OCHRE = '#c07a1f'
 const BLUE = '#5468b0'
 const EMERALD = '#2f9e6e'
@@ -426,7 +426,7 @@ export function CalendarHeatmap({ rows, month }: { rows: HeatRow[]; month: numbe
                   key={m.n}
                   className={
                     m.n === month
-                      ? 'rounded bg-teal-700 px-1 py-1 text-[11px] font-semibold text-white'
+                      ? 'rounded bg-brand-700 px-1 py-1 text-[11px] font-semibold text-white'
                       : 'px-1 py-1 text-[11px] font-medium text-slate-400'
                   }
                   title={`${m.name} · ${m.en}`}
@@ -441,7 +441,7 @@ export function CalendarHeatmap({ rows, month }: { rows: HeatRow[]; month: numbe
               <tr>
                 <td
                   colSpan={13}
-                  className="pt-4 pb-1 text-[10px] font-semibold tracking-[0.16em] text-teal-800 uppercase"
+                  className="pt-4 pb-1 text-[10px] font-semibold tracking-[0.16em] text-brand-800 uppercase"
                 >
                   {section}
                 </td>
@@ -463,7 +463,7 @@ export function CalendarHeatmap({ rows, month }: { rows: HeatRow[]; month: numbe
                           className="h-11 min-w-20 rounded-md border border-slate-100 px-1.5 py-1 align-top transition hover:brightness-95"
                           style={{
                             background: kind ? kind.bg : '#faf8f2',
-                            boxShadow: isCurrent ? 'inset 0 0 0 2px #0f766e' : undefined,
+                            boxShadow: isCurrent ? 'inset 0 0 0 2px #a92529' : undefined,
                           }}
                         >
                           {c.text ? (
@@ -559,7 +559,7 @@ export function GuideReadiness({ rows }: { rows: ReadinessRow[] }) {
       <ul className="mt-3 space-y-1 border-t border-slate-100 pt-3">
         {data.map((r) => (
           <li key={r.area} className="flex items-center justify-between gap-3 text-xs">
-            <Link href={`/guides/${r.slug}`} className="truncate font-medium text-teal-800 hover:underline">
+            <Link href={`/guides/${r.slug}`} className="truncate font-medium text-brand-800 hover:underline">
               {r.area}
             </Link>
             <span className="shrink-0 tabular-nums text-slate-400">

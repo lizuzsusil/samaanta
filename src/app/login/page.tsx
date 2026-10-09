@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { redirect } from 'next/navigation'
-import { Landmark, ShieldCheck, CalendarRange, BookOpenCheck } from 'lucide-react'
+import Image from 'next/image'
+import { ShieldCheck, CalendarRange, BookOpenCheck } from 'lucide-react'
 import { getSessionUser } from '@/lib/auth'
 import { LoginForm } from './login-form'
 import { Skeleton } from '@/components/ui/primitives'
@@ -58,7 +59,7 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
           className="absolute inset-0"
           style={{
             background:
-              'radial-gradient(600px 300px at 20% 0%, rgba(45,212,191,0.35), transparent 65%), radial-gradient(500px 260px at 90% 20%, rgba(201,155,63,0.28), transparent 65%), radial-gradient(700px 400px at 50% 110%, rgba(255,255,255,0.07), transparent 60%), linear-gradient(180deg, #0d1f1c 0%, #14302b 55%, #0b5f57 130%)',
+              'radial-gradient(600px 300px at 20% 0%, rgba(236,52,54,0.35), transparent 65%), radial-gradient(500px 260px at 90% 20%, rgba(201,155,63,0.28), transparent 65%), radial-gradient(700px 400px at 50% 110%, rgba(255,255,255,0.07), transparent 60%), linear-gradient(180deg, #221b1b 0%, #3a2a2a 55%, #871e22 130%)',
           }}
         />
         <div
@@ -72,15 +73,19 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
         />
         <div className="relative flex h-full flex-col justify-between p-12 text-white">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white/10 ring-1 ring-white/20 backdrop-blur">
-                <Landmark className="h-5 w-5 text-teal-200" />
-              </span>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/brand/samaanta-logo.png"
+                alt="Samaanta Foundation"
+                width={324}
+                height={118}
+                className="h-14 w-auto rounded-2xl bg-white p-1.5 shadow-xl"
+              />
               <div>
-                <div className="text-[11px] font-bold tracking-[0.28em] text-teal-200 uppercase">
-                  Samaanta Development Foundation
+                <div className="text-[11px] font-bold tracking-[0.28em] text-brand-200 uppercase">
+                  Compliance workspace
                 </div>
-                <div className="text-xs text-white/60">Compliance workspace · FY 2083/84</div>
+                <div className="mt-1 text-xs text-white/60">FY 2083/84 · Handover edition</div>
               </div>
             </div>
             <h1 className="font-display mt-10 max-w-md text-[40px] leading-[1.05] font-semibold tracking-tight text-balance">
@@ -100,7 +105,7 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
                   key={h.title}
                   className="flex items-start gap-3 rounded-2xl bg-white/[0.06] p-4 ring-1 ring-white/10 backdrop-blur"
                 >
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-teal-400/15 text-teal-200 ring-1 ring-teal-300/20">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-400/15 text-brand-200 ring-1 ring-brand-300/20">
                     <Icon className="h-4 w-4" />
                   </span>
                   <span>
@@ -123,15 +128,16 @@ async function LoginContent({ searchParams }: { searchParams: Promise<{ next?: s
       <div className="flex w-full items-center justify-center px-5 py-10 lg:w-[48%]">
         <div className="rise w-full max-w-sm">
           <div className="mb-7 lg:hidden">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-teal-700 to-[#0d1f1c] text-white">
-                <Landmark className="h-4 w-4" />
-              </span>
-              <span className="text-sm font-bold text-stone-900">Samaanta Development Foundation</span>
-            </div>
+            <Image
+              src="/brand/samaanta-logo.png"
+              alt="Samaanta Foundation"
+              width={324}
+              height={118}
+              className="h-11 w-auto rounded-xl shadow-md"
+            />
           </div>
           <div className="rounded-3xl border border-stone-200/80 bg-white/90 p-7 shadow-pop backdrop-blur sm:p-8">
-            <div className="text-[10px] font-bold tracking-[0.24em] text-teal-700 uppercase">
+            <div className="text-[10px] font-bold tracking-[0.24em] text-brand-700 uppercase">
               Compliance workspace
             </div>
             <h2 className="font-display mt-1.5 text-[28px] font-semibold tracking-tight text-stone-900">

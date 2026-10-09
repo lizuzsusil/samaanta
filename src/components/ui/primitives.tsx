@@ -48,13 +48,13 @@ export function CardHeader({
     <div className={cn('mb-4 flex flex-wrap items-start justify-between gap-3', className)}>
       <div className="flex min-w-0 items-start gap-3">
         {Icon ? (
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-teal-700 to-teal-600 text-white shadow-[0_6px_16px_-6px_rgb(13_122_111/0.6)]">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-700 to-brand-600 text-white shadow-[0_6px_16px_-6px_rgb(196_42_45/0.6)]">
             <Icon className="h-4 w-4" />
           </span>
         ) : null}
         <div className="min-w-0">
           {eyebrow ? (
-            <div className="mb-0.5 text-[10px] font-bold tracking-[0.18em] text-teal-700 uppercase">
+            <div className="mb-0.5 text-[10px] font-bold tracking-[0.18em] text-brand-700 uppercase">
               {eyebrow}
             </div>
           ) : null}
@@ -124,7 +124,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl font-semibold tracking-tight transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100 focus-visible:outline-teal-700'
+    'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl font-semibold tracking-tight transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100 focus-visible:outline-brand-700'
   const sizes =
     size === 'sm'
       ? 'px-3 py-1.5 text-xs'
@@ -133,7 +133,7 @@ export function Button({
         : 'px-4 py-2.5 text-sm'
   const variants = {
     primary:
-      'bg-gradient-to-b from-teal-600 to-teal-800 text-white shadow-[0_8px_20px_-8px_rgb(13_122_111/0.7),inset_0_1px_0_rgb(255_255_255/0.2)] hover:from-teal-500 hover:to-teal-700 hover:shadow-[0_12px_28px_-8px_rgb(13_122_111/0.7)]',
+      'bg-gradient-to-b from-brand-600 to-brand-800 text-white shadow-[0_8px_20px_-8px_rgb(196_42_45/0.7),inset_0_1px_0_rgb(255_255_255/0.2)] hover:from-brand-500 hover:to-brand-700 hover:shadow-[0_12px_28px_-8px_rgb(196_42_45/0.7)]',
     secondary:
       'border border-stone-300/90 bg-white text-stone-800 shadow-[0_1px_2px_rgb(0_0_0/0.05)] hover:border-stone-400 hover:bg-stone-50',
     ghost: 'text-stone-600 hover:bg-stone-900/5 hover:text-stone-900',
@@ -164,7 +164,7 @@ export function PageHeader({
           <div className="mb-2 flex items-center gap-2 text-[11px] font-bold tracking-[0.18em] uppercase">
             {crumb ? <span className="text-stone-400">{crumb}</span> : null}
             {crumb && eyebrow ? <span className="text-stone-300">/</span> : null}
-            {eyebrow ? <span className="text-teal-700">{eyebrow}</span> : null}
+            {eyebrow ? <span className="text-brand-700">{eyebrow}</span> : null}
           </div>
         ) : null}
         <h1 className="font-display max-w-3xl text-[30px] leading-[1.1] font-semibold tracking-tight text-balance text-stone-900 sm:text-[34px]">
@@ -192,7 +192,7 @@ export function Stat({
   label: string
   value: ReactNode
   hint?: ReactNode
-  tone?: 'slate' | 'green' | 'amber' | 'blue' | 'rose' | 'teal'
+  tone?: 'slate' | 'green' | 'amber' | 'blue' | 'rose' | 'brand'
   icon?: LucideIcon
   delta?: string
 }) {
@@ -202,7 +202,7 @@ export function Stat({
     amber: 'border-amber-200/90',
     blue: 'border-sky-200/90',
     rose: 'border-rose-200/90',
-    teal: 'border-teal-600/25',
+    brand: 'border-brand-600/25',
   }[tone]
   const valueTones = {
     slate: 'text-stone-900',
@@ -210,7 +210,7 @@ export function Stat({
     amber: 'text-amber-700',
     blue: 'text-sky-700',
     rose: 'text-rose-700',
-    teal: 'text-teal-800',
+    brand: 'text-brand-800',
   }[tone]
   const iconBg = {
     slate: 'bg-stone-100 text-stone-600',
@@ -218,7 +218,7 @@ export function Stat({
     amber: 'bg-amber-100 text-amber-700',
     blue: 'bg-sky-100 text-sky-700',
     rose: 'bg-rose-100 text-rose-700',
-    teal: 'bg-teal-700 text-white',
+    brand: 'bg-brand-700 text-white',
   }[tone]
   return (
     <div
@@ -254,10 +254,10 @@ export function Stat({
 
 export function Progress({
   value,
-  tone = 'teal',
+  tone = 'brand',
 }: {
   value: number
-  tone?: 'teal' | 'green' | 'gold'
+  tone?: 'brand' | 'green' | 'gold'
 }) {
   const pct = Math.max(0, Math.min(1, value)) * 100
   const bar =
@@ -265,7 +265,7 @@ export function Progress({
       ? 'from-emerald-500 to-emerald-600'
       : tone === 'gold'
         ? 'from-amber-400 to-amber-600'
-        : 'from-teal-500 to-teal-700'
+        : 'from-brand-500 to-brand-700'
   return (
     <div className="h-2 w-full overflow-hidden rounded-full bg-stone-900/8 shadow-[inset_0_1px_2px_rgb(0_0_0/0.08)]">
       <div

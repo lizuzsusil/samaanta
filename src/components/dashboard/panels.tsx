@@ -51,9 +51,9 @@ export function KpiGrid({ data }: { data: Dashboard }) {
       label: 'Active now',
       value: k.active,
       hint: 'in window this month',
-      tone: 'teal' as const,
+      tone: 'brand' as const,
       icon: Zap,
-      bar: 'bg-teal-600',
+      bar: 'bg-brand-600',
     },
     {
       label: 'Needs attention',
@@ -70,7 +70,7 @@ export function KpiGrid({ data }: { data: Dashboard }) {
     amber: 'bg-amber-100 text-amber-700',
     blue: 'bg-sky-100 text-sky-700',
     rose: 'bg-rose-100 text-rose-600',
-    teal: 'bg-teal-700 text-white',
+    brand: 'bg-brand-700 text-white',
   }
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
@@ -102,8 +102,8 @@ export function KpiGrid({ data }: { data: Dashboard }) {
                   ? 'text-emerald-700'
                   : c.tone === 'rose' && c.value
                     ? 'text-rose-600'
-                    : c.tone === 'teal'
-                      ? 'text-teal-800'
+                    : c.tone === 'brand'
+                      ? 'text-brand-800'
                       : c.tone === 'blue'
                         ? 'text-sky-700'
                         : 'text-stone-900',
@@ -135,7 +135,7 @@ export function ComplianceChain({ data }: { data: Dashboard }) {
         action={
           <Link
             href="/tasks"
-            className="inline-flex items-center gap-1 rounded-xl border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-stone-700 shadow-sm transition hover:border-teal-600/40 hover:text-teal-800"
+            className="inline-flex items-center gap-1 rounded-xl border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-stone-700 shadow-sm transition hover:border-brand-600/40 hover:text-brand-800"
           >
             Open tracker <ArrowRight className="h-3.5 w-3.5" />
           </Link>
@@ -148,14 +148,14 @@ export function ComplianceChain({ data }: { data: Dashboard }) {
             <li key={step.code} className="relative">
               <Link
                 href="/tasks"
-                className="group flex h-full flex-col rounded-2xl border border-stone-200/80 bg-gradient-to-b from-stone-50/80 to-white p-3.5 transition-all hover:-translate-y-0.5 hover:border-teal-600/30 hover:shadow-pop"
+                className="group flex h-full flex-col rounded-2xl border border-stone-200/80 bg-gradient-to-b from-stone-50/80 to-white p-3.5 transition-all hover:-translate-y-0.5 hover:border-brand-600/30 hover:shadow-pop"
               >
                 <div className="flex items-center gap-1.5">
                   <span className="font-mono text-[10px] font-bold tracking-wider text-stone-400">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className={`h-1.5 w-1.5 rounded-full ${timingDot[step.timing]}`} />
-                  <Icon className="ml-auto h-4 w-4 shrink-0 text-stone-300 transition group-hover:text-teal-700" />
+                  <Icon className="ml-auto h-4 w-4 shrink-0 text-stone-300 transition group-hover:text-brand-700" />
                 </div>
                 <span className="mt-1.5 text-[13px] leading-snug font-bold tracking-tight text-stone-800">
                   {step.name}
@@ -310,7 +310,7 @@ export function ProgressByArea({ data }: { data: Dashboard }) {
                     {row.guideSlug ? (
                       <Link
                         href={`/guides/${row.guideSlug}`}
-                        className="font-medium text-teal-700 hover:underline"
+                        className="font-medium text-brand-700 hover:underline"
                       >
                         {row.area}
                       </Link>

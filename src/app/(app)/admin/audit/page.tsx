@@ -63,7 +63,7 @@ export default async function AuditPage({
               Filter
             </button>
             {(action || q) ? (
-              <a href="/admin/audit" className="text-xs text-teal-700 hover:underline">
+              <a href="/admin/audit" className="text-xs text-brand-700 hover:underline">
                 Clear
               </a>
             ) : null}
