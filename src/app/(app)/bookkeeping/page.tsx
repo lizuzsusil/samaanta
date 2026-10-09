@@ -50,7 +50,9 @@ export default async function BookkeepingPage() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title="Monthly TDS Log – Office Rent, Staff Salaries, Income & Expenses"
+        crumb="Workspace"
+        eyebrow="Monthly Book-keeping"
+        title="TDS · rent · salaries · income & expenses"
         subtitle="One column per payment month (BS, Shrawan → Asadh). TDS must be deposited and e-TDS filed by the 25th of the FOLLOWING month. Amounts in NPR."
       />
       <Notice>

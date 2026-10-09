@@ -7,6 +7,7 @@ import { npr, SST_RATE } from '@/lib/calc'
 import { Button, Notice } from '@/components/ui/primitives'
 import { SelectCell, TextCell } from '@/components/ui/edit'
 import { addStaff, deleteStaff, setSalary, updateMonthly } from '@/lib/actions/bookkeeping'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export type MonthlyRecordDto = {
   month: number
@@ -432,14 +433,16 @@ function Sheet({
   children: ReactNode
 }) {
   return (
-    <section className="rounded-xl border border-slate-200 bg-white shadow-card">
-      <div className="border-b border-slate-100 px-5 pt-5 pb-3">
-        <h2 className="text-sm font-semibold text-slate-900">{title}</h2>
-        {note ? <p className="mt-1 text-xs text-slate-500">{note}</p> : null}
+    <section className="overflow-hidden rounded-2xl border border-stone-200/80 bg-white/95 shadow-card">
+      <div className="flex items-start justify-between gap-3 border-b border-stone-100 bg-gradient-to-b from-stone-50/80 to-white px-5 pt-5 pb-3">
+        <div>
+          <h2 className="font-display text-[16px] font-semibold tracking-tight text-stone-900">{title}</h2>
+          {note ? <p className="mt-1 max-w-2xl text-xs leading-relaxed text-stone-500">{note}</p> : null}
+        </div>
       </div>
-      <div className="scroll-slim overflow-x-auto">
+      <ScrollArea orientation="horizontal">
         <table className="w-full min-w-[1700px] border-collapse text-sm">{children}</table>
-      </div>
+      </ScrollArea>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Newsreader, Public_Sans, IBM_Plex_Mono } from 'next/font/google'
+import 'overlayscrollbars/overlayscrollbars.css'
 import './globals.css'
 
 const sans = Public_Sans({

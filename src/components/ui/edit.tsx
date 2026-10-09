@@ -60,7 +60,7 @@ export function TextCell({
         }
       }}
       className={cn(
-        'cell-input text-sm',
+        'cell-input text-sm text-stone-800',
         align === 'right' && 'text-right tabular-nums',
         pending && 'opacity-60',
         className,
@@ -111,8 +111,8 @@ export function SelectCell({
       disabled={disabled || pending}
       onChange={handleChange}
       className={cn(
-        'w-full cursor-pointer rounded-md border border-transparent bg-transparent px-2 py-1 text-sm transition',
-        'hover:border-slate-300 hover:bg-white focus:border-teal-500 focus:bg-white focus:ring-2 focus:ring-teal-600/20',
+        'w-full cursor-pointer rounded-lg border border-transparent bg-transparent px-2 py-1.5 text-[13px] font-medium text-stone-700 transition',
+        'hover:border-stone-300 hover:bg-white focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/15',
         disabled && 'cursor-default hover:border-transparent hover:bg-transparent',
         pending && 'opacity-60',
         className,

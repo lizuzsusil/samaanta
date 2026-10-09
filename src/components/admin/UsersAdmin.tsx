@@ -13,6 +13,7 @@ import {
   setPermission,
   updateUser,
 } from '@/lib/actions/users'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 type UserDto = Awaited<ReturnType<typeof getUsers>>[number]
 type PermDto = Awaited<ReturnType<typeof getPermissionSummary>>[number]
@@ -143,7 +144,7 @@ export function UsersAdmin({
           ) : null}
         </div>
 
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[900px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -226,7 +227,7 @@ export function UsersAdmin({
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
 
       <Card padded={false}>
@@ -237,7 +238,7 @@ export function UsersAdmin({
             subtitle="Modules each role can open (read) and change (write). Admins cannot lose access to Users & Roles or the Audit Log."
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[720px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -287,7 +288,7 @@ export function UsersAdmin({
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
         <div className="border-t border-slate-100 px-5 py-3 text-[11px] text-slate-400">
           Changes apply to every session of that role immediately. Signature users: sign out and
           back in after changing your own role.

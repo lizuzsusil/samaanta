@@ -1,6 +1,7 @@
 import { requirePermission } from '@/lib/auth'
 import { getAuditLogs } from '@/lib/queries'
 import { PageHeader, Card, CardHeader, EmptyState, Badge } from '@/components/ui/primitives'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export const metadata = { title: 'Audit Log' }
 
@@ -69,7 +70,7 @@ export default async function AuditPage({
           </form>
         </div>
 
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[900px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -119,7 +120,7 @@ export default async function AuditPage({
               )}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
     </div>
   )

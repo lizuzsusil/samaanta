@@ -18,6 +18,7 @@ import { cn } from '@/lib/cn'
 import { Badge, Button, EmptyState, Notice } from '@/components/ui/primitives'
 import { SelectCell, TextCell } from '@/components/ui/edit'
 import { createTask, deleteTask, updateTask } from '@/lib/actions/tasks'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 type Props = {
   tasks: Task[]
@@ -58,11 +59,12 @@ export function TaskTracker({ tasks, month, canWrite }: Props) {
   }
 
   const filterSelect =
-    'rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-700 focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-600/10'
+    'rounded-xl border border-stone-300/90 bg-white px-3 py-2 text-[13px] font-medium text-stone-700 shadow-sm focus:border-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-600/15 transition'
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="rounded-2xl border border-stone-200/80 bg-white/85 p-3 shadow-card backdrop-blur">
+        <div className="flex flex-wrap items-center gap-2">
         <div className="relative min-w-56 flex-1">
           <Search className="pointer-events-none absolute top-1/2 left-2.5 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
@@ -98,16 +100,17 @@ export function TaskTracker({ tasks, month, canWrite }: Props) {
           ))}
         </select>
 
-        <span className="text-xs tabular-nums text-slate-500">
-          {rows.length} of {tasks.length} tasks
+        <span className="rounded-full bg-stone-900 px-2.5 py-1 text-[11px] font-bold text-white tabular-nums">
+          {rows.length} / {tasks.length}
         </span>
 
         {canWrite ? (
-          <Button variant="primary" size="sm" onClick={() => setShowNew((v) => !v)}>
+          <Button variant="primary" size="sm" onClick={() => setShowNew((v) => !v)} className="ml-auto">
             <Plus className="h-4 w-4" />
             New task
           </Button>
         ) : null}
+        </div>
       </div>
 
       {error ? <Notice tone="error">{error}</Notice> : null}
@@ -126,10 +129,10 @@ export function TaskTracker({ tasks, month, canWrite }: Props) {
         />
       ) : null}
 
-      <div className="scroll-slim overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-card">
+      <ScrollArea orientation="horizontal" className="table-premium rounded-2xl border border-stone-200/80 bg-white/95 shadow-card">
         <table className="w-full min-w-[1500px] border-collapse text-sm">
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
+            <tr className="border-b border-stone-200 bg-stone-50/90 text-left text-[10px] font-bold tracking-[0.12em] text-stone-500 uppercase">
               <Th>ID</Th>
               <Th>Area</Th>
               <Th className="w-72">Compliance / task</Th>
@@ -183,7 +186,7 @@ export function TaskTracker({ tasks, month, canWrite }: Props) {
             )}
           </tbody>
         </table>
-      </div>
+      </ScrollArea>
 
       <p className="text-[11px] text-slate-400">
         Timing is derived from the month selected in the top bar · click any field to edit ·

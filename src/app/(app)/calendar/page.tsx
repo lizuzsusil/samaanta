@@ -17,8 +17,10 @@ export default async function CalendarPage() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title="Annual Administrative, Governance & Legal Calendar"
-        subtitle="Fiscal Year 2083/84 (2026/27) · Nepali months (BS) with approximate English months · Fiscal year runs Shrawan → Asadh"
+        crumb="Workspace"
+        eyebrow="Annual Calendar"
+        title="The year, month by month"
+        subtitle="Fiscal Year 2083/84 (2026/27) · Nepali months (BS) with approximate English months · Shrawan → Asadh"
       />
       <CalendarGrid activities={activities} month={month} canWrite={canWrite} />
       <p className="text-[11px] text-slate-400">

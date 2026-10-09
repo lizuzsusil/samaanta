@@ -5,12 +5,19 @@ import {
   CheckCircle2,
   Clock3,
   CircleDashed,
+  Layers,
+  CircleCheck,
+  Loader,
+  Circle,
+  Zap,
+  Siren,
 } from 'lucide-react'
 import type { Dashboard } from '@/lib/queries'
 import { BS_MONTHS, CALENDAR_KINDS } from '@/lib/constants'
 import { fmtPct, npr, TIMING_LABEL } from '@/lib/calc'
 import { Badge, Card, CardHeader, Progress } from '@/components/ui/primitives'
 import { cn } from '@/lib/cn'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 const TIMING_ICONS = {
   complete: CheckCircle2,
@@ -22,81 +29,144 @@ const TIMING_ICONS = {
 export function KpiGrid({ data }: { data: Dashboard }) {
   const k = data.kpis
   const cards = [
-    { label: 'Total tasks', value: k.total, hint: 'tracked for FY 2083/84', tone: 'slate' as const },
+    { label: 'Total tasks', value: k.total, hint: 'tracked FY 2083/84', tone: 'slate' as const, icon: Layers, bar: 'bg-stone-300' },
     {
       label: 'Completed',
       value: k.completed,
       hint: `${fmtPct(k.completedPct)} of all tasks`,
       tone: 'green' as const,
+      icon: CircleCheck,
+      bar: 'bg-emerald-500',
     },
     {
-      label: 'In progress / submitted',
+      label: 'In progress',
       value: k.inProgress,
       hint: 'being worked on',
       tone: 'blue' as const,
+      icon: Loader,
+      bar: 'bg-sky-500',
     },
-    { label: 'Not started', value: k.notStarted, hint: 'yet to begin', tone: 'slate' as const },
+    { label: 'Not started', value: k.notStarted, hint: 'yet to begin', tone: 'slate' as const, icon: Circle, bar: 'bg-stone-300' },
     {
-      label: 'Active this month',
+      label: 'Active now',
       value: k.active,
-      hint: 'in their window now',
+      hint: 'in window this month',
       tone: 'teal' as const,
+      icon: Zap,
+      bar: 'bg-teal-600',
     },
     {
       label: 'Needs attention',
       value: k.attention,
-      hint: 'past window, not complete',
+      hint: 'past window, open',
       tone: k.attention ? ('rose' as const) : ('slate' as const),
+      icon: Siren,
+      bar: k.attention ? 'bg-rose-500' : 'bg-stone-300',
     },
   ]
+  const iconBg = {
+    slate: 'bg-stone-100 text-stone-500',
+    green: 'bg-emerald-100 text-emerald-700',
+    amber: 'bg-amber-100 text-amber-700',
+    blue: 'bg-sky-100 text-sky-700',
+    rose: 'bg-rose-100 text-rose-600',
+    teal: 'bg-teal-700 text-white',
+  }
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-      {cards.map((c) => (
-        <div
-          key={c.label}
-          className={cn(
-            'rounded-xl border bg-white p-4 shadow-card',
-            c.tone === 'rose' && c.value ? 'border-rose-300' : 'border-slate-200',
-          )}
-        >
-          <div className="text-[10px] font-semibold tracking-[0.14em] text-slate-500 uppercase">
-            {c.label}
+      {cards.map((c, i) => {
+        const Icon = c.icon
+        const alert = c.tone === 'rose' && c.value > 0
+        return (
+          <div
+            key={c.label}
+            className={cn(
+              'rise group relative overflow-hidden rounded-2xl border bg-white/95 p-4 shadow-card backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:shadow-pop',
+              alert ? 'border-rose-300 ring-1 ring-rose-200' : 'border-stone-200/80',
+            )}
+            style={{ animationDelay: `${i * 40}ms` }}
+          >
+            <span className={cn('absolute inset-x-0 top-0 h-1', c.bar)} />
+            <div className="flex items-start justify-between gap-2">
+              <div className="text-[10px] font-bold tracking-[0.13em] text-stone-500 uppercase">
+                {c.label}
+              </div>
+              <span className={cn('grid h-7 w-7 place-items-center rounded-lg', iconBg[c.tone])}>
+                <Icon className="h-3.5 w-3.5" />
+              </span>
+            </div>
+            <div
+              className={cn(
+                'mt-1 text-[30px] leading-none font-semibold tracking-tight tabular-nums',
+                c.tone === 'green'
+                  ? 'text-emerald-700'
+                  : c.tone === 'rose' && c.value
+                    ? 'text-rose-600'
+                    : c.tone === 'teal'
+                      ? 'text-teal-800'
+                      : c.tone === 'blue'
+                        ? 'text-sky-700'
+                        : 'text-stone-900',
+              )}
+            >
+              {c.value}
+            </div>
+            <div className="mt-1.5 text-[11px] font-medium text-stone-400">{c.hint}</div>
           </div>
-          <div className="mt-1 text-3xl font-semibold tabular-nums text-slate-900">{c.value}</div>
-          <div className="mt-0.5 text-[11px] text-slate-500">{c.hint}</div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
 
 export function ComplianceChain({ data }: { data: Dashboard }) {
+  const timingDot = {
+    complete: 'bg-emerald-500',
+    active: 'bg-sky-500',
+    upcoming: 'bg-stone-300',
+    attention: 'bg-rose-500',
+  } as const
   return (
-    <Card>
+    <Card lift>
       <CardHeader
+        eyebrow="Chain"
         title="Compliance chain"
-        subtitle="Each step feeds the next — statuses come from the Task Tracker"
+        subtitle="Each step feeds the next — statuses come straight from the Task Tracker"
+        action={
+          <Link
+            href="/tasks"
+            className="inline-flex items-center gap-1 rounded-xl border border-stone-200 bg-white px-3 py-1.5 text-xs font-semibold text-stone-700 shadow-sm transition hover:border-teal-600/40 hover:text-teal-800"
+          >
+            Open tracker <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        }
       />
-      <ol className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+      <ol className="grid gap-2.5 md:grid-cols-3 xl:grid-cols-6">
         {data.chain.map((step, i) => {
           const Icon = TIMING_ICONS[step.timing]
           return (
             <li key={step.code} className="relative">
               <Link
                 href="/tasks"
-                className="flex h-full flex-col rounded-lg border border-slate-200 bg-slate-50/60 p-3 transition hover:border-teal-200 hover:bg-white"
+                className="group flex h-full flex-col rounded-2xl border border-stone-200/80 bg-gradient-to-b from-stone-50/80 to-white p-3.5 transition-all hover:-translate-y-0.5 hover:border-teal-600/30 hover:shadow-pop"
               >
-                <div className="flex items-start justify-between gap-2">
-                  <span className="text-sm font-semibold text-slate-800">{step.name}</span>
-                  <Icon className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                <div className="flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] font-bold tracking-wider text-stone-400">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className={`h-1.5 w-1.5 rounded-full ${timingDot[step.timing]}`} />
+                  <Icon className="ml-auto h-4 w-4 shrink-0 text-stone-300 transition group-hover:text-teal-700" />
                 </div>
-                <span className="mt-1 text-[11px] text-slate-500">{step.window}</span>
-                <span className="mt-2 self-start">
+                <span className="mt-1.5 text-[13px] leading-snug font-bold tracking-tight text-stone-800">
+                  {step.name}
+                </span>
+                <span className="mt-0.5 text-[11px] font-medium text-stone-400">{step.window}</span>
+                <span className="mt-2.5 self-start">
                   <Badge value={step.status} />
                 </span>
               </Link>
               {i < data.chain.length - 1 ? (
-                <ArrowRight className="absolute -right-2.5 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-slate-300 xl:block" />
+                <ArrowRight className="absolute top-1/2 -right-2 z-10 hidden h-4 w-4 -translate-y-1/2 rounded-full bg-white text-stone-300 shadow-sm ring-1 ring-stone-200 xl:block" />
               ) : null}
             </li>
           )
@@ -218,7 +288,7 @@ export function ProgressByArea({ data }: { data: Dashboard }) {
           subtitle="Status, timing and readiness — open a step guide for the detail"
         />
       </div>
-      <div className="scroll-slim overflow-x-auto">
+      <ScrollArea orientation="horizontal">
         <table className="w-full min-w-[820px] text-sm">
           <thead>
             <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -277,7 +347,7 @@ export function ProgressByArea({ data }: { data: Dashboard }) {
             })}
           </tbody>
         </table>
-      </div>
+      </ScrollArea>
     </Card>
   )
 }
@@ -311,7 +381,7 @@ export function ThisMonthFocus({
           subtitle="From the Annual Calendar"
         />
       </div>
-      <div className="scroll-slim overflow-x-auto">
+      <ScrollArea orientation="horizontal">
         <table className="w-full min-w-[720px] text-sm">
           <thead>
             <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -335,7 +405,7 @@ export function ThisMonthFocus({
             ))}
           </tbody>
         </table>
-      </div>
+      </ScrollArea>
     </Card>
   )
 }

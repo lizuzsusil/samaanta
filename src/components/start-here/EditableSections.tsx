@@ -12,6 +12,7 @@ import {
   updateDropbox,
   updateHandover,
 } from '@/lib/actions/overview'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export type HandoverDto = { id: string; item: string; detail: string; owner: string; status: string }
 export type ContactDto = {
@@ -62,7 +63,7 @@ export function EditableSections({
             subtitle="Track each item until the successor has everything"
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[900px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -101,7 +102,7 @@ export function EditableSections({
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
 
       <Card padded={false}>
@@ -126,7 +127,7 @@ export function EditableSections({
             }
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[1100px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -200,7 +201,7 @@ export function EditableSections({
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
 
       <Card padded={false}>
@@ -210,7 +211,7 @@ export function EditableSections({
             subtitle="Paste each folder link — the Task Tracker and every step guide pick it up automatically"
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[1100px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -266,7 +267,7 @@ export function EditableSections({
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
     </div>
   )

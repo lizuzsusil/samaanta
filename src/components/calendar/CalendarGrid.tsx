@@ -6,6 +6,7 @@ import { BS_MONTHS, CALENDAR_KINDS } from '@/lib/constants'
 import { cn } from '@/lib/cn'
 import { Button, Notice } from '@/components/ui/primitives'
 import { updateCalendarCell } from '@/lib/actions/calendar'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export type CalendarActivityDto = {
   id: string
@@ -69,8 +70,8 @@ export function CalendarGrid({
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <span className="text-[11px] font-semibold tracking-wide text-slate-500 uppercase">
+      <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-stone-200/80 bg-white/85 px-4 py-3 shadow-card backdrop-blur">
+        <span className="text-[10px] font-bold tracking-[0.16em] text-stone-400 uppercase">
           Colour key
         </span>
         {Object.entries(CALENDAR_KINDS)
@@ -84,14 +85,14 @@ export function CalendarGrid({
               {v.label}
             </span>
           ))}
-        <span className="text-xs text-slate-400">
-          {canWrite ? 'Click any cell to edit.' : 'Read-only access.'}
+        <span className="ml-auto rounded-full bg-stone-900/[0.05] px-2.5 py-1 text-[11px] font-semibold text-stone-500">
+          {canWrite ? 'Click any cell to edit' : 'Read-only access'}
         </span>
       </div>
 
       {error ? <Notice tone="error">{error}</Notice> : null}
 
-      <div className="scroll-slim overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-card">
+      <ScrollArea orientation="horizontal" className="table-premium rounded-2xl border border-stone-200/80 bg-white/95 shadow-card">
         <table className="w-full min-w-[1800px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -127,7 +128,7 @@ export function CalendarGrid({
             ))}
           </tbody>
         </table>
-      </div>
+      </ScrollArea>
 
       {editing ? (
         <div className="fixed inset-0 z-50 grid place-items-center bg-slate-900/40 p-4">

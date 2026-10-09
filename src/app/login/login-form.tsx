@@ -16,7 +16,7 @@ export function LoginForm({ next }: { next: string }) {
       <input type="hidden" name="next" value={next} />
 
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-slate-600">
+        <label htmlFor="email" className="mb-1.5 block text-xs font-bold text-stone-700">
           Email
         </label>
         <input
@@ -31,7 +31,7 @@ export function LoginForm({ next }: { next: string }) {
       </div>
 
       <div>
-        <label htmlFor="password" className="mb-1.5 block text-xs font-medium text-slate-600">
+        <label htmlFor="password" className="mb-1.5 block text-xs font-bold text-stone-700">
           Password
         </label>
         <input
@@ -47,9 +47,9 @@ export function LoginForm({ next }: { next: string }) {
 
       {state.error ? <Notice tone="error">{state.error}</Notice> : null}
 
-      <Button type="submit" variant="primary" className="w-full" disabled={pending}>
+      <Button type="submit" variant="primary" size="lg" className="w-full" disabled={pending}>
         <LogIn className="h-4 w-4" />
-        {pending ? 'Signing in…' : 'Sign in'}
+        {pending ? 'Signing in…' : 'Sign in to workspace'}
       </Button>
     </form>
   )

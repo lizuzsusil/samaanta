@@ -13,7 +13,9 @@ export default async function GuidesIndexPage() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title="Step guides"
+        crumb="Start here"
+        eyebrow="Step guides"
+        title="Every process, step by step"
         subtitle="Detailed process and document checklist for each compliance area — open a guide to mark steps Done and documents Ready."
       />
 

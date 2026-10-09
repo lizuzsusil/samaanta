@@ -9,6 +9,7 @@ import {
 } from '@/components/start-here/EditableSections'
 import { can } from '@/lib/auth'
 import { BookOpen, Database, FolderTree, KeyRound, LayoutList, ListChecks, Users } from 'lucide-react'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 export const metadata = { title: 'Start Here' }
 
@@ -86,7 +87,7 @@ export default async function StartHerePage() {
           <div className="p-5 pb-0">
             <CardHeader title="2 · Sheet index" icon={LayoutList} />
           </div>
-          <div className="scroll-slim overflow-x-auto">
+          <ScrollArea orientation="horizontal">
             <table className="w-full text-sm">
               <tbody className="divide-y divide-slate-100">
                 {sheetIndex.map((s) => (
@@ -97,7 +98,7 @@ export default async function StartHerePage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </ScrollArea>
         </Card>
       </div>
 
@@ -139,9 +140,14 @@ export default async function StartHerePage() {
       <div className="grid gap-5 lg:grid-cols-2">
         <Card>
           <CardHeader title="5 · Digital compliance folder structure" icon={FolderTree} />
-          <pre className="scroll-slim overflow-x-auto rounded-lg bg-slate-900 px-4 py-3 text-[12px] leading-relaxed whitespace-pre-wrap text-slate-100">
-            {folder}
-          </pre>
+          <ScrollArea
+            orientation="horizontal"
+            className="rounded-lg bg-slate-900 px-4 py-3"
+          >
+            <pre className="text-[12px] leading-relaxed whitespace-pre-wrap text-slate-100">
+              {folder}
+            </pre>
+          </ScrollArea>
         </Card>
 
         <Card>

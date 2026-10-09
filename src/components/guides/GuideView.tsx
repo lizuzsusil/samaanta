@@ -16,6 +16,7 @@ import {
   updateGuideDoc,
   updateGuideStep,
 } from '@/lib/actions/guides'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 type Guide = NonNullable<Awaited<ReturnType<typeof getGuide>>>
 
@@ -40,26 +41,31 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
 
   return (
     <div className="space-y-5">
-      <div>
+      <div className="rise relative overflow-hidden rounded-3xl border border-stone-200/70 bg-gradient-to-br from-white via-teal-50/50 to-amber-50/60 p-6 shadow-card">
         <Link
           href="/guides"
-          className="inline-flex items-center gap-1 text-xs font-medium text-teal-700 hover:underline"
+          className="inline-flex items-center gap-1 rounded-full bg-white/80 px-2.5 py-1 text-[11px] font-bold text-teal-800 ring-1 ring-stone-200 transition hover:ring-teal-600/40"
         >
           <ArrowLeft className="h-3.5 w-3.5" /> All step guides
         </Link>
-        <div className="mt-2 flex flex-wrap items-baseline justify-between gap-3">
-          <div>
-            <h1 className="text-xl font-semibold tracking-tight text-slate-900">
+        <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
+          <div className="min-w-0 max-w-2xl">
+            <div className="text-[10px] font-bold tracking-[0.22em] text-teal-700 uppercase">
+              {guide.sheet}
+            </div>
+            <h1 className="font-display mt-1 text-[26px] leading-tight font-semibold tracking-tight text-stone-900">
               {guide.title}
             </h1>
-            <p className="mt-1 text-sm text-slate-500">{guide.subtitle}</p>
+            <p className="mt-1.5 text-sm leading-relaxed text-stone-500">{guide.subtitle}</p>
           </div>
-          <div className="flex gap-2 text-xs text-slate-500">
-            <span className="rounded-lg bg-slate-100 px-2.5 py-1.5">
-              {stepsDone}/{guide.steps.length} steps done
+          <div className="flex gap-2 text-xs tabular-nums">
+            <span className="rounded-2xl bg-stone-900 px-3.5 py-2 text-white shadow-md">
+              <span className="block text-lg leading-none font-bold">{stepsDone}/{guide.steps.length}</span>
+              <span className="mt-0.5 block text-[10px] font-semibold text-white/60 uppercase">steps done</span>
             </span>
-            <span className="rounded-lg bg-slate-100 px-2.5 py-1.5">
-              {docsReady}/{guide.docs.length} docs ready
+            <span className="rounded-2xl border border-emerald-200 bg-emerald-50 px-3.5 py-2 text-emerald-900">
+              <span className="block text-lg leading-none font-bold">{docsReady}/{guide.docs.length}</span>
+              <span className="mt-0.5 block text-[10px] font-semibold text-emerald-700/70 uppercase">docs ready</span>
             </span>
           </div>
         </div>
@@ -124,7 +130,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
             }
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[1100px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -207,7 +213,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
               )}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
 
       <Card padded={false}>
@@ -235,7 +241,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
             }
           />
         </div>
-        <div className="scroll-slim overflow-x-auto">
+        <ScrollArea orientation="horizontal">
           <table className="w-full min-w-[1000px] text-sm">
             <thead>
               <tr className="border-y border-slate-200 bg-slate-50 text-left text-[11px] tracking-wide text-slate-500 uppercase">
@@ -316,7 +322,7 @@ export function GuideView({ guide, canWrite }: { guide: Guide; canWrite: boolean
               )}
             </tbody>
           </table>
-        </div>
+        </ScrollArea>
       </Card>
 
       {guide.tips.length ? (

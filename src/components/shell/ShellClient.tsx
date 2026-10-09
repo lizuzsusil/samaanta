@@ -3,14 +3,36 @@
 import { useState, useTransition, type ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, LogOut, CalendarRange, ShieldCheck, Eye } from 'lucide-react'
+import {
+  Menu,
+  X,
+  LogOut,
+  CalendarRange,
+  ShieldCheck,
+  Eye,
+  Sparkles,
+  ChevronRight,
+  Landmark,
+} from 'lucide-react'
 import { cn, initials } from '@/lib/cn'
 import { BS_MONTHS } from '@/lib/constants'
 import type { PermissionMap, ShellUser } from '@/lib/types'
 import { logoutAction, setCurrentMonth } from '@/lib/actions/auth'
 import { MAIN_NAV, isActive, type NavItem } from './nav'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 type GuideLink = { slug: string; sheet: string; title: string }
+
+const CRUMBS: Record<string, string> = {
+  '/dashboard': 'Dashboard',
+  '/calendar': 'Annual Calendar',
+  '/tasks': 'Task Tracker',
+  '/bookkeeping': 'Monthly Book-keeping',
+  '/start-here': 'Handover guide',
+  '/guides': 'Step guides',
+  '/admin/users': 'Users & roles',
+  '/admin/audit': 'Audit log',
+}
 
 export function ShellClient({
   user,
@@ -30,15 +52,32 @@ export function ShellClient({
   const [monthPending, startMonth] = useTransition()
 
   const visible = (item: NavItem) => !item.module || Boolean(perms[item.module]?.read)
+  const monthMeta = BS_MONTHS[currentMonth - 1]
+  const crumb = CRUMBS[pathname] ?? (pathname.startsWith('/guides/') ? 'Step guide' : 'Workspace')
 
   const nav = (
-    <nav className="flex h-full flex-col gap-6 overflow-y-auto px-3 py-5">
-      <div className="px-2">
-        <div className="text-[11px] font-semibold tracking-[0.2em] text-teal-200 uppercase">
-          Samaanta
+    <nav className="flex min-h-full flex-col gap-5 px-3 py-5">
+      {/* Brand */}
+      <div className="px-1">
+        <Link href="/dashboard" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-teal-600 via-teal-700 to-[#0d1f1c] text-lg font-bold text-white shadow-[0_10px_24px_-8px_rgb(13_122_111/0.7)] transition-transform group-hover:scale-[1.03]">
+            <Landmark className="h-5 w-5" />
+          </span>
+          <span className="min-w-0">
+            <span className="block truncate text-[13px] font-bold tracking-tight text-stone-900">
+              Samaanta
+            </span>
+            <span className="block truncate text-[11px] font-medium text-stone-500">
+              Development Foundation
+            </span>
+          </span>
+        </Link>
+        <div className="mt-3 flex items-center gap-2 rounded-xl border border-teal-700/15 bg-gradient-to-br from-teal-50 to-amber-50 px-3 py-2">
+          <Sparkles className="h-3.5 w-3.5 shrink-0 text-teal-700" />
+          <p className="text-[11px] leading-tight font-medium text-stone-700">
+            FY 2083/84 <span className="text-stone-400">· Handover edition</span>
+          </p>
         </div>
-        <div className="mt-0.5 text-sm font-medium text-white">Development Foundation</div>
-        <div className="mt-1 text-[11px] text-slate-400">Compliance workspace</div>
       </div>
 
       {MAIN_NAV.map((group) => {
@@ -46,10 +85,10 @@ export function ShellClient({
         if (!items.length) return null
         return (
           <div key={group.label}>
-            <div className="px-2 pb-1.5 text-[10px] font-semibold tracking-[0.16em] text-slate-500 uppercase">
+            <div className="px-2.5 pb-1.5 text-[10px] font-bold tracking-[0.18em] text-stone-400 uppercase">
               {group.label}
             </div>
-            <ul className="space-y-0.5">
+            <ul className="space-y-1">
               {items.map((item) => {
                 const active = isActive(pathname, item.href)
                 const Icon = item.icon
@@ -59,14 +98,22 @@ export function ShellClient({
                       href={item.href}
                       onClick={() => setOpen(false)}
                       className={cn(
-                        'flex items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm transition',
+                        'group flex items-center gap-2.5 rounded-xl px-3 py-2 text-[13px] transition-all',
                         active
-                          ? 'bg-teal-600/20 font-medium text-white'
-                          : 'text-slate-300 hover:bg-white/5 hover:text-white',
+                          ? 'bg-gradient-to-b from-teal-700 to-teal-800 font-semibold text-white shadow-[0_8px_20px_-8px_rgb(13_122_111/0.7)]'
+                          : 'font-medium text-stone-600 hover:bg-stone-900/[0.05] hover:text-stone-900',
                       )}
                     >
-                      <Icon className="h-4 w-4 shrink-0" />
-                      <span className="truncate">{item.label}</span>
+                      <Icon
+                        className={cn(
+                          'h-4 w-4 shrink-0 transition',
+                          active ? 'text-teal-100' : 'text-stone-400 group-hover:text-stone-700',
+                        )}
+                      />
+                      <span className="flex-1 truncate">{item.label}</span>
+                      {active ? (
+                        <ChevronRight className="h-3.5 w-3.5 text-teal-200" />
+                      ) : null}
                     </Link>
                   </li>
                 )
@@ -78,8 +125,17 @@ export function ShellClient({
 
       {perms.guides?.read ? (
         <div>
-          <div className="px-2 pb-1.5 text-[10px] font-semibold tracking-[0.16em] text-slate-500 uppercase">
-            Step guides
+          <div className="flex items-center justify-between px-2.5 pb-1.5">
+            <span className="text-[10px] font-bold tracking-[0.18em] text-stone-400 uppercase">
+              Step guides
+            </span>
+            <Link
+              href="/guides"
+              className="text-[11px] font-semibold text-teal-700 hover:underline"
+              onClick={() => setOpen(false)}
+            >
+              All
+            </Link>
           </div>
           <ul className="space-y-0.5">
             {guides.map((g) => {
@@ -91,13 +147,21 @@ export function ShellClient({
                     href={href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      'block truncate rounded-lg px-2.5 py-1.5 text-[13px] transition',
+                      'flex items-center gap-2 rounded-lg px-3 py-1.5 text-[12.5px] transition',
                       active
-                        ? 'bg-teal-600/20 font-medium text-white'
-                        : 'text-slate-400 hover:bg-white/5 hover:text-white',
+                        ? 'bg-teal-700/10 font-semibold text-teal-900'
+                        : 'text-stone-500 hover:bg-stone-900/[0.04] hover:text-stone-800',
                     )}
                   >
-                    {g.sheet} · {g.title}
+                    <span
+                      className={cn(
+                        'h-1.5 w-1.5 shrink-0 rounded-full',
+                        active ? 'bg-teal-600' : 'bg-stone-300',
+                      )}
+                    />
+                    <span className="truncate">
+                      {g.sheet} · {g.title}
+                    </span>
                   </Link>
                 </li>
               )
@@ -106,10 +170,25 @@ export function ShellClient({
         </div>
       ) : null}
 
-      <div className="mt-auto px-2 pt-4">
-        <div className="flex items-center gap-2 rounded-lg bg-white/5 px-2.5 py-2 text-[11px] text-slate-400">
-          <ShieldCheck className="h-3.5 w-3.5" />
-          Role: <span className="font-medium text-slate-200">{user.role}</span>
+      <div className="mt-auto space-y-2 px-1 pt-4">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0d1f1c] via-[#14302b] to-teal-800 p-3.5 text-white shadow-pop">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-40"
+            style={{
+              background:
+                'radial-gradient(180px 90px at 85% -10%, rgba(45,212,191,0.5), transparent 70%), radial-gradient(140px 80px at 0% 110%, rgba(201,155,63,0.35), transparent 70%)',
+            }}
+          />
+          <div className="relative">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] text-teal-200 uppercase">
+              <ShieldCheck className="h-3.5 w-3.5" /> {user.role === 'ADMIN' ? 'Administrator' : 'Board view'}
+            </div>
+            <p className="mt-1.5 text-[12px] leading-snug text-white/85">
+              {user.role === 'ADMIN'
+                ? 'You can edit every sheet, guide and roster.'
+                : 'Read-only access across the workspace.'}
+            </p>
+          </div>
         </div>
       </div>
     </nav>
@@ -117,48 +196,59 @@ export function ShellClient({
 
   return (
     <div className="flex min-h-screen">
-      <aside className="sticky top-0 hidden h-screen w-64 shrink-0 border-r border-shell-line bg-shell lg:block">
-        {nav}
+      <aside className="sticky top-0 hidden h-screen w-[272px] shrink-0 border-r border-stone-200/80 bg-white/85 backdrop-blur-xl lg:block">
+        <ScrollArea orientation="vertical" className="h-full">
+          {nav}
+        </ScrollArea>
       </aside>
 
       {open ? (
         <div className="fixed inset-0 z-40 lg:hidden">
           <button
             aria-label="Close navigation"
-            className="absolute inset-0 bg-slate-900/50"
+            className="absolute inset-0 bg-stone-900/45 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <aside className="absolute inset-y-0 left-0 w-64 bg-shell shadow-xl">{nav}</aside>
+          <aside className="absolute inset-y-0 left-0 w-[280px] overflow-hidden rounded-r-3xl bg-white shadow-pop">
+            <ScrollArea orientation="vertical" className="h-full">
+              {nav}
+            </ScrollArea>
+          </aside>
         </div>
       ) : null}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-          <div className="flex items-center gap-3 px-4 py-3 sm:px-6">
+        <header className="sticky top-0 z-30 border-b border-stone-200/70 bg-white/75 backdrop-blur-xl">
+          <div className="flex items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className="rounded-lg border border-slate-200 p-2 text-slate-600 hover:bg-slate-50 lg:hidden"
+              className="rounded-xl border border-stone-200 bg-white p-2 text-stone-600 shadow-sm hover:bg-stone-50 lg:hidden"
               aria-label="Toggle navigation"
             >
               {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
 
-            <div className="hidden min-w-0 sm:block">
-              <div className="truncate text-sm font-semibold text-slate-900">
-                Administrative, Governance &amp; Legal Compliance
+            <div className="hidden min-w-0 md:block">
+              <div className="flex items-center gap-1.5 text-[11px] font-semibold text-stone-400">
+                <span>Workspace</span>
+                <ChevronRight className="h-3 w-3" />
+                <span className="text-stone-700">{crumb}</span>
               </div>
-              <div className="truncate text-[11px] text-slate-500">
-                Fiscal Year 2083/84 (2026/27) · Shrawan 2083 – Asadh 2084
+              <div className="mt-0.5 truncate text-[13px] font-bold tracking-tight text-stone-900">
+                Administrative, Governance &amp; Legal Compliance
+                <span className="ml-2 rounded-full bg-teal-700/10 px-2 py-0.5 align-middle text-[10px] font-bold tracking-wide text-teal-800 uppercase">
+                  {monthMeta.name} · mo {currentMonth}/12
+                </span>
               </div>
             </div>
 
             <div className="ml-auto flex items-center gap-2">
-              <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-sm">
-                <CalendarRange className="h-4 w-4 text-slate-400" />
+              <label className="flex cursor-pointer items-center gap-2 rounded-xl border border-stone-200 bg-white py-2 pr-3 pl-3 text-sm shadow-sm transition hover:border-teal-600/40 hover:shadow-md">
+                <CalendarRange className="h-4 w-4 text-teal-700" />
                 <span className="sr-only">Current Nepali month</span>
                 <select
-                  className="bg-transparent text-sm font-medium text-slate-700 focus:outline-none"
+                  className="cursor-pointer bg-transparent text-[13px] font-semibold text-stone-800 focus:outline-none"
                   value={currentMonth}
                   disabled={monthPending}
                   onChange={(e) => {
@@ -172,19 +262,25 @@ export function ShellClient({
                     </option>
                   ))}
                 </select>
+                <span
+                  className={cn(
+                    'h-1.5 w-1.5 rounded-full',
+                    monthPending ? 'animate-pulse bg-amber-500' : 'bg-emerald-500',
+                  )}
+                />
               </label>
 
-              <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white py-1 pr-2 pl-1">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-teal-700 text-[11px] font-semibold text-white">
+              <div className="flex items-center gap-2.5 rounded-xl border border-stone-200 bg-white py-1.5 pr-1.5 pl-1.5 shadow-sm">
+                <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-to-br from-teal-700 to-[#0d1f1c] text-[11px] font-bold text-white">
                   {initials(user.name)}
                 </span>
-                <span className="hidden text-left leading-tight sm:block">
-                  <span className="block max-w-[10rem] truncate text-xs font-medium text-slate-800">
+                <span className="hidden text-left leading-tight xl:block">
+                  <span className="block max-w-[9rem] truncate text-[12px] font-bold text-stone-800">
                     {user.name}
                   </span>
-                  <span className="flex items-center gap-1 text-[10px] text-slate-500">
+                  <span className="flex items-center gap-1 text-[10px] font-medium text-stone-500">
                     {user.role === 'ADMIN' ? (
-                      <ShieldCheck className="h-3 w-3" />
+                      <ShieldCheck className="h-3 w-3 text-teal-700" />
                     ) : (
                       <Eye className="h-3 w-3" />
                     )}
@@ -194,7 +290,7 @@ export function ShellClient({
                 <form action={logoutAction}>
                   <button
                     type="submit"
-                    className="rounded-md p-1.5 text-slate-500 transition hover:bg-slate-100 hover:text-rose-600"
+                    className="rounded-lg p-2 text-stone-400 transition hover:bg-rose-50 hover:text-rose-600"
                     title="Sign out"
                   >
                     <LogOut className="h-4 w-4" />
@@ -205,10 +301,19 @@ export function ShellClient({
           </div>
         </header>
 
-        <main className="mx-auto w-full max-w-[1500px] flex-1 px-4 py-6 sm:px-6">{children}</main>
+        <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+          {children}
+        </main>
 
-        <footer className="border-t border-slate-200 px-6 py-4 text-center text-[11px] text-slate-400">
-          Verify statutory deadlines with IRD / OCR / SWC / Ward before filing.
+        <footer className="border-t border-stone-200/70 bg-white/60 px-6 py-4 backdrop-blur">
+          <div className="mx-auto flex w-full max-w-[1440px] flex-wrap items-center justify-between gap-2 text-[11px] text-stone-400">
+            <span>
+              Samaanta Development Foundation · FY 2083/84 · Shrawan 2083 – Asadh 2084
+            </span>
+            <span className="font-medium">
+              Verify statutory deadlines with IRD / OCR / SWC / Ward before filing.
+            </span>
+          </div>
         </footer>
       </div>
     </div>

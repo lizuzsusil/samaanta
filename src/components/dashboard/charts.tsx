@@ -21,6 +21,7 @@ import {
 import { BS_MONTHS, CALENDAR_KINDS } from '@/lib/constants'
 import { fmtPct, npr } from '@/lib/calc'
 import { Card, CardHeader } from '@/components/ui/primitives'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 /* --------------------------------- palette --------------------------------- */
 
@@ -72,18 +73,18 @@ function ChartTip({
 }) {
   if (!active || !payload?.length) return null
   return (
-    <div className="rounded-md border border-stone-200 bg-white/95 px-3 py-2 shadow-lg backdrop-blur">
+    <div className="min-w-[180px] rounded-xl border border-stone-900/90 bg-stone-900/95 px-3 py-2.5 shadow-pop backdrop-blur">
       {label != null && label !== '' ? (
-        <div className="mb-1 text-[11px] font-semibold tracking-wide text-stone-500 uppercase">
+        <div className="mb-1.5 text-[10px] font-bold tracking-[0.14em] text-white/60 uppercase">
           {label}
         </div>
       ) : null}
-      <ul className="space-y-0.5">
+      <ul className="space-y-1">
         {payload.map((p, i) => (
           <li key={i} className="flex items-center gap-2 text-[13px]">
-            <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: p.color }} />
-            <span className="text-stone-500">{p.name}</span>
-            <span className="ml-auto pl-4 font-semibold tabular-nums text-stone-900">
+            <span className="h-2 w-2 shrink-0 rounded-full ring-2 ring-white/20" style={{ background: p.color }} />
+            <span className="text-white/60">{p.name}</span>
+            <span className="ml-auto pl-4 font-bold tabular-nums text-white">
               {p.value}
               {suffix}
             </span>
@@ -96,10 +97,13 @@ function ChartTip({
 
 function Legend({ items }: { items: { color: string; label: string }[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+    <div className="flex flex-wrap items-center gap-1.5">
       {items.map((it) => (
-        <span key={it.label} className="inline-flex items-center gap-1.5 text-xs text-slate-500">
-          <span className="h-2 w-2 rounded-full" style={{ background: it.color }} />
+        <span
+          key={it.label}
+          className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-[11px] font-semibold text-stone-600"
+        >
+          <span className="h-2 w-2 rounded-full shadow-sm" style={{ background: it.color }} />
           {it.label}
         </span>
       ))}
@@ -410,7 +414,7 @@ export function CalendarHeatmap({ rows, month }: { rows: HeatRow[]; month: numbe
           items={KIND_ORDER.map((k) => ({ color: CALENDAR_KINDS[k].bg, label: CALENDAR_KINDS[k].label }))}
         />
       </div>
-      <div className="scroll-slim overflow-x-auto p-6 pt-4">
+      <ScrollArea orientation="horizontal" className="p-6 pt-4">
         <table className="w-full min-w-[1080px] border-separate border-spacing-1 text-sm">
           <thead>
             <tr>
@@ -478,7 +482,7 @@ export function CalendarHeatmap({ rows, month }: { rows: HeatRow[]; month: numbe
             </tbody>
           ))}
         </table>
-      </div>
+      </ScrollArea>
     </Card>
   )
 }

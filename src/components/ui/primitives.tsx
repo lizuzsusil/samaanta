@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { LucideIcon } from 'lucide-react'
+import { AlertCircle, CheckCircle2, Info, Inbox } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { STATUS_STYLES } from '@/lib/constants'
 
@@ -7,16 +8,19 @@ export function Card({
   children,
   className,
   padded = true,
+  lift = false,
 }: {
   children: ReactNode
   className?: string
   padded?: boolean
+  lift?: boolean
 }) {
   return (
     <section
       className={cn(
-        'rounded-lg border border-slate-200/90 bg-white shadow-card',
-        padded && 'p-5',
+        'relative overflow-hidden rounded-2xl border border-stone-200/80 bg-white/95 shadow-card backdrop-blur-sm',
+        lift && 'card-lift',
+        padded && 'p-5 sm:p-6',
         className,
       )}
     >
@@ -31,46 +35,85 @@ export function CardHeader({
   action,
   icon: Icon,
   className,
+  eyebrow,
 }: {
   title: ReactNode
   subtitle?: ReactNode
   action?: ReactNode
   icon?: LucideIcon
   className?: string
+  eyebrow?: string
 }) {
   return (
     <div className={cn('mb-4 flex flex-wrap items-start justify-between gap-3', className)}>
-      <div className="flex min-w-0 items-start gap-2">
-        {Icon ? <Icon className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" /> : null}
-        <div>
-        <h2 className="font-display text-[17px] font-semibold text-slate-900">{title}</h2>
-        {subtitle ? <p className="mt-1 text-xs text-slate-500">{subtitle}</p> : null}
+      <div className="flex min-w-0 items-start gap-3">
+        {Icon ? (
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-teal-700 to-teal-600 text-white shadow-[0_6px_16px_-6px_rgb(13_122_111/0.6)]">
+            <Icon className="h-4 w-4" />
+          </span>
+        ) : null}
+        <div className="min-w-0">
+          {eyebrow ? (
+            <div className="mb-0.5 text-[10px] font-bold tracking-[0.18em] text-teal-700 uppercase">
+              {eyebrow}
+            </div>
+          ) : null}
+          <h2 className="font-display text-[18px] leading-snug font-semibold tracking-tight text-stone-900">
+            {title}
+          </h2>
+          {subtitle ? (
+            <p className="mt-1 max-w-2xl text-[13px] leading-relaxed text-stone-500">{subtitle}</p>
+          ) : null}
         </div>
       </div>
-      {action}
+      {action ? <div className="flex shrink-0 flex-wrap items-center gap-2">{action}</div> : null}
     </div>
   )
 }
 
+const DOT_STYLES: Record<string, string> = {
+  Completed: 'bg-emerald-500',
+  Submitted: 'bg-sky-500',
+  'In Progress': 'bg-amber-500',
+  'Not Started': 'bg-stone-400',
+  'On Hold': 'bg-rose-500',
+  Done: 'bg-emerald-500',
+  Yes: 'bg-emerald-500',
+  No: 'bg-rose-500',
+  Pending: 'bg-amber-500',
+  Deposited: 'bg-sky-500',
+  'Deposited & Filed': 'bg-emerald-500',
+  Late: 'bg-rose-500',
+  High: 'bg-rose-500',
+  Medium: 'bg-amber-500',
+  Low: 'bg-stone-400',
+}
+
 export function Badge({ value, className }: { value: string; className?: string }) {
-  const fallback = className ? '' : 'bg-slate-100 text-slate-700 ring-slate-200'
+  const fallback = className ? '' : 'bg-stone-100 text-stone-700 ring-stone-200'
   const style = STATUS_STYLES[value] ?? fallback
+  const dot = DOT_STYLES[value]
   return (
     <span
       className={cn(
-        'inline-flex items-center whitespace-nowrap rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset',
+        'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold whitespace-nowrap ring-1 ring-inset',
         style,
         className,
       )}
     >
+      {dot ? (
+        <span className={cn('h-1.5 w-1.5 rounded-full shadow-sm', dot)}>
+          <span className="sr-only">·</span>
+        </span>
+      ) : null}
       {value}
     </span>
   )
 }
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger'
-  size?: 'sm' | 'md'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger' | 'gold'
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export function Button({
@@ -81,13 +124,22 @@ export function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center gap-1.5 rounded-lg font-medium transition disabled:cursor-not-allowed disabled:opacity-50'
-  const sizes = size === 'sm' ? 'px-2.5 py-1.5 text-xs' : 'px-3.5 py-2 text-sm'
+    'inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-xl font-semibold tracking-tight transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100 focus-visible:outline-teal-700'
+  const sizes =
+    size === 'sm'
+      ? 'px-3 py-1.5 text-xs'
+      : size === 'lg'
+        ? 'px-5 py-3 text-sm'
+        : 'px-4 py-2.5 text-sm'
   const variants = {
-    primary: 'bg-teal-700 text-white hover:bg-teal-600 shadow-sm',
-    secondary: 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50',
-    ghost: 'text-slate-600 hover:bg-slate-100',
-    danger: 'border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100',
+    primary:
+      'bg-gradient-to-b from-teal-600 to-teal-800 text-white shadow-[0_8px_20px_-8px_rgb(13_122_111/0.7),inset_0_1px_0_rgb(255_255_255/0.2)] hover:from-teal-500 hover:to-teal-700 hover:shadow-[0_12px_28px_-8px_rgb(13_122_111/0.7)]',
+    secondary:
+      'border border-stone-300/90 bg-white text-stone-800 shadow-[0_1px_2px_rgb(0_0_0/0.05)] hover:border-stone-400 hover:bg-stone-50',
+    ghost: 'text-stone-600 hover:bg-stone-900/5 hover:text-stone-900',
+    danger:
+      'border border-rose-200 bg-gradient-to-b from-rose-50 to-white text-rose-700 shadow-sm hover:border-rose-300 hover:bg-rose-50',
+    gold: 'bg-gradient-to-b from-[#c99b3f] to-[#9a6f1e] text-white shadow-[0_8px_20px_-8px_rgb(184_134_46/0.7)] hover:brightness-110',
   }[variant]
   return <button type={type} className={cn(base, sizes, variants, className)} {...props} />
 }
@@ -96,16 +148,33 @@ export function PageHeader({
   title,
   subtitle,
   actions,
+  eyebrow,
+  crumb,
 }: {
   title: string
   subtitle?: ReactNode
   actions?: ReactNode
+  eyebrow?: string
+  crumb?: string
 }) {
   return (
-    <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <header className="rise mb-6 flex flex-wrap items-end justify-between gap-4">
       <div className="min-w-0">
-        <h1 className="font-display text-[26px] leading-tight font-semibold text-slate-900">{title}</h1>
-        {subtitle ? <p className="mt-1 max-w-3xl text-sm text-slate-500">{subtitle}</p> : null}
+        {crumb || eyebrow ? (
+          <div className="mb-2 flex items-center gap-2 text-[11px] font-bold tracking-[0.18em] uppercase">
+            {crumb ? <span className="text-stone-400">{crumb}</span> : null}
+            {crumb && eyebrow ? <span className="text-stone-300">/</span> : null}
+            {eyebrow ? <span className="text-teal-700">{eyebrow}</span> : null}
+          </div>
+        ) : null}
+        <h1 className="font-display max-w-3xl text-[30px] leading-[1.1] font-semibold tracking-tight text-balance text-stone-900 sm:text-[34px]">
+          {title}
+        </h1>
+        {subtitle ? (
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-pretty text-stone-500">
+            {subtitle}
+          </p>
+        ) : null}
       </div>
       {actions ? <div className="flex flex-wrap items-center gap-2">{actions}</div> : null}
     </header>
@@ -117,54 +186,112 @@ export function Stat({
   value,
   hint,
   tone = 'slate',
+  icon: Icon,
+  delta,
 }: {
   label: string
   value: ReactNode
   hint?: ReactNode
   tone?: 'slate' | 'green' | 'amber' | 'blue' | 'rose' | 'teal'
+  icon?: LucideIcon
+  delta?: string
 }) {
-  const tones = {
-    slate: 'border-slate-200',
-    green: 'border-emerald-200',
-    amber: 'border-amber-200',
-    blue: 'border-sky-200',
-    rose: 'border-rose-200',
-    teal: 'border-teal-600/30',
+  const ring = {
+    slate: 'border-stone-200/90',
+    green: 'border-emerald-200/90',
+    amber: 'border-amber-200/90',
+    blue: 'border-sky-200/90',
+    rose: 'border-rose-200/90',
+    teal: 'border-teal-600/25',
   }[tone]
   const valueTones = {
-    slate: 'text-slate-900',
+    slate: 'text-stone-900',
     green: 'text-emerald-700',
     amber: 'text-amber-700',
     blue: 'text-sky-700',
     rose: 'text-rose-700',
-    teal: 'text-teal-700',
+    teal: 'text-teal-800',
+  }[tone]
+  const iconBg = {
+    slate: 'bg-stone-100 text-stone-600',
+    green: 'bg-emerald-100 text-emerald-700',
+    amber: 'bg-amber-100 text-amber-700',
+    blue: 'bg-sky-100 text-sky-700',
+    rose: 'bg-rose-100 text-rose-700',
+    teal: 'bg-teal-700 text-white',
   }[tone]
   return (
-    <div className={cn('rounded-xl border bg-white p-4 shadow-card', tones)}>
-      <div className="text-[11px] font-semibold tracking-wider text-slate-500 uppercase">
-        {label}
+    <div
+      className={cn(
+        'group relative overflow-hidden rounded-2xl border bg-white/95 p-4 shadow-card backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:shadow-pop',
+        ring,
+      )}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div className="text-[10px] font-bold tracking-[0.14em] text-stone-500 uppercase">
+          {label}
+        </div>
+        {Icon ? (
+          <span className={cn('grid h-7 w-7 place-items-center rounded-lg', iconBg)}>
+            <Icon className="h-3.5 w-3.5" />
+          </span>
+        ) : null}
       </div>
-      <div className={cn('mt-1 text-2xl font-semibold tabular-nums', valueTones)}>{value}</div>
-      {hint ? <div className="mt-1 text-xs text-slate-500">{hint}</div> : null}
+      <div className={cn('mt-1.5 text-[28px] leading-none font-semibold tracking-tight tabular-nums', valueTones)}>
+        {value}
+      </div>
+      <div className="mt-1.5 flex items-center gap-2">
+        {delta ? (
+          <span className="rounded-full bg-stone-900 px-1.5 py-0.5 text-[10px] font-bold text-white tabular-nums">
+            {delta}
+          </span>
+        ) : null}
+        {hint ? <div className="truncate text-xs text-stone-500">{hint}</div> : null}
+      </div>
     </div>
   )
 }
 
-export function Progress({ value, tone = 'teal' }: { value: number; tone?: 'teal' | 'green' }) {
+export function Progress({
+  value,
+  tone = 'teal',
+}: {
+  value: number
+  tone?: 'teal' | 'green' | 'gold'
+}) {
   const pct = Math.max(0, Math.min(1, value)) * 100
-  const bar = tone === 'green' ? 'bg-emerald-500' : 'bg-teal-600'
+  const bar =
+    tone === 'green'
+      ? 'from-emerald-500 to-emerald-600'
+      : tone === 'gold'
+        ? 'from-amber-400 to-amber-600'
+        : 'from-teal-500 to-teal-700'
   return (
-    <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
-      <div className={cn('h-full rounded-full transition-all', bar)} style={{ width: `${pct}%` }} />
+    <div className="h-2 w-full overflow-hidden rounded-full bg-stone-900/8 shadow-[inset_0_1px_2px_rgb(0_0_0/0.08)]">
+      <div
+        className={cn('h-full rounded-full bg-gradient-to-r transition-all duration-700', bar)}
+        style={{ width: `${pct}%` }}
+      />
     </div>
   )
 }
 
-export function EmptyState({ title, hint }: { title: string; hint?: string }) {
+export function EmptyState({
+  title,
+  hint,
+  icon: Icon = Inbox,
+}: {
+  title: string
+  hint?: string
+  icon?: LucideIcon
+}) {
   return (
-    <div className="rounded-lg border border-dashed border-slate-300 px-4 py-8 text-center">
-      <p className="text-sm font-medium text-slate-600">{title}</p>
-      {hint ? <p className="mt-1 text-xs text-slate-400">{hint}</p> : null}
+    <div className="rounded-2xl border border-dashed border-stone-300 bg-stone-50/60 px-4 py-10 text-center">
+      <span className="mx-auto grid h-11 w-11 place-items-center rounded-2xl bg-white text-stone-400 shadow-card">
+        <Icon className="h-5 w-5" />
+      </span>
+      <p className="mt-3 text-sm font-semibold text-stone-700">{title}</p>
+      {hint ? <p className="mx-auto mt-1 max-w-sm text-xs leading-relaxed text-stone-400">{hint}</p> : null}
     </div>
   )
 }
@@ -176,20 +303,22 @@ export function Skeleton({
   className?: string
   tone?: 'light' | 'dark'
 }) {
-  const bg = tone === 'dark' ? 'bg-white/10' : 'bg-slate-200'
-  return <div className={cn('animate-pulse rounded-md', bg, className)} />
+  if (tone === 'dark') {
+    return <div className={cn('animate-pulse rounded-lg bg-white/10', className)} />
+  }
+  return <div className={cn('skeleton-shimmer rounded-lg', className)} />
 }
 
 export function PageSkeleton() {
   return (
     <div className="space-y-5">
-      <Skeleton className="h-8 w-64" />
+      <Skeleton className="h-9 w-72" />
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        <Skeleton className="h-24" />
-        <Skeleton className="h-24" />
-        <Skeleton className="h-24" />
+        <Skeleton className="h-28" />
+        <Skeleton className="h-28" />
+        <Skeleton className="h-28" />
       </div>
-      <Skeleton className="h-64" />
+      <Skeleton className="h-72" />
     </div>
   )
 }
@@ -198,17 +327,26 @@ export function Notice({
   tone = 'info',
   children,
 }: {
-  tone?: 'info' | 'error' | 'success'
+  tone?: 'info' | 'error' | 'success' | 'warn'
   children: ReactNode
 }) {
   const tones = {
-    info: 'border-sky-200 bg-sky-50 text-sky-800',
-    error: 'border-rose-200 bg-rose-50 text-rose-800',
-    success: 'border-emerald-200 bg-emerald-50 text-emerald-800',
+    info: 'border-sky-200 bg-sky-50/80 text-sky-900',
+    error: 'border-rose-200 bg-rose-50/80 text-rose-900',
+    success: 'border-emerald-200 bg-emerald-50/80 text-emerald-900',
+    warn: 'border-amber-200 bg-amber-50/80 text-amber-900',
   }[tone]
+  const Icon = tone === 'error' ? AlertCircle : tone === 'success' ? CheckCircle2 : Info
   return (
-    <div className={cn('rounded-lg border px-3 py-2 text-sm', tones)} role="status">
-      {children}
+    <div
+      className={cn(
+        'flex items-start gap-2.5 rounded-xl border px-3.5 py-2.5 text-[13px] leading-relaxed shadow-sm',
+        tones,
+      )}
+      role="status"
+    >
+      <Icon className="mt-0.5 h-4 w-4 shrink-0 opacity-70" />
+      <div className="min-w-0">{children}</div>
     </div>
   )
 }

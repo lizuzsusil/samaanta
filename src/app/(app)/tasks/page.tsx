@@ -17,8 +17,10 @@ export default async function TasksPage() {
   return (
     <div className="space-y-5">
       <PageHeader
-        title="Compliance Task Tracker – FY 2083/84"
-        subtitle="Update Status, dates and follow-up after every action. Timing updates automatically from the month selected in the top bar."
+        crumb="Workspace"
+        eyebrow="Task Tracker"
+        title="Compliance tasks · FY 2083/84"
+        subtitle="Update status, dates and follow-up after every action. Timing updates automatically from the month selected in the top bar."
       />
       <TaskTracker tasks={tasks} month={month} canWrite={canWrite} />
     </div>

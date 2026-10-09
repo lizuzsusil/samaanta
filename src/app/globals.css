@@ -5,14 +5,50 @@
   --font-display: var(--font-newsreader), Georgia, 'Times New Roman', serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  --color-paper: #f4f2ec;
-  --color-shell: #1a1512;
-  --color-shell-soft: #262019;
-  --color-shell-line: #3b332a;
-  --color-accent: #0f766e;
-  --color-accent-soft: #e6f2ee;
+  /* Premium SaaS light — warm paper + deep pine + emerald + gold */
+  --color-paper: #f6f4ee;
+  --color-paper-deep: #ede9dd;
+  --color-ink: #1c1917;
+  --color-mist: #faf9f6;
 
-  --shadow-card: 0 1px 2px 0 rgb(28 25 23 / 0.05);
+  --color-shell: #0d1f1c;
+  --color-shell-soft: #14302b;
+  --color-shell-line: #23403a;
+  --color-shell-glow: #14b8a6;
+
+  --color-accent: #0d7a6f;
+  --color-accent-deep: #0b5f57;
+  --color-accent-soft: #e3f2ec;
+  --color-accent-mist: #f0f9f5;
+
+  --color-gold: #b8862e;
+  --color-gold-soft: #faf0d7;
+
+  --shadow-card: 0 1px 2px 0 rgb(28 25 23 / 0.05), 0 8px 24px -12px rgb(28 25 23 / 0.12);
+  --shadow-pop: 0 12px 40px -12px rgb(13 31 28 / 0.28), 0 2px 8px 0 rgb(13 31 28 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(20 184 166 / 0.25), 0 8px 24px -8px rgb(13 122 111 / 0.45);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: -400px 0;
+    }
+    to {
+      background-position: 400px 0;
+    }
+  }
 }
 
 html {
@@ -20,40 +56,179 @@ html {
 }
 
 body {
-  background: #f4f2ec;
+  background:
+    radial-gradient(1200px 400px at 50% -120px, #e8f3ee 0%, transparent 60%),
+    radial-gradient(900px 320px at 90% -80px, #f7ecd2 0%, transparent 55%),
+    #f6f4ee;
+  background-attachment: fixed;
   color: #1c1917;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #bfe0d6;
-  color: #0b3b34;
+  background: #0d7a6f;
+  color: #fff;
 }
 
-/* thin, quiet scrollbars for the wide spreadsheet-style tables */
+/* ---------- ScrollArea theme (OverlayScrollbars, auto-reveal) ---------- */
+.os-theme-saam {
+  --os-size: 10px;
+  --os-padding-perpendicular: 2px;
+  --os-padding-axis: 2px;
+  --os-track-border-radius: 10px;
+  --os-handle-interactive-area-offset: 4px;
+  --os-handle-border-radius: 10px;
+  --os-track-bg: transparent;
+  --os-track-bg-hover: transparent;
+  --os-track-bg-active: transparent;
+  --os-track-border: none;
+  --os-track-border-hover: none;
+  --os-track-border-active: none;
+  --os-handle-bg: rgba(120, 113, 96, 0.45);
+  --os-handle-bg-hover: rgba(13, 122, 111, 0.65);
+  --os-handle-bg-active: rgba(13, 122, 111, 0.9);
+  --os-handle-border: none;
+  --os-handle-border-hover: none;
+  --os-handle-border-active: none;
+}
+
+/* ---------- native scrollbars: auto-reveal fallback (hidden by default) ---------- */
+/* Covers the page itself plus elements that keep native scrolling
+   (selects, textareas, dropdowns). Every ScrollArea region uses the
+   themed overlay bars above instead. */
+/* Firefox: transparent track + thumb until the scroll container is
+   hovered, focused, or actively scrolled. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover,
+*:focus-within,
+*:active {
+  scrollbar-color: #c4bda9 transparent;
+}
+
+/* Chromium / Safari / Edge: transparent thumb that fades in on hover. */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 9999px;
+  background-clip: padding-box;
+  transition: background-color 0.25s ease;
+}
+*:hover::-webkit-scrollbar-thumb,
+*:focus-within::-webkit-scrollbar-thumb,
+*:active::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
+  background-color: #c4bda9;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Legacy helper — now an alias for the global auto-reveal behavior. */
 .scroll-slim {
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: transparent transparent;
+}
+.scroll-slim:hover,
+.scroll-slim:focus-within,
+.scroll-slim:active {
+  scrollbar-color: #c4bda9 transparent;
 }
 .scroll-slim::-webkit-scrollbar {
   height: 8px;
   width: 8px;
 }
 .scroll-slim::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background-color: transparent;
+  border: 2px solid transparent;
   border-radius: 9999px;
+  background-clip: padding-box;
 }
-.scroll-slim::-webkit-scrollbar-track {
-  background: transparent;
+.scroll-slim:hover::-webkit-scrollbar-thumb,
+.scroll-slim:focus-within::-webkit-scrollbar-thumb,
+.scroll-slim:active::-webkit-scrollbar-thumb {
+  background-color: #c4bda9;
 }
 
+/* ---------- inputs ---------- */
 .cell-input {
-  @apply w-full rounded-md border border-transparent bg-transparent px-2 py-1 text-sm transition
-    hover:border-slate-300 hover:bg-white focus:border-teal-600 focus:bg-white focus:ring-2 focus:ring-teal-600/20;
+  @apply w-full rounded-lg border border-transparent bg-transparent px-2 py-1.5 text-sm transition
+    hover:border-stone-300 hover:bg-white focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-600/15;
 }
 
 .field {
-  @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900
-    placeholder:text-slate-400 focus:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600/20;
+  @apply w-full rounded-xl border border-stone-300/90 bg-white px-3.5 py-2.5 text-sm text-stone-900 shadow-[inset_0_1px_2px_rgb(0_0_0/0.04)]
+    placeholder:text-stone-400 focus:border-teal-600 focus:outline-none focus:ring-4 focus:ring-teal-600/15 transition;
+}
+
+/* ---------- premium helpers ---------- */
+.card-lift {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 4px 0 rgb(28 25 23 / 0.05),
+    0 20px 44px -18px rgb(28 25 23 / 0.22);
+}
+
+.hairline {
+  border: 1px solid rgb(28 25 23 / 0.08);
+}
+
+.table-premium thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+}
+
+.rise {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.rise-1 {
+  animation-delay: 0.04s;
+}
+.rise-2 {
+  animation-delay: 0.1s;
+}
+.rise-3 {
+  animation-delay: 0.16s;
+}
+.rise-4 {
+  animation-delay: 0.22s;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #e7e2d4 25%, #f4f1e7 45%, #e7e2d4 65%);
+  background-size: 800px 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* focus visibility for a11y */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #0d7a6f;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* number tabular default in tables */
+table {
+  font-variant-numeric: tabular-nums;
 }
